@@ -1,124 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FCDO Travel Advisory Map</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div id="app">
 
-    <header>
-      <div class="logo">
-        <svg class="logo-crown" viewBox="0 0 40 40" fill="none">
-          <path d="M20 4 L25 14 L36 9 L31 20 L36 23H4L9 20L4 9L15 14Z" fill="#c8a84b"/>
-          <rect x="4" y="23" width="32" height="8" rx="2" fill="#c8a84b"/>
-        </svg>
-        <div class="logo-text">
-          <h1>Foreign Travel Advisory</h1>
-          <p>UK Foreign, Commonwealth &amp; Development Office</p>
+      <header>
+        <div class="header-brand">
+          <div class="header-flag">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="header-title">
+            FCDO Travel Advisory <span>/ World Map</span>
+          </div>
         </div>
-      </div>
 
-      <div class="header-divider"></div>
-
-      <div class="time-controls">
-        <span class="time-label">HISTORY</span>
-        <div class="slider-track">
-          <div class="slider-dates" id="sliderDates"></div>
-          <input type="range" id="timeSlider" min="0" step="1">
+        <div class="header-meta">
+          Step 1 — Static Shell
         </div>
-        <div class="current-date" id="currentDate">—</div>
-        <button class="play-btn" id="playBtn" title="Play through history">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
-            <path id="playIcon" d="M2 1.5L8 5L2 8.5V1.5Z"/>
-          </svg>
-        </button>
-      </div>
 
-      <div class="header-divider"></div>
-
-      <div class="header-stats">
-        <div class="hstat">
-          <div class="hstat-dot" style="background:var(--red)"></div>
-          <span class="hstat-num" id="hstat-avoid_all">—</span>
-          <span class="hstat-label">Avoid all</span>
+        <div class="header-status">
+          <span class="status-dot"></span>
+          Polygons loading…
         </div>
-        <div class="hstat">
-          <div class="hstat-dot" style="background:var(--orange)"></div>
-          <span class="hstat-num" id="hstat-avoid_all_but_essential">—</span>
-          <span class="hstat-label">Essential only</span>
-        </div>
-        <div class="hstat">
-          <div class="hstat-dot" style="background:var(--yellow)"></div>
-          <span class="hstat-num" id="hstat-some_parts">—</span>
-          <span class="hstat-label">Some parts</span>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <div id="map"></div>
+      <div id="map-container">
+        <!-- Loading overlay -->
+        <div id="loading">
+          <div class="loader-ring"></div>
+          <div class="loader-label">Loading world polygons…</div>
+        </div>
 
-    <!-- Legend -->
-    <div class="legend">
-      <div class="legend-title">Advisory Level</div>
-      <div class="legend-row" data-level="avoid_all" onclick="toggleFilter('avoid_all')">
-        <div class="legend-swatch" style="background:var(--red)"></div>
-        <div class="legend-text">Advise against all travel</div>
-        <div class="legend-count" id="lc-avoid_all">—</div>
-      </div>
-      <div class="legend-row" data-level="avoid_all_but_essential" onclick="toggleFilter('avoid_all_but_essential')">
-        <div class="legend-swatch" style="background:var(--orange)"></div>
-        <div class="legend-text">Avoid all but essential</div>
-        <div class="legend-count" id="lc-avoid_all_but_essential">—</div>
-      </div>
-      <div class="legend-row" data-level="some_parts" onclick="toggleFilter('some_parts')">
-        <div class="legend-swatch" style="background:var(--yellow)"></div>
-        <div class="legend-text">Some parts — see advice</div>
-        <div class="legend-count" id="lc-some_parts">—</div>
-      </div>
-      <div class="legend-row" data-level="safe" onclick="toggleFilter('safe')">
-        <div class="legend-swatch" style="background:var(--green)"></div>
-        <div class="legend-text">See travel advice</div>
-        <div class="legend-count" id="lc-safe">—</div>
-      </div>
-      <div class="legend-row" data-level="none" onclick="toggleFilter('none')">
-        <div class="legend-swatch" style="background:var(--grey)"></div>
-        <div class="legend-text">No advisory data</div>
-        <div class="legend-count" id="lc-none">—</div>
-      </div>
-      <hr class="legend-divider">
-      <div class="legend-note">
-        <span class="pdf-dot"></span>Sub-national zones shown for countries<br>
-        with FCDO PDF maps. Click any country<br>
-        for details and a link to full advice.
+        <div id="map"></div>
+
+        <!-- Legend -->
+        <div id="legend">
+          <div class="legend-heading">Advisory Tiers</div>
+
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--avoid-all)"></div>
+            <div class="legend-label">
+              Avoid all travel
+              <span class="legend-sub">avoid_all</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
+            <div class="legend-label">
+              Avoid all but essential
+              <span class="legend-sub">avoid_all_but_essential</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--some-parts)"></div>
+            <div class="legend-label">
+              Mixed (some parts)
+              <span class="legend-sub">some_parts</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--no-warning)"></div>
+            <div class="legend-label">
+              See travel advice
+              <span class="legend-sub">null — no specific warning</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
+            <div class="legend-label">
+              No advisory data
+              <span class="legend-sub">not in FCDO index</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Country count -->
+        <div id="country-count">
+          <strong id="count-num">—</strong>
+          countries loaded
+        </div>
       </div>
     </div>
-
-    <!-- Info Panel -->
-    <div class="info-panel" id="infoPanel">
-      <button class="info-close" onclick="closePanel()">✕</button>
-      <div class="info-banner" id="infoBanner"></div>
-      <div class="info-body">
-        <div class="info-badge" id="infoBadge"></div>
-        <div class="info-name" id="infoName"></div>
-        <div class="info-updated" id="infoUpdated"></div>
-        <div class="info-advice" id="infoAdvice"></div>
-        <div class="info-pdf-note" id="infoPdfNote" style="display:none">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;margin-top:1px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-          Sub-national advisory zones are shown on the map, georeferenced from the official FCDO PDF briefing map.
-        </div>
-        <a class="info-link" id="infoLink" href="#" target="_blank" style="display:none">
-          View full FCDO travel advice
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-    </div>
-
     <script src="scripts.js"></script>
   </body>
 </html>
