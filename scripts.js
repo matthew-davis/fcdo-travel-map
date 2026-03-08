@@ -1,12 +1,14 @@
 // ── Map init ─────────────────────────────────────────────────────────
 const map = L.map('map', {
   center: [20, 10],
-  zoom: 2,
+  zoom: 3,
   minZoom: 2,
   maxZoom: 10,
   zoomControl: true,
   attributionControl: true,
 });
+
+requestAnimationFrame(() => map.invalidateSize());
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
