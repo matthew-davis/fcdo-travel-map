@@ -44,7 +44,7 @@ Work through these steps in order. Update the status marker for each task as wor
 
 - [X] Create `index.html` with Leaflet and CartoDB tile layer
 - [X] Load and render `data/world_10m.json` country polygons
-- [ ] Confirm all ~240 countries display correctly in browser
+- [X] Confirm all ~240 countries display correctly in browser
 
 ---
 
