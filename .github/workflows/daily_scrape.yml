@@ -33,7 +33,7 @@ jobs:
           if [ -n "${{ github.event.inputs.date_override }}" ]; then
             DATE_ARG="--date ${{ github.event.inputs.date_override }}"
           fi
-          node scraper.js $DATE_ARG
+          node scripts/scraper.js $DATE_ARG
 
       - name: Commit and push snapshot
         run: |
