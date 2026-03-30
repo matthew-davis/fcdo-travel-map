@@ -51,20 +51,20 @@ Work through these steps in order. Update the status marker for each task as wor
 ### Step 2 — Colour countries from snapshot
 > Wire the map to colour countries using a snapshot JSON. Use the sample data already in `scripts.js` or write a hand-crafted snapshot file. Confirm all four advisory tiers render with the correct colours.
 
-- [ ] Define the four tier colours in JS (red / orange / yellow / green)
-- [ ] Load a snapshot JSON and apply colours to matching country polygons
-- [ ] Confirm all four status values render correctly
-- [ ] Handle `null` status (green / no warning) and unknown ISO codes gracefully
+- [X] Define the four tier colours in JS (red / orange / yellow / green)
+- [X] Load a snapshot JSON and apply colours to matching country polygons
+- [X] Confirm all four status values render correctly
+- [X] Handle `null` status (green / no warning) and unknown ISO codes gracefully
 
 ---
 
 ### Step 3 — Country click panel
 > Add a side panel. Clicking a country polygon shows: name, advisory level, human-readable description, and a link to `gov.uk/foreign-travel-advice/{slug}`.
 
-- [ ] Add side panel HTML/CSS to `index.html`
-- [ ] Wire Leaflet click events on country polygons
-- [ ] Display name, status badge, description text, and GOV.UK link
-- [ ] Handle click on a country with no advisory data
+- [X] Add side panel HTML/CSS to `index.html`
+- [X] Wire Leaflet click events on country polygons
+- [X] Display name, status badge, description text, and GOV.UK link
+- [X] Handle click on a country with no advisory data
 
 ---
 

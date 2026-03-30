@@ -1,96 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FCDO Travel Advisory Map</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="app">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FCDO Travel Advisory Map</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
 
-      <header>
-        <div class="header-brand">
-          <div class="header-flag">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="header-title">
-            FCDO Travel Advisory <span>/ World Map</span>
-          </div>
+  <header>
+    <div class="header-brand">
+      <div class="header-flag">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="header-title">
+        FCDO Travel Advisory <span>/ World Map</span>
+      </div>
+    </div>
+
+    <div class="header-meta">
+      Step 3 — Country Click Panel
+    </div>
+
+    <div class="header-status">
+      <span class="status-dot"></span>
+      Polygons loading…
+    </div>
+  </header>
+
+  <div id="map-container">
+    <!-- Loading overlay -->
+    <div id="loading">
+      <div class="loader-ring"></div>
+      <div class="loader-label">Loading world polygons…</div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Info panel (hidden by default) -->
+    <div id="info-panel" class="panel-hidden">
+      <div class="info-header">
+        <button id="close-panel" class="close-btn">&times;</button>
+      </div>
+      <div class="info-content">
+        <h2 id="info-country-name">—</h2>
+        <div id="info-status-badge" class="status-badge">—</div>
+        <p id="info-description">Click a country to see travel advice.</p>
+        <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
+          View full advice on GOV.UK →
+        </a>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div id="legend">
+      <div class="legend-heading">Advisory Tiers</div>
+
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--avoid-all)"></div>
+        <div class="legend-label">
+          Avoid all travel
+          <span class="legend-sub">avoid_all</span>
         </div>
-
-        <div class="header-meta">
-          Step 1 — Static Shell
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
+        <div class="legend-label">
+          Avoid all but essential
+          <span class="legend-sub">avoid_all_but_essential</span>
         </div>
-
-        <div class="header-status">
-          <span class="status-dot"></span>
-          Polygons loading…
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--some-parts)"></div>
+        <div class="legend-label">
+          Mixed (some parts)
+          <span class="legend-sub">some_parts</span>
         </div>
-      </header>
-
-      <div id="map-container">
-        <!-- Loading overlay -->
-        <div id="loading">
-          <div class="loader-ring"></div>
-          <div class="loader-label">Loading world polygons…</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--no-warning)"></div>
+        <div class="legend-label">
+          See travel advice
+          <span class="legend-sub">null — no specific warning</span>
         </div>
-
-        <div id="map"></div>
-
-        <!-- Legend -->
-        <div id="legend">
-          <div class="legend-heading">Advisory Tiers</div>
-
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--avoid-all)"></div>
-            <div class="legend-label">
-              Avoid all travel
-              <span class="legend-sub">avoid_all</span>
-            </div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
-            <div class="legend-label">
-              Avoid all but essential
-              <span class="legend-sub">avoid_all_but_essential</span>
-            </div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--some-parts)"></div>
-            <div class="legend-label">
-              Mixed (some parts)
-              <span class="legend-sub">some_parts</span>
-            </div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--no-warning)"></div>
-            <div class="legend-label">
-              See travel advice
-              <span class="legend-sub">null — no specific warning</span>
-            </div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
-            <div class="legend-label">
-              No advisory data
-              <span class="legend-sub">not in FCDO index</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Country count -->
-        <div id="country-count">
-          <strong id="count-num">—</strong>
-          countries loaded
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
+        <div class="legend-label">
+          No advisory data
+          <span class="legend-sub">not in FCDO index</span>
         </div>
       </div>
     </div>
-    <script src="scripts.js"></script>
-  </body>
+
+    <!-- Country count -->
+    <div id="country-count">
+      <strong id="count-num">—</strong>
+      countries loaded
+    </div>
+  </div>
+</div>
+<script src="scripts.js"></script>
+</body>
 </html>
