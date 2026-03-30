@@ -97,7 +97,14 @@ Work through these steps in order. Update the status marker for each task as wor
 - [X] Update the scraper to append to this index on each run
 - [X] Add slider UI to the page header
 - [X] Wire slider to swap the active snapshot and re-colour the map
-- [X] Show a **▲ escalated** / **▼ improved** badge in the info panel when a country's status differs from the previous snapshot
+- [X] Show a **▲ escalated** / **▼ improved** badge in the info panel when a country's status differs from previous snapshot
+- [ ] Need to troubleshoot colours updating when the slider moves
+- [ ] Need to confirm the bade appears when required
+- [ ] Re-design the slider bar (remove date at beginning and end)
+- [ ] Remove snapshot and date from header and add something else
+- [ ] Slightly less dark water colour, lighter grey
+- [ ] Can I lay lat long lines over the map?
+- [ ] Better map placement? Against left side of window? Maybe a info bar on right instead of overlap
 
 ---
 
@@ -109,6 +116,7 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Validate GeoJSON output and render as a Leaflet overlay
 - [ ] Process remaining PDF countries (Israel, Ukraine, etc.)
 - [ ] Only re-process a country when `public_updated_at` changes
+- [ ] Remove Mixed colour option from ledgend and countries
 
 ---
 

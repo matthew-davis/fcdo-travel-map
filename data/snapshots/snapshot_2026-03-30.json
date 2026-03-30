@@ -26,7 +26,7 @@
       "updated_at": "2026-03-30T11:09:15+01:00"
     },
     "EG": {
-      "status": "some_parts",
+      "status": "avoid_all",
       "name": "Egypt",
       "slug": "egypt",
       "has_pdf": true,

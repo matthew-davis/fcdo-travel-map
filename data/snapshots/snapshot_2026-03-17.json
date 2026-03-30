@@ -3,7 +3,7 @@
   "generated_at": "2026-03-17T06:49:25.408Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
-    "QATAR": {
+    "QA": {
       "status": "avoid_all_but_essential",
       "name": "Qatar",
       "slug": "qatar",
@@ -11,7 +11,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a36c48286b6fdc85daeb04/Qatar_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2026-03-16T20:16:46+00:00"
     },
-    "KUWAIT": {
+    "KW": {
       "status": "avoid_all_but_essential",
       "name": "Kuwait",
       "slug": "kuwait",
@@ -19,7 +19,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a36b0da4d26cb233cd47da/Kuwait_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-16T20:15:22+00:00"
     },
-    "CUBA": {
+    "CU": {
       "status": "avoid_all_but_essential",
       "name": "Cuba",
       "slug": "cuba",
@@ -27,7 +27,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/698cc89184cc2df4a87123d5/FCDO__TA__103_-_Cuba_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-16T19:11:40+00:00"
     },
-    "UNITED_ARAB_EMIRATES": {
+    "AE": {
       "status": "avoid_all_but_essential",
       "name": "United Arab Emirates",
       "slug": "united-arab-emirates",
@@ -35,21 +35,21 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a36e57ec82ce45f05bd728/United_Arab_Emirates_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-16T18:57:20+00:00"
     },
-    "ITALY": {
+    "IT": {
       "status": null,
       "name": "Italy",
       "slug": "italy",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:33:19+00:00"
     },
-    "SRI_LANKA": {
+    "LK": {
       "status": null,
       "name": "Sri Lanka",
       "slug": "sri-lanka",
       "has_pdf": false,
       "updated_at": "2026-03-03T11:09:48+00:00"
     },
-    "IRAQ": {
+    "IQ": {
       "status": "avoid_all",
       "name": "Iraq",
       "slug": "iraq",
@@ -57,14 +57,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a4b52ea4d26cb233cd47f0/FCDO__TA__048_-_Iraq_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-15T10:02:30+00:00"
     },
-    "PAKISTAN": {
+    "PK": {
       "status": "some_parts",
       "name": "Pakistan",
       "slug": "pakistan",
       "has_pdf": false,
       "updated_at": "2026-03-14T11:01:10+00:00"
     },
-    "SAUDI_ARABIA": {
+    "SA": {
       "status": "some_parts",
       "name": "Saudi Arabia",
       "slug": "saudi-arabia",
@@ -72,7 +72,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a8bbce5fc94cfb71958fb9/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-03-14T10:01:20+00:00"
     },
-    "BAHRAIN": {
+    "BH": {
       "status": "avoid_all_but_essential",
       "name": "Bahrain",
       "slug": "bahrain",
@@ -80,7 +80,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a367d7286b6fdc85daeb02/Bahrain_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-14T10:00:44+00:00"
     },
-    "OMAN": {
+    "OM": {
       "status": null,
       "name": "Oman",
       "slug": "oman",
@@ -94,7 +94,7 @@
       "has_pdf": false,
       "updated_at": "2026-03-13T16:34:25+00:00"
     },
-    "JORDAN": {
+    "JO": {
       "status": "some_parts",
       "name": "Jordan",
       "slug": "jordan",
@@ -102,14 +102,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a5be6fa56a5482312c71a0/FCDO__TA__087_-_Jordan_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-03-10T14:36:32+00:00"
     },
-    "USA": {
+    "US": {
       "status": null,
       "name": "USA",
       "slug": "usa",
       "has_pdf": false,
       "updated_at": "2026-03-13T12:39:43+00:00"
     },
-    "MEXICO": {
+    "MX": {
       "status": "some_parts",
       "name": "Mexico",
       "slug": "mexico",
@@ -117,14 +117,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-03-13T10:40:19+00:00"
     },
-    "ANTIGUA_AND_BARBUDA": {
+    "AG": {
       "status": null,
       "name": "Antigua and Barbuda",
       "slug": "antigua-and-barbuda",
       "has_pdf": false,
       "updated_at": "2026-03-13T09:27:23+00:00"
     },
-    "CAMBODIA": {
+    "KH": {
       "status": "some_parts",
       "name": "Cambodia",
       "slug": "cambodia",
@@ -132,7 +132,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-02-02T14:49:28+00:00"
     },
-    "THAILAND": {
+    "TH": {
       "status": "some_parts",
       "name": "Thailand",
       "slug": "thailand",
@@ -140,14 +140,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b4383915f7123658010e/FCDO__TA__040_-_Thailand_Travel_Advice_Ed8__WEB_.jpg",
       "updated_at": "2026-03-04T03:34:24+00:00"
     },
-    "NEPAL": {
+    "NP": {
       "status": null,
       "name": "Nepal",
       "slug": "nepal",
       "has_pdf": false,
       "updated_at": "2026-03-12T14:45:11+00:00"
     },
-    "LEBANON": {
+    "LB": {
       "status": "some_parts",
       "name": "Lebanon",
       "slug": "lebanon",
@@ -163,7 +163,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a2c80fec82ce45f05bd722/FCDO__TA__022_-_Israel_Travel_Advice_Ed27__WEB_.jpg",
       "updated_at": "2026-03-12T14:15:10+00:00"
     },
-    "ISRAEL": {
+    "IL": {
       "status": "avoid_all",
       "name": "Israel",
       "slug": "israel",
@@ -171,14 +171,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a2c183a4d26cb233cd47d4/FCDO__TA__022_-_Israel_Travel_Advice_Ed27__WEB_.jpg",
       "updated_at": "2026-03-12T14:14:57+00:00"
     },
-    "INDIA": {
+    "IN": {
       "status": "some_parts",
       "name": "India",
       "slug": "india",
       "has_pdf": false,
       "updated_at": "2026-03-02T17:45:53+00:00"
     },
-    "ECUADOR": {
+    "EC": {
       "status": "some_parts",
       "name": "Ecuador",
       "slug": "ecuador",
@@ -186,7 +186,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/65a1082ce96df50014f8452c/FCDO__TA__014_-_Ecuador_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-03-11T09:09:41+00:00"
     },
-    "VENEZUELA": {
+    "VE": {
       "status": "some_parts",
       "name": "Venezuela",
       "slug": "venezuela",
@@ -194,7 +194,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6b088b9bd90e63a2521da/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed4__WEB_.jpg",
       "updated_at": "2026-03-10T16:12:13+00:00"
     },
-    "EGYPT": {
+    "EG": {
       "status": "some_parts",
       "name": "Egypt",
       "slug": "egypt",
@@ -202,7 +202,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/670e278f30536cb92748313c/FCDO__TA__015_-_Egypt_Travel_Advice_Ed10__WEB_.jpg",
       "updated_at": "2026-03-10T14:44:32+00:00"
     },
-    "BANGLADESH": {
+    "BD": {
       "status": "some_parts",
       "name": "Bangladesh",
       "slug": "bangladesh",
@@ -210,21 +210,21 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6991cc717da91680ad7f4436/Bangladesh_map.jpg",
       "updated_at": "2026-03-10T14:22:17+00:00"
     },
-    "SOLOMON_ISLANDS": {
+    "SB": {
       "status": null,
       "name": "Solomon Islands",
       "slug": "solomon-islands",
       "has_pdf": false,
       "updated_at": "2026-03-10T13:28:56+00:00"
     },
-    "BELGIUM": {
+    "BE": {
       "status": null,
       "name": "Belgium",
       "slug": "belgium",
       "has_pdf": false,
       "updated_at": "2026-03-06T09:37:57+00:00"
     },
-    "YEMEN": {
+    "YE": {
       "status": "avoid_all",
       "name": "Yemen",
       "slug": "yemen",
@@ -232,7 +232,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/5f4e3445e90e071c6f74664e/FCDO__TA__047_-_Yemen_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-09T17:16:38+00:00"
     },
-    "COLOMBIA": {
+    "CO": {
       "status": "some_parts",
       "name": "Colombia",
       "slug": "colombia",
@@ -240,7 +240,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/67c05135b0bb6528ee866b96/FCDO_TA_054_-_Colombia_Travel_Advice_Ed3_WEB.jpg",
       "updated_at": "2026-03-09T15:20:28+00:00"
     },
-    "PERU": {
+    "PE": {
       "status": "some_parts",
       "name": "Peru",
       "slug": "peru",
@@ -248,42 +248,42 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6645e81e993111924d9d365a/FCDO__TA__093_-_Peru_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-03-07T11:23:02+00:00"
     },
-    "SAMOA": {
+    "WS": {
       "status": null,
       "name": "Samoa",
       "slug": "samoa",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:43:38+00:00"
     },
-    "TONGA": {
+    "TO": {
       "status": null,
       "name": "Tonga",
       "slug": "tonga",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:43:26+00:00"
     },
-    "NAURU": {
+    "NR": {
       "status": null,
       "name": "Nauru",
       "slug": "nauru",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:43:14+00:00"
     },
-    "FIJI": {
+    "FJ": {
       "status": null,
       "name": "Fiji",
       "slug": "fiji",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:42:42+00:00"
     },
-    "KIRIBATI": {
+    "KI": {
       "status": null,
       "name": "Kiribati",
       "slug": "kiribati",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:42:29+00:00"
     },
-    "MARSHALL_ISLANDS": {
+    "MH": {
       "status": null,
       "name": "Marshall Islands",
       "slug": "marshall-islands",
@@ -297,21 +297,21 @@
       "has_pdf": false,
       "updated_at": "2026-03-06T16:41:40+00:00"
     },
-    "TUVALU": {
+    "TV": {
       "status": null,
       "name": "Tuvalu",
       "slug": "tuvalu",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:41:17+00:00"
     },
-    "VANUATU": {
+    "VU": {
       "status": null,
       "name": "Vanuatu",
       "slug": "vanuatu",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:41:04+00:00"
     },
-    "PAPUA_NEW_GUINEA": {
+    "PG": {
       "status": "some_parts",
       "name": "Papua New Guinea",
       "slug": "papua-new-guinea",
@@ -319,14 +319,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/68b1908211b4ded2da19fc61/FCDO__TA__063_-_Papua_New_Guinea_Ed2__WEB_.jpg",
       "updated_at": "2026-03-06T16:40:48+00:00"
     },
-    "SINGAPORE": {
+    "SG": {
       "status": null,
       "name": "Singapore",
       "slug": "singapore",
       "has_pdf": false,
       "updated_at": "2026-03-06T16:30:00+00:00"
     },
-    "LAOS": {
+    "LA": {
       "status": "some_parts",
       "name": "Laos",
       "slug": "laos",
@@ -334,7 +334,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/64391b7a773a8a0013ab2c63/FCDO__TA__088_-_Laos_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-03-06T16:29:54+00:00"
     },
-    "INDONESIA": {
+    "ID": {
       "status": "some_parts",
       "name": "Indonesia",
       "slug": "indonesia",
@@ -342,42 +342,42 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6745db6083f3d6d843be9719/FCDO__TA__020_-_Indonesia_Travel_Advice_Ed9__WEB_.jpg",
       "updated_at": "2026-03-06T16:12:05+00:00"
     },
-    "BOTSWANA": {
+    "BW": {
       "status": null,
       "name": "Botswana",
       "slug": "botswana",
       "has_pdf": false,
       "updated_at": "2026-03-06T15:32:16+00:00"
     },
-    "BRUNEI": {
+    "BN": {
       "status": null,
       "name": "Brunei",
       "slug": "brunei",
       "has_pdf": false,
       "updated_at": "2026-03-06T14:42:42+00:00"
     },
-    "NEW_ZEALAND": {
+    "NZ": {
       "status": null,
       "name": "New Zealand",
       "slug": "new-zealand",
       "has_pdf": false,
       "updated_at": "2026-03-06T14:58:44+00:00"
     },
-    "AUSTRALIA": {
+    "AU": {
       "status": null,
       "name": "Australia",
       "slug": "australia",
       "has_pdf": false,
       "updated_at": "2026-03-06T14:58:41+00:00"
     },
-    "VIETNAM": {
+    "VN": {
       "status": null,
       "name": "Vietnam",
       "slug": "vietnam",
       "has_pdf": false,
       "updated_at": "2026-03-06T13:09:29+00:00"
     },
-    "PHILIPPINES": {
+    "PH": {
       "status": "some_parts",
       "name": "Philippines",
       "slug": "philippines",
@@ -385,21 +385,21 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/616406778fa8f52980d9301c/FCDO__TA__033_-_Philippines_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2026-03-06T11:30:05+00:00"
     },
-    "CHINA": {
+    "CN": {
       "status": null,
       "name": "China",
       "slug": "china",
       "has_pdf": false,
       "updated_at": "2026-03-06T10:29:41+00:00"
     },
-    "TRINIDAD_AND_TOBAGO": {
+    "TT": {
       "status": null,
       "name": "Trinidad and Tobago",
       "slug": "trinidad-and-tobago",
       "has_pdf": false,
       "updated_at": "2026-03-06T10:24:58+00:00"
     },
-    "AZERBAIJAN": {
+    "AZ": {
       "status": "some_parts",
       "name": "Azerbaijan",
       "slug": "azerbaijan",
@@ -407,42 +407,42 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/67efddbf27eb76c92cf7e567/FCDO__TA__004_-_Azerbaijan_Travel_Advice_Ed9__WEB_.jpg",
       "updated_at": "2026-03-05T19:08:25+00:00"
     },
-    "UZBEKISTAN": {
+    "UZ": {
       "status": null,
       "name": "Uzbekistan",
       "slug": "uzbekistan",
       "has_pdf": false,
       "updated_at": "2026-03-05T15:16:58+00:00"
     },
-    "CYPRUS": {
+    "CY": {
       "status": null,
       "name": "Cyprus",
       "slug": "cyprus",
       "has_pdf": false,
       "updated_at": "2026-03-05T13:54:37+00:00"
     },
-    "JAPAN": {
+    "JP": {
       "status": null,
       "name": "Japan",
       "slug": "japan",
       "has_pdf": false,
       "updated_at": "2026-03-05T12:07:22+00:00"
     },
-    "MALDIVES": {
+    "MV": {
       "status": null,
       "name": "Maldives",
       "slug": "maldives",
       "has_pdf": false,
       "updated_at": "2026-03-05T10:49:34+00:00"
     },
-    "GREECE": {
+    "GR": {
       "status": null,
       "name": "Greece",
       "slug": "greece",
       "has_pdf": false,
       "updated_at": "2026-03-05T09:35:30+00:00"
     },
-    "GEORGIA": {
+    "GE": {
       "status": "some_parts",
       "name": "Georgia",
       "slug": "georgia",
@@ -450,7 +450,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/690481e4823bdda9488b24cf/FCDO_TA_018_-_Georgia_Travel_Advice_Ed4_WEB.jpg",
       "updated_at": "2026-03-04T14:33:17+00:00"
     },
-    "MALAYSIA": {
+    "MY": {
       "status": "some_parts",
       "name": "Malaysia",
       "slug": "malaysia",
@@ -458,21 +458,21 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6565efa562180b000dce830a/FCDO__TA__025_-_Malaysia_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-03-04T14:26:47+00:00"
     },
-    "TAJIKISTAN": {
+    "TJ": {
       "status": null,
       "name": "Tajikistan",
       "slug": "tajikistan",
       "has_pdf": false,
       "updated_at": "2026-03-04T13:27:55+00:00"
     },
-    "NETHERLANDS": {
+    "NL": {
       "status": null,
       "name": "Netherlands",
       "slug": "netherlands",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:35:06+00:00"
     },
-    "IRAN": {
+    "IR": {
       "status": "avoid_all",
       "name": "Iran",
       "slug": "iran",
@@ -480,7 +480,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/627e359b8fa8f53f99901991/FCDO__TA__021_-_Iran_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-03-01T17:27:32+00:00"
     },
-    "DJIBOUTI": {
+    "DJ": {
       "status": "some_parts",
       "name": "Djibouti",
       "slug": "djibouti",
@@ -488,7 +488,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/615dd2368fa8f5297a62a0bc/FCDO__TA__013_-_Djibouti_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2026-03-04T10:28:26+00:00"
     },
-    "TURKEY": {
+    "TR": {
       "status": "some_parts",
       "name": "Turkey",
       "slug": "turkey",
@@ -496,14 +496,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6faa2a2495f2d259f13d2/FCDO_TA_043_-_Turkey_Travel_Advice_Ed4_WEB.jpg",
       "updated_at": "2026-03-01T17:30:53+00:00"
     },
-    "TURKMENISTAN": {
+    "TM": {
       "status": null,
       "name": "Turkmenistan",
       "slug": "turkmenistan",
       "has_pdf": false,
       "updated_at": "2026-03-02T12:47:13+00:00"
     },
-    "ARMENIA": {
+    "AM": {
       "status": "some_parts",
       "name": "Armenia",
       "slug": "armenia",
@@ -511,7 +511,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/615dcc368fa8f5297eda6658/FCDO__TA__003_-_Armenia_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-03-01T17:29:01+00:00"
     },
-    "SYRIA": {
+    "SY": {
       "status": "avoid_all",
       "name": "Syria",
       "slug": "syria",
@@ -519,7 +519,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/5f4f3764e90e071c745ff2f9/FCDO__TA__039_-_Syria_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-02-27T22:32:06+00:00"
     },
-    "BOLIVIA": {
+    "BO": {
       "status": "some_parts",
       "name": "Bolivia",
       "slug": "bolivia",
@@ -534,14 +534,14 @@
       "has_pdf": false,
       "updated_at": "2026-02-27T15:08:06+00:00"
     },
-    "KYRGYZSTAN": {
+    "KG": {
       "status": null,
       "name": "Kyrgyzstan",
       "slug": "kyrgyzstan",
       "has_pdf": false,
       "updated_at": "2026-02-27T14:47:28+00:00"
     },
-    "AFGHANISTAN": {
+    "AF": {
       "status": "avoid_all",
       "name": "Afghanistan",
       "slug": "afghanistan",
@@ -549,7 +549,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/66447989993111924d9d348d/FCDO__TA__001_-_Afghanistan_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-02-27T10:38:40+00:00"
     },
-    "MOZAMBIQUE": {
+    "MZ": {
       "status": "some_parts",
       "name": "Mozambique",
       "slug": "mozambique",
@@ -557,14 +557,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/68b6aa1b11b4ded2da19fcfe/FCDO__TA__028_-_Mozambique_Travel_Advice_Ed11__WEB_.jpg",
       "updated_at": "2026-02-26T16:36:37+00:00"
     },
-    "CAPE_VERDE": {
+    "CV": {
       "status": null,
       "name": "Cape Verde",
       "slug": "cape-verde",
       "has_pdf": false,
       "updated_at": "2026-02-06T14:41:39+00:00"
     },
-    "RUSSIA": {
+    "RU": {
       "status": "avoid_all",
       "name": "Russia",
       "slug": "russia",
@@ -572,7 +572,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/621cd8428fa8f54915f43831/FCDO__TA__059_-_Russia_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-01-30T15:20:21+00:00"
     },
-    "SUDAN": {
+    "SD": {
       "status": "some_parts",
       "name": "Sudan",
       "slug": "sudan",
@@ -580,14 +580,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/672a3fc8f03408fa7966d186/FCDO__TA__038_-_Sudan_Travel_Advice_Ed8__WEB_.jpg",
       "updated_at": "2026-02-26T11:44:14+00:00"
     },
-    "IRELAND": {
+    "IE": {
       "status": null,
       "name": "Ireland",
       "slug": "ireland",
       "has_pdf": false,
       "updated_at": "2026-02-26T11:06:23+00:00"
     },
-    "DEMOCRATIC_REPUBLIC_OF_THE_CONGO": {
+    "CD": {
       "status": "some_parts",
       "name": "Democratic Republic of the Congo",
       "slug": "democratic-republic-of-the-congo",
@@ -595,7 +595,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/699f2b9b532c9ad91ebbcd03/FCDO__TA__012_-_Democratic_Repbulic_of_the_Congo_Travel_Advice_Ed17__WEB_.jpg",
       "updated_at": "2026-02-25T17:08:17+00:00"
     },
-    "TUNISIA": {
+    "TN": {
       "status": "some_parts",
       "name": "Tunisia",
       "slug": "tunisia",
@@ -603,7 +603,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/687faf22fdc190fb6b8468e3/FCDO__TA__042_-_Tunisia_Travel_Advice_Ed5__WEB___1_.jpg",
       "updated_at": "2026-02-23T12:48:19+00:00"
     },
-    "ALGERIA": {
+    "DZ": {
       "status": "some_parts",
       "name": "Algeria",
       "slug": "algeria",
@@ -611,7 +611,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/615dcb70d3bf7f55fd843aea/FCDO__TA__002_-_Algeria_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-02-23T12:46:42+00:00"
     },
-    "NIGERIA": {
+    "NG": {
       "status": "some_parts",
       "name": "Nigeria",
       "slug": "nigeria",
@@ -619,14 +619,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/68b5a5683f3e5483efdba88a/FCDO__TA__030_-_Nigeria_Travel_Advice_map__WEB_.jpg",
       "updated_at": "2026-02-23T09:30:46+00:00"
     },
-    "PORTUGAL": {
+    "PT": {
       "status": null,
       "name": "Portugal",
       "slug": "portugal",
       "has_pdf": false,
       "updated_at": "2026-02-19T14:01:39+00:00"
     },
-    "KENYA": {
+    "KE": {
       "status": "some_parts",
       "name": "Kenya",
       "slug": "kenya",
@@ -634,7 +634,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-02-19T11:49:16+00:00"
     },
-    "DOMINICA": {
+    "DM": {
       "status": null,
       "name": "Dominica",
       "slug": "dominica",
@@ -655,14 +655,14 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:50:28+00:00"
     },
-    "GUYANA": {
+    "GY": {
       "status": null,
       "name": "Guyana",
       "slug": "guyana",
       "has_pdf": false,
       "updated_at": "2025-12-30T14:37:59+00:00"
     },
-    "ETHIOPIA": {
+    "ET": {
       "status": "some_parts",
       "name": "Ethiopia",
       "slug": "ethiopia",
@@ -670,147 +670,147 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6983415b20fe1bb69ac243ed/FCDO__TA__017_-_Ethiopia_Travel_Advice_Ed42__WEB_.jpg",
       "updated_at": "2026-01-31T19:30:05+00:00"
     },
-    "MADAGASCAR": {
+    "MG": {
       "status": null,
       "name": "Madagascar",
       "slug": "madagascar",
       "has_pdf": false,
       "updated_at": "2026-01-26T10:47:11+00:00"
     },
-    "FRANCE": {
+    "FR": {
       "status": null,
       "name": "France",
       "slug": "france",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:39:22+00:00"
     },
-    "SWITZERLAND": {
+    "CH": {
       "status": null,
       "name": "Switzerland",
       "slug": "switzerland",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:38:50+00:00"
     },
-    "SWEDEN": {
+    "SE": {
       "status": null,
       "name": "Sweden",
       "slug": "sweden",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:38:33+00:00"
     },
-    "SPAIN": {
+    "ES": {
       "status": null,
       "name": "Spain",
       "slug": "spain",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:37:58+00:00"
     },
-    "SLOVENIA": {
+    "SI": {
       "status": null,
       "name": "Slovenia",
       "slug": "slovenia",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:37:14+00:00"
     },
-    "SLOVAKIA": {
+    "SK": {
       "status": null,
       "name": "Slovakia",
       "slug": "slovakia",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:36:55+00:00"
     },
-    "ROMANIA": {
+    "RO": {
       "status": null,
       "name": "Romania",
       "slug": "romania",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:36:37+00:00"
     },
-    "POLAND": {
+    "PL": {
       "status": null,
       "name": "Poland",
       "slug": "poland",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:35:48+00:00"
     },
-    "NORWAY": {
+    "NO": {
       "status": null,
       "name": "Norway",
       "slug": "norway",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:35:29+00:00"
     },
-    "MALTA": {
+    "MT": {
       "status": null,
       "name": "Malta",
       "slug": "malta",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:34:45+00:00"
     },
-    "LUXEMBOURG": {
+    "LU": {
       "status": null,
       "name": "Luxembourg",
       "slug": "luxembourg",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:34:29+00:00"
     },
-    "LITHUANIA": {
+    "LT": {
       "status": null,
       "name": "Lithuania",
       "slug": "lithuania",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:34:14+00:00"
     },
-    "LIECHTENSTEIN": {
+    "LI": {
       "status": null,
       "name": "Liechtenstein",
       "slug": "liechtenstein",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:33:55+00:00"
     },
-    "LATVIA": {
+    "LV": {
       "status": null,
       "name": "Latvia",
       "slug": "latvia",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:33:39+00:00"
     },
-    "ICELAND": {
+    "IS": {
       "status": null,
       "name": "Iceland",
       "slug": "iceland",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:32:48+00:00"
     },
-    "HUNGARY": {
+    "HU": {
       "status": null,
       "name": "Hungary",
       "slug": "hungary",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:32:29+00:00"
     },
-    "GERMANY": {
+    "DE": {
       "status": null,
       "name": "Germany",
       "slug": "germany",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:31:01+00:00"
     },
-    "FINLAND": {
+    "FI": {
       "status": null,
       "name": "Finland",
       "slug": "finland",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:30:14+00:00"
     },
-    "ESTONIA": {
+    "EE": {
       "status": null,
       "name": "Estonia",
       "slug": "estonia",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:29:58+00:00"
     },
-    "DENMARK": {
+    "DK": {
       "status": null,
       "name": "Denmark",
       "slug": "denmark",
@@ -824,28 +824,28 @@
       "has_pdf": false,
       "updated_at": "2026-02-18T11:29:19+00:00"
     },
-    "CROATIA": {
+    "HR": {
       "status": null,
       "name": "Croatia",
       "slug": "croatia",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:29:01+00:00"
     },
-    "BULGARIA": {
+    "BG": {
       "status": null,
       "name": "Bulgaria",
       "slug": "bulgaria",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:28:44+00:00"
     },
-    "AUSTRIA": {
+    "AT": {
       "status": null,
       "name": "Austria",
       "slug": "austria",
       "has_pdf": false,
       "updated_at": "2026-02-18T11:27:58+00:00"
     },
-    "GUATEMALA": {
+    "GT": {
       "status": "some_parts",
       "name": "Guatemala",
       "slug": "guatemala",
@@ -853,14 +853,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/65fac0c89316f5001d64c3c0/FCDO__TA__095_-_Guatemala_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-02-17T16:34:36+00:00"
     },
-    "MOROCCO": {
+    "MA": {
       "status": null,
       "name": "Morocco",
       "slug": "morocco",
       "has_pdf": false,
       "updated_at": "2026-02-17T10:48:54+00:00"
     },
-    "NIGER": {
+    "NE": {
       "status": "avoid_all",
       "name": "Niger",
       "slug": "niger",
@@ -868,14 +868,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69021020918e1f940b3cf7e5/FCDO__TA__029_-_Niger_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-02-17T10:42:49+00:00"
     },
-    "LIBERIA": {
+    "LR": {
       "status": null,
       "name": "Liberia",
       "slug": "liberia",
       "has_pdf": false,
       "updated_at": "2026-02-13T11:47:53+00:00"
     },
-    "BELARUS": {
+    "BY": {
       "status": "avoid_all",
       "name": "Belarus",
       "slug": "belarus",
@@ -883,14 +883,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/621a51bb8fa8f54916f45f67/FCDO_TA_057_-_Belarus_Travel_Advice_Ed2_WEB.jpg",
       "updated_at": "2025-12-15T12:16:53+00:00"
     },
-    "GUINEA": {
+    "GN": {
       "status": null,
       "name": "Guinea",
       "slug": "guinea",
       "has_pdf": false,
       "updated_at": "2026-02-12T10:13:29+00:00"
     },
-    "CAMEROON": {
+    "CM": {
       "status": "some_parts",
       "name": "Cameroon",
       "slug": "cameroon",
@@ -898,35 +898,35 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/698a079585bc7d6ba0fbc82e/FCDO__TA__008_-_Cameroon_Travel_Advice_Ed6__WEB_.jpg",
       "updated_at": "2026-02-09T16:16:46+00:00"
     },
-    "BOSNIA_AND_HERZEGOVINA": {
+    "BA": {
       "status": null,
       "name": "Bosnia and Herzegovina",
       "slug": "bosnia-and-herzegovina",
       "has_pdf": false,
       "updated_at": "2026-02-09T13:58:49+00:00"
     },
-    "SOUTH_AFRICA": {
+    "ZA": {
       "status": null,
       "name": "South Africa",
       "slug": "south-africa",
       "has_pdf": false,
       "updated_at": "2026-02-09T09:17:46+00:00"
     },
-    "NORTH_MACEDONIA": {
+    "MK": {
       "status": null,
       "name": "North Macedonia",
       "slug": "north-macedonia",
       "has_pdf": false,
       "updated_at": "2026-02-04T12:04:35+00:00"
     },
-    "MONTENEGRO": {
+    "ME": {
       "status": null,
       "name": "Montenegro",
       "slug": "montenegro",
       "has_pdf": false,
       "updated_at": "2026-02-04T12:03:40+00:00"
     },
-    "SERBIA": {
+    "RS": {
       "status": null,
       "name": "Serbia",
       "slug": "serbia",
@@ -941,7 +941,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/66152612c4c84de468346aee/FCDO__TA__049_-_C%C3%B4te_d_Ivoire_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-01-30T15:19:58+00:00"
     },
-    "MYANMAR": {
+    "MM": {
       "status": "some_parts",
       "name": "Myanmar (Burma)",
       "slug": "myanmar",
@@ -949,14 +949,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6931608e502f392086ee8bc8/FCDO_TA_064_-_Myanmar_Ed10_WEB.jpg",
       "updated_at": "2026-01-28T12:08:16+00:00"
     },
-    "CHILE": {
+    "CL": {
       "status": null,
       "name": "Chile",
       "slug": "chile",
       "has_pdf": false,
       "updated_at": "2026-01-27T12:51:50+00:00"
     },
-    "ERITREA": {
+    "ER": {
       "status": "some_parts",
       "name": "Eritrea",
       "slug": "eritrea",
@@ -964,7 +964,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/62558a0c8fa8f54a9055161a/FCDO__TA__016_-_Eritrea_Travel_Advice_Ed4__WEB_.jpg",
       "updated_at": "2026-01-27T11:43:18+00:00"
     },
-    "SOMALIA": {
+    "SO": {
       "status": "some_parts",
       "name": "Somalia",
       "slug": "somalia",
@@ -972,56 +972,56 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/61a63d6be90e07044b1ef4b5/s.jpg",
       "updated_at": "2026-01-26T16:49:01+00:00"
     },
-    "BARBADOS": {
+    "BB": {
       "status": null,
       "name": "Barbados",
       "slug": "barbados",
       "has_pdf": false,
       "updated_at": "2026-01-23T15:06:44+00:00"
     },
-    "PARAGUAY": {
+    "PY": {
       "status": null,
       "name": "Paraguay",
       "slug": "paraguay",
       "has_pdf": false,
       "updated_at": "2026-01-21T16:11:30+00:00"
     },
-    "SEYCHELLES": {
+    "SC": {
       "status": null,
       "name": "Seychelles",
       "slug": "seychelles",
       "has_pdf": false,
       "updated_at": "2026-01-21T12:01:13+00:00"
     },
-    "SIERRA_LEONE": {
+    "SL": {
       "status": null,
       "name": "Sierra Leone",
       "slug": "sierra-leone",
       "has_pdf": false,
       "updated_at": "2026-01-05T15:10:44+00:00"
     },
-    "ZIMBABWE": {
+    "ZW": {
       "status": null,
       "name": "Zimbabwe",
       "slug": "zimbabwe",
       "has_pdf": false,
       "updated_at": "2026-01-20T14:14:32+00:00"
     },
-    "UGANDA": {
+    "UG": {
       "status": null,
       "name": "Uganda",
       "slug": "uganda",
       "has_pdf": false,
       "updated_at": "2026-01-19T17:00:32+00:00"
     },
-    "MALAWI": {
+    "MW": {
       "status": null,
       "name": "Malawi",
       "slug": "malawi",
       "has_pdf": false,
       "updated_at": "2026-01-05T15:34:05+00:00"
     },
-    "UKRAINE": {
+    "UA": {
       "status": "some_parts",
       "name": "Ukraine",
       "slug": "ukraine",
@@ -1029,28 +1029,28 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
       "updated_at": "2026-01-15T17:41:32+00:00"
     },
-    "COMOROS": {
+    "KM": {
       "status": null,
       "name": "Comoros",
       "slug": "comoros",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:42:55+00:00"
     },
-    "HONDURAS": {
+    "HN": {
       "status": null,
       "name": "Honduras",
       "slug": "honduras",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:57:38+00:00"
     },
-    "EL_SALVADOR": {
+    "SV": {
       "status": null,
       "name": "El Salvador",
       "slug": "el-salvador",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:31:17+00:00"
     },
-    "CHAD": {
+    "TD": {
       "status": "some_parts",
       "name": "Chad",
       "slug": "chad",
@@ -1058,14 +1058,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/60dc7052e90e07717b84dc57/FCDO__TA__010_-_Chad_Travel_Advice_Ed4__WEB_.jpg",
       "updated_at": "2025-12-10T13:18:54+00:00"
     },
-    "NICARAGUA": {
+    "NI": {
       "status": null,
       "name": "Nicaragua",
       "slug": "nicaragua",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:20:42+00:00"
     },
-    "MAURITANIA": {
+    "MR": {
       "status": "some_parts",
       "name": "Mauritania",
       "slug": "mauritania",
@@ -1080,7 +1080,7 @@
       "has_pdf": false,
       "updated_at": "2026-01-13T16:52:31+00:00"
     },
-    "LIBYA": {
+    "LY": {
       "status": "some_parts",
       "name": "Libya",
       "slug": "libya",
@@ -1088,14 +1088,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/68237cb42b7ca0cc347e081e/FCDO__TA__024_-_Libya_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-01-14T21:24:22+00:00"
     },
-    "ALBANIA": {
+    "AL": {
       "status": null,
       "name": "Albania",
       "slug": "albania",
       "has_pdf": false,
       "updated_at": "2025-12-10T12:40:35+00:00"
     },
-    "MALI": {
+    "ML": {
       "status": "avoid_all",
       "name": "Mali",
       "slug": "mali",
@@ -1103,14 +1103,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/690369fee2ebc0fb39a51ffc/FCDO_TA_026_-_Mali_Travel_Advice_Ed7_WEB.jpg",
       "updated_at": "2026-01-08T10:34:42+00:00"
     },
-    "EQUATORIAL_GUINEA": {
+    "GQ": {
       "status": null,
       "name": "Equatorial Guinea",
       "slug": "equatorial-guinea",
       "has_pdf": false,
       "updated_at": "2026-01-08T10:25:07+00:00"
     },
-    "TANZANIA": {
+    "TZ": {
       "status": "some_parts",
       "name": "Tanzania",
       "slug": "tanzania",
@@ -1118,7 +1118,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/690e25f165da22dd57729905/FCDO__TA__086_-_Tanzania_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2025-12-10T15:29:15+00:00"
     },
-    "KAZAKHSTAN": {
+    "KZ": {
       "status": null,
       "name": "Kazakhstan",
       "slug": "kazakhstan",
@@ -1139,7 +1139,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-11T11:32:17+00:00"
     },
-    "BAHAMAS": {
+    "BS": {
       "status": null,
       "name": "Bahamas",
       "slug": "bahamas",
@@ -1153,28 +1153,28 @@
       "has_pdf": false,
       "updated_at": "2026-01-05T14:54:43+00:00"
     },
-    "MONGOLIA": {
+    "MN": {
       "status": null,
       "name": "Mongolia",
       "slug": "mongolia",
       "has_pdf": false,
       "updated_at": "2026-01-02T14:09:56+00:00"
     },
-    "COSTA_RICA": {
+    "CR": {
       "status": null,
       "name": "Costa Rica",
       "slug": "costa-rica",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:09:22+00:00"
     },
-    "SOUTH_KOREA": {
+    "KR": {
       "status": null,
       "name": "South Korea",
       "slug": "south-korea",
       "has_pdf": false,
       "updated_at": "2025-12-30T11:34:26+00:00"
     },
-    "BENIN": {
+    "BJ": {
       "status": "some_parts",
       "name": "Benin",
       "slug": "benin",
@@ -1182,7 +1182,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69403ab8adb5707d9f33d7ce/FCDO__TA__051_-_Benin_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2025-12-15T16:50:33+00:00"
     },
-    "TAIWAN": {
+    "TW": {
       "status": null,
       "name": "Taiwan",
       "slug": "taiwan",
@@ -1197,7 +1197,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/66d031530b53069322597c76/FCDO__TA__052_-_Kosovo_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2025-12-19T10:01:16+00:00"
     },
-    "RWANDA": {
+    "RW": {
       "status": "some_parts",
       "name": "Rwanda",
       "slug": "rwanda",
@@ -1205,21 +1205,21 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/694416f88f4636fa2c547e9a/FCDO__TA__100_-_Rwanda_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2025-12-18T15:03:23+00:00"
     },
-    "JAMAICA": {
+    "JM": {
       "status": null,
       "name": "Jamaica",
       "slug": "jamaica",
       "has_pdf": false,
       "updated_at": "2025-12-10T12:51:54+00:00"
     },
-    "GUINEA_BISSAU": {
+    "GW": {
       "status": null,
       "name": "Guinea-Bissau",
       "slug": "guinea-bissau",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:55:45+00:00"
     },
-    "TOGO": {
+    "TG": {
       "status": "some_parts",
       "name": "Togo",
       "slug": "togo",
@@ -1227,7 +1227,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/694038f06a12691d4849200a/FCDO__TA__041_-_Togo_Travel_Advice_Ed4__WEB_.jpg",
       "updated_at": "2025-12-15T16:47:10+00:00"
     },
-    "HAITI": {
+    "HT": {
       "status": "avoid_all",
       "name": "Haiti",
       "slug": "haiti",
@@ -1242,14 +1242,14 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:54:06+00:00"
     },
-    "GRENADA": {
+    "GD": {
       "status": null,
       "name": "Grenada",
       "slug": "grenada",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:53:19+00:00"
     },
-    "GHANA": {
+    "GH": {
       "status": "some_parts",
       "name": "Ghana",
       "slug": "ghana",
@@ -1257,14 +1257,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/65dca99ff1cab30011fc4712/FCDO__TA__090_-_Ghana_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2025-12-10T13:51:55+00:00"
     },
-    "MONACO": {
+    "MC": {
       "status": null,
       "name": "Monaco",
       "slug": "monaco",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:45:13+00:00"
     },
-    "MOLDOVA": {
+    "MD": {
       "status": "some_parts",
       "name": "Moldova",
       "slug": "moldova",
@@ -1294,7 +1294,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:41:54+00:00"
     },
-    "SOUTH_SUDAN": {
+    "SS": {
       "status": "avoid_all",
       "name": "South Sudan",
       "slug": "south-sudan",
@@ -1302,7 +1302,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/5f4f33bfe90e071c6c7d9425/FCDO__TA__036_-_South_Sudan_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2025-12-10T13:40:52+00:00"
     },
-    "MAURITIUS": {
+    "MU": {
       "status": null,
       "name": "Mauritius",
       "slug": "mauritius",
@@ -1316,7 +1316,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:37:46+00:00"
     },
-    "GABON": {
+    "GA": {
       "status": null,
       "name": "Gabon",
       "slug": "gabon",
@@ -1337,28 +1337,28 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:36:08+00:00"
     },
-    "SENEGAL": {
+    "SN": {
       "status": null,
       "name": "Senegal",
       "slug": "senegal",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:35:01+00:00"
     },
-    "SAO_TOME_AND_PRINCIPE": {
+    "ST": {
       "status": null,
       "name": "São Tomé and Principe",
       "slug": "sao-tome-and-principe",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:33:54+00:00"
     },
-    "SAN_MARINO": {
+    "SM": {
       "status": null,
       "name": "San Marino",
       "slug": "san-marino",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:33:32+00:00"
     },
-    "ESWATINI": {
+    "SZ": {
       "status": null,
       "name": "Eswatini",
       "slug": "eswatini",
@@ -1372,28 +1372,28 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:30:27+00:00"
     },
-    "DOMINICAN_REPUBLIC": {
+    "DO": {
       "status": null,
       "name": "Dominican Republic",
       "slug": "dominican-republic",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:29:21+00:00"
     },
-    "PANAMA": {
+    "PA": {
       "status": null,
       "name": "Panama",
       "slug": "panama",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:26:25+00:00"
     },
-    "PALAU": {
+    "PW": {
       "status": null,
       "name": "Palau",
       "slug": "palau",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:25:21+00:00"
     },
-    "NORTH_KOREA": {
+    "KP": {
       "status": "avoid_all_but_essential",
       "name": "North Korea",
       "slug": "north-korea",
@@ -1408,7 +1408,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:19:36+00:00"
     },
-    "CENTRAL_AFRICAN_REPUBLIC": {
+    "CF": {
       "status": "some_parts",
       "name": "Central African Republic",
       "slug": "central-african-republic",
@@ -1416,7 +1416,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/664616ceb7249a4c6e9d3673/FCDO__TA__009_-_Central_African_Republic_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2025-12-10T13:18:11+00:00"
     },
-    "CANADA": {
+    "CA": {
       "status": null,
       "name": "Canada",
       "slug": "canada",
@@ -1430,14 +1430,14 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:16:00+00:00"
     },
-    "NAMIBIA": {
+    "NA": {
       "status": null,
       "name": "Namibia",
       "slug": "namibia",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:15:46+00:00"
     },
-    "BURKINA_FASO": {
+    "BF": {
       "status": "avoid_all",
       "name": "Burkina Faso",
       "slug": "burkina-faso",
@@ -1445,7 +1445,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6880fe502b6fd60b7c160f72/FCDO_TA_006_-_Burkina_Faso_Travel_Advice_Ed2_WEB.jpg",
       "updated_at": "2025-12-10T13:14:03+00:00"
     },
-    "LESOTHO": {
+    "LS": {
       "status": null,
       "name": "Lesotho",
       "slug": "lesotho",
@@ -1459,21 +1459,21 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:10:48+00:00"
     },
-    "BHUTAN": {
+    "BT": {
       "status": null,
       "name": "Bhutan",
       "slug": "bhutan",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:09:24+00:00"
     },
-    "BELIZE": {
+    "BZ": {
       "status": null,
       "name": "Belize",
       "slug": "belize",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:07:17+00:00"
     },
-    "ZAMBIA": {
+    "ZM": {
       "status": null,
       "name": "Zambia",
       "slug": "zambia",
@@ -1495,7 +1495,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:02:12+00:00"
     },
-    "URUGUAY": {
+    "UY": {
       "status": null,
       "name": "Uruguay",
       "slug": "uruguay",
@@ -1509,7 +1509,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T12:56:52+00:00"
     },
-    "ARGENTINA": {
+    "AR": {
       "status": null,
       "name": "Argentina",
       "slug": "argentina",
@@ -1523,7 +1523,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T12:48:06+00:00"
     },
-    "ANGOLA": {
+    "AO": {
       "status": "some_parts",
       "name": "Angola",
       "slug": "angola",
@@ -1531,14 +1531,14 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6437d3f1db4ba90013448e0a/FCDO__TA__053_-_Angola_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2025-12-10T12:47:53+00:00"
     },
-    "ANDORRA": {
+    "AD": {
       "status": null,
       "name": "Andorra",
       "slug": "andorra",
       "has_pdf": false,
       "updated_at": "2025-12-10T12:46:46+00:00"
     },
-    "BURUNDI": {
+    "BI": {
       "status": "some_parts",
       "name": "Burundi",
       "slug": "burundi",
@@ -1546,7 +1546,7 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6939587c5cc812f50aa41eff/FCDO_TA_007_-_Burundi_Travel_Advice_Ed6_WEB.jpg",
       "updated_at": "2025-12-10T12:46:28+00:00"
     },
-    "SURINAME": {
+    "SR": {
       "status": null,
       "name": "Suriname",
       "slug": "suriname",
@@ -1560,7 +1560,7 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T12:39:48+00:00"
     },
-    "BRAZIL": {
+    "BR": {
       "status": "some_parts",
       "name": "Brazil",
       "slug": "brazil",

@@ -353,18 +353,20 @@ async function showInfoPanel(countryName, iso2, advisory) {
  
     // ── Escalation / improvement badge ───────────────────────────────
     // Compare against the previous snapshot in the timeline (if one exists)
-    const prevIndex = currentIndex + 1; // dates are descending; prevIndex = one day older
+    const prevIndex = currentIndex + 1;
     if (iso2 && prevIndex < snapshotDates.length) {
-      const prevDate = snapshotDates[prevIndex];
+      const prevDate  = snapshotDates[prevIndex];
+      const currStatus = advisory.status ?? null;
+      const currRank   = TIER_RANK[currStatus] ?? 0;
+
       try {
-        const prevSnap    = await loadSnapshot(prevDate);
+        const prevSnap     = await loadSnapshot(prevDate);
         const prevAdvisory = prevSnap.countries[iso2];
         const prevStatus   = prevAdvisory?.status ?? null;
-        const currStatus   = advisory.status ?? null;
- 
-        const currRank = TIER_RANK[currStatus] ?? 0;
-        const prevRank = TIER_RANK[prevStatus] ?? 0;
- 
+        const prevRank     = TIER_RANK[prevStatus] ?? 0;
+
+        console.log(`delta: curr="${currStatus}" (${currRank}) vs prev="${prevStatus}" (${prevRank})`);
+
         if (currRank > prevRank) {
           deltaEl.textContent = '▲ Escalated';
           deltaEl.className   = 'delta-badge escalated';
@@ -372,9 +374,9 @@ async function showInfoPanel(countryName, iso2, advisory) {
           deltaEl.textContent = '▼ Improved';
           deltaEl.className   = 'delta-badge improved';
         }
-        // Equal — leave hidden
-      } catch {
-        // Previous snapshot unavailable — silently skip badge
+        // Equal ranks — badge stays hidden
+      } catch (err) {
+        console.error('delta fetch failed:', err);
       }
     }
   }
