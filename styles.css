@@ -1,6 +1,6 @@
 /* ── Reset & tokens ───────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
 :root {
   --bg:         #0a0d12;
   --surface:    #111520;
@@ -8,7 +8,7 @@
   --text:       #c8d0e0;
   --text-muted: #4a5568;
   --accent:     #3b7dd8;
-
+ 
   /* Advisory tier colours */
   --avoid-all:      #e53e3e;
   --avoid-ess:      #dd6b20;
@@ -17,12 +17,12 @@
   --neutral:        #1e2a3d;
   --neutral-hover:  #253348;
 }
-
+ 
 html, body { height: 100%; background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; overflow: hidden; }
-
+ 
 /* ── Layout ───────────────────────────────────────────────────────── */
 #app { display: flex; flex-direction: column; height: 100vh; }
-
+ 
 /* ── Header ───────────────────────────────────────────────────────── */
 header {
   display: flex;
@@ -35,13 +35,13 @@ header {
   flex-shrink: 0;
   z-index: 1000;
 }
-
+ 
 .header-brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
+ 
 .header-flag {
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@ header {
 .header-flag span:nth-child(1) { background: #00247d; }
 .header-flag span:nth-child(2) { background: #cf142b; }
 .header-flag span:nth-child(3) { background: #00247d; }
-
+ 
 .header-title {
   font-size: 13px;
   font-weight: 700;
@@ -68,14 +68,14 @@ header {
   color: var(--text-muted);
   font-weight: 400;
 }
-
+ 
 .header-meta {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   color: var(--text-muted);
   letter-spacing: 0.05em;
 }
-
+ 
 .header-status {
   display: flex;
   align-items: center;
@@ -95,12 +95,103 @@ header {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.3; }
 }
-
+ 
+/* ── Time slider strip ────────────────────────────────────────────── */
+#slider-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  height: 40px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 999;
+}
+ 
+#slider-strip.hidden {
+  display: none;
+}
+ 
+.slider-endpoint {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+ 
+.slider-track-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+ 
+/* Custom range slider */
+#date-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+ 
+#date-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--accent);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+ 
+#date-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px rgba(59, 125, 216, 0.3);
+}
+ 
+#date-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--surface);
+  cursor: pointer;
+}
+ 
+#date-slider::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+}
+ 
+.slider-date-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 160px;
+  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+ 
+.slider-date-label.is-latest {
+  color: var(--accent);
+}
+ 
 /* ── Map area ─────────────────────────────────────────────────────── */
 #map-container { flex: 1; position: relative; overflow: hidden; min-height: 0; }
 #map { position: absolute; inset: 0; width: 100%; height: 100%; }
 .leaflet-container { background: inherit }
-
+ 
 /* ── Info panel ───────────────────────────────────────────────────── */
 #info-panel {
   position: absolute;
@@ -120,20 +211,20 @@ header {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
   opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+ 
 #info-panel.panel-hidden {
   transform: translateX(380px);
   opacity: 0;
   pointer-events: none;
 }
-
+ 
 .info-header {
   display: flex;
   justify-content: flex-end;
   padding: 12px 14px;
   border-bottom: 1px solid var(--border);
 }
-
+ 
 .close-btn {
   background: none;
   border: none;
@@ -154,13 +245,13 @@ header {
   background: var(--neutral-hover);
   color: var(--text);
 }
-
+ 
 .info-content {
   padding: 20px;
   overflow-y: auto;
   flex: 1;
 }
-
+ 
 #info-country-name {
   font-size: 22px;
   font-weight: 700;
@@ -168,7 +259,7 @@ header {
   margin-bottom: 12px;
   line-height: 1.2;
 }
-
+ 
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -178,46 +269,79 @@ header {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
-
+ 
 .status-badge.avoid-all {
   background: rgba(229, 62, 62, 0.15);
   color: #fc8181;
   border: 1px solid rgba(229, 62, 62, 0.3);
 }
-
+ 
 .status-badge.avoid-essential {
   background: rgba(221, 107, 32, 0.15);
   color: #f6ad55;
   border: 1px solid rgba(221, 107, 32, 0.3);
 }
-
+ 
 .status-badge.some-parts {
   background: rgba(214, 158, 46, 0.15);
   color: #f6e05e;
   border: 1px solid rgba(214, 158, 46, 0.3);
 }
-
+ 
 .status-badge.no-warning {
   background: rgba(45, 138, 94, 0.15);
   color: #68d391;
   border: 1px solid rgba(45, 138, 94, 0.3);
 }
-
+ 
 .status-badge.no-data {
   background: rgba(30, 42, 61, 0.5);
   color: var(--text-muted);
   border: 1px solid var(--border);
 }
-
+ 
+/* ── Delta / escalation badge ─────────────────────────────────────── */
+.delta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  margin-left: 6px;
+}
+ 
+.delta-badge.escalated {
+  background: rgba(229, 62, 62, 0.12);
+  color: #fc8181;
+  border: 1px solid rgba(229, 62, 62, 0.25);
+}
+ 
+.delta-badge.improved {
+  background: rgba(45, 138, 94, 0.12);
+  color: #68d391;
+  border: 1px solid rgba(45, 138, 94, 0.25);
+}
+ 
+.delta-badge.hidden {
+  display: none;
+}
+ 
 #info-description {
   font-size: 14px;
   line-height: 1.6;
   color: var(--text);
   margin-bottom: 20px;
+  margin-top: 8px;
 }
-
+ 
 .gov-link {
   display: inline-flex;
   align-items: center;
@@ -234,7 +358,7 @@ header {
 .gov-link:hover {
   background: #4a90e2;
 }
-
+ 
 /* ── Legend ───────────────────────────────────────────────────────── */
 #legend {
   position: absolute;
@@ -248,7 +372,7 @@ header {
   backdrop-filter: blur(8px);
   min-width: 210px;
 }
-
+ 
 .legend-heading {
   font-size: 9px;
   font-weight: 700;
@@ -257,7 +381,7 @@ header {
   color: var(--text-muted);
   margin-bottom: 10px;
 }
-
+ 
 .legend-item {
   display: flex;
   align-items: center;
@@ -280,7 +404,7 @@ header {
   color: var(--text-muted);
   display: block;
 }
-
+ 
 /* ── Country count badge ──────────────────────────────────────────── */
 #country-count {
   position: absolute;
@@ -306,7 +430,7 @@ header {
   line-height: 1;
   margin-bottom: 2px;
 }
-
+ 
 /* ── Loading overlay ──────────────────────────────────────────────── */
 #loading {
   position: absolute;
@@ -321,7 +445,7 @@ header {
   transition: opacity 0.5s ease;
 }
 #loading.hidden { opacity: 0; pointer-events: none; }
-
+ 
 .loader-ring {
   width: 40px; height: 40px;
   border: 2px solid var(--border);
@@ -330,17 +454,17 @@ header {
   animation: spin 0.9s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-
+ 
 .loader-label {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--text-muted);
 }
-
+ 
 /* ── Utility ──────────────────────────────────────────────────────── */
 .hidden { display: none !important; }
-
+ 
 /* ── Leaflet overrides ────────────────────────────────────────────── */
 .leaflet-control-zoom {
   border: 1px solid var(--border) !important;
@@ -362,7 +486,7 @@ header {
   font-size: 10px !important;
 }
 .leaflet-control-attribution a { color: #4a6fa5 !important; }
-
+ 
 /* Tooltip */
 .country-tooltip {
   background: rgba(17, 21, 32, 0.95);

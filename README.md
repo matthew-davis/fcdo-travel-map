@@ -93,11 +93,11 @@ Work through these steps in order. Update the status marker for each task as wor
 ### Step 6 — Time slider
 > Add a date slider to the header. The page loads an index of available snapshots and lets the user scrub between dates.
 
-- [ ] Generate / maintain a `data/snapshot_index.json` listing all available snapshot dates
-- [ ] Update the scraper to append to this index on each run
-- [ ] Add slider UI to the page header
-- [ ] Wire slider to swap the active snapshot and re-colour the map
-- [ ] Show a **▲ escalated** / **▼ improved** badge in the info panel when a country's status differs from the previous snapshot
+- [X] Generate / maintain a `data/snapshot_index.json` listing all available snapshot dates
+- [X] Update the scraper to append to this index on each run
+- [X] Add slider UI to the page header
+- [X] Wire slider to swap the active snapshot and re-colour the map
+- [X] Show a **▲ escalated** / **▼ improved** badge in the info panel when a country's status differs from the previous snapshot
 
 ---
 
@@ -118,6 +118,7 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Responsive layout for info panel and time slider on small screens
 - [ ] Graceful error handling (missing PDFs, API failures, unknown country codes)
 - [ ] Optional: search box to zoom/highlight a country by name
+- [ ] Need to generate some kind of stats on visitors optional to aso denote where they are looking at the site from
 
 ---
 

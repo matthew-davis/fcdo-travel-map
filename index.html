@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="app">
-
+ 
   <header>
     <div class="header-brand">
       <div class="header-flag">
@@ -23,26 +23,47 @@
         FCDO Travel Advisory <span>/ World Map</span>
       </div>
     </div>
-
+ 
     <div class="header-meta">
-      Step 3 — Country Click Panel
+      Snapshot: —
     </div>
-
+ 
     <div class="header-status">
       <span class="status-dot"></span>
       Polygons loading…
     </div>
   </header>
-
+ 
+  <!-- ── Time slider strip ──────────────────────────────────────── -->
+  <div id="slider-strip">
+    <span id="slider-oldest" class="slider-endpoint">—</span>
+ 
+    <div class="slider-track-wrap">
+      <input
+        id="date-slider"
+        type="range"
+        min="0"
+        max="0"
+        value="0"
+        step="1"
+        aria-label="Select snapshot date"
+      />
+    </div>
+ 
+    <span id="slider-date-label" class="slider-date-label is-latest">—</span>
+ 
+    <span id="slider-newest" class="slider-endpoint">—</span>
+  </div>
+ 
   <div id="map-container">
     <!-- Loading overlay -->
     <div id="loading">
       <div class="loader-ring"></div>
-      <div class="loader-label">Loading world polygons…</div>
+      <div class="loader-label">Loading snapshot index…</div>
     </div>
-
+ 
     <div id="map"></div>
-
+ 
     <!-- Info panel (hidden by default) -->
     <div id="info-panel" class="panel-hidden">
       <div class="info-header">
@@ -51,17 +72,19 @@
       <div class="info-content">
         <h2 id="info-country-name">—</h2>
         <div id="info-status-badge" class="status-badge">—</div>
+        <!-- Delta badge: shown when status differs from previous snapshot -->
+        <div id="info-delta-badge" class="delta-badge hidden"></div>
         <p id="info-description">Click a country to see travel advice.</p>
         <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
           View full advice on GOV.UK →
         </a>
       </div>
     </div>
-
+ 
     <!-- Legend -->
     <div id="legend">
       <div class="legend-heading">Advisory Tiers</div>
-
+ 
       <div class="legend-item">
         <div class="legend-swatch" style="background:var(--avoid-all)"></div>
         <div class="legend-label">
@@ -98,7 +121,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- Country count -->
     <div id="country-count">
       <strong id="count-num">—</strong>

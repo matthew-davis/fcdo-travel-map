@@ -21,6 +21,14 @@ const TIER_COLORS = {
   unknown:                 '#1e2a3d',  // neutral grey (no data)
 };
  
+// Advisory tier numeric rank — higher = more severe
+const TIER_RANK = {
+  avoid_all:               3,
+  avoid_all_but_essential: 2,
+  some_parts:              1,
+  null:                    0,
+};
+ 
 // ── Country styles ────────────────────────────────────────────────────
 const HOVER_STYLE = {
   fillOpacity: 1,
@@ -65,17 +73,120 @@ function getCountryStyle(feature, snapshot) {
   };
 }
  
-// ── Load snapshot then GeoJSON ────────────────────────────────────────
-let countryLayer = null;
+// ── State ─────────────────────────────────────────────────────────────
+let countryLayer    = null;
 let currentSnapshot = null;
+let snapshotDates   = [];    // descending: [newest, ..., oldest]
+let currentIndex    = 0;     // index into snapshotDates; 0 = newest
  
-fetch('data/snapshot_today.json')
+// Cache for already-fetched snapshots — keyed by date string
+const snapshotCache = new Map();
+ 
+// ── Snapshot fetching ─────────────────────────────────────────────────
+ 
+async function loadSnapshot(date) {
+  if (snapshotCache.has(date)) return snapshotCache.get(date);
+ 
+  const path = date === snapshotDates[0]
+    ? 'data/snapshot_today.json'
+    : `data/snapshots/snapshot_${date}.json`;
+ 
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`HTTP ${res.status} loading snapshot for ${date}`);
+  const snap = await res.json();
+  snapshotCache.set(date, snap);
+  return snap;
+}
+ 
+// ── Apply a snapshot to the map ───────────────────────────────────────
+ 
+function applySnapshot(snapshot) {
+  currentSnapshot = snapshot;
+  if (countryLayer) {
+    countryLayer.setStyle((feature) => getCountryStyle(feature, snapshot));
+  }
+  updateSliderDateLabel();
+}
+ 
+// ── Slider UI helpers ─────────────────────────────────────────────────
+ 
+function updateSliderDateLabel() {
+  const date = snapshotDates[currentIndex];
+  if (!date) return;
+ 
+  const label = document.getElementById('slider-date-label');
+  const isLatest = currentIndex === 0;
+ 
+  // Format date nicely: "30 Mar 2026"
+  const [y, m, d] = date.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const formatted = `${parseInt(d, 10)} ${months[parseInt(m,10)-1]} ${y}`;
+ 
+  label.textContent = isLatest ? `${formatted} (latest)` : formatted;
+  label.classList.toggle('is-latest', isLatest);
+}
+ 
+function buildSlider() {
+  const slider = document.getElementById('date-slider');
+  if (!slider || snapshotDates.length < 2) {
+    // Only one snapshot — hide the entire strip
+    document.getElementById('slider-strip').classList.add('hidden');
+    return;
+  }
+ 
+  slider.min   = 0;
+  slider.max   = snapshotDates.length - 1;
+  slider.value = 0;
+ 
+  // Show date range endpoints
+  const oldest = snapshotDates[snapshotDates.length - 1];
+  const newest = snapshotDates[0];
+  const [oy, om, od] = oldest.split('-');
+  const [ny, nm, nd] = newest.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('slider-oldest').textContent =
+    `${parseInt(od,10)} ${months[parseInt(om,10)-1]} ${oy}`;
+  document.getElementById('slider-newest').textContent =
+    `${parseInt(nd,10)} ${months[parseInt(nm,10)-1]} ${ny}`;
+ 
+  updateSliderDateLabel();
+ 
+  slider.addEventListener('input', async () => {
+    const idx = parseInt(slider.value, 10);
+    currentIndex = idx;
+    const date = snapshotDates[idx];
+ 
+    // Show loading state on label
+    document.getElementById('slider-date-label').textContent = 'Loading…';
+ 
+    try {
+      const snap = await loadSnapshot(date);
+      applySnapshot(snap);
+    } catch (err) {
+      console.error('Failed to load snapshot:', err);
+      document.getElementById('slider-date-label').textContent = 'Load failed';
+    }
+  });
+}
+ 
+// ── Load snapshot index then GeoJSON ─────────────────────────────────
+ 
+fetch('data/snapshot_index.json')
   .then(r => {
-    if (!r.ok) throw new Error(`HTTP ${r.status} loading snapshot`);
+    if (!r.ok) throw new Error(`HTTP ${r.status} loading snapshot index`);
     return r.json();
+  })
+  .then(index => {
+    snapshotDates = index.dates; // already sorted descending by scraper
+ 
+    // Update loading label
+    document.querySelector('.loader-label').textContent = 'Loading advisory data…';
+ 
+    return loadSnapshot(snapshotDates[0]);
   })
   .then(snapshot => {
     currentSnapshot = snapshot;
+    snapshotCache.set(snapshotDates[0], snapshot);
  
     // Update loading label
     document.querySelector('.loader-label').textContent = 'Loading world polygons…';
@@ -117,12 +228,13 @@ fetch('data/snapshot_today.json')
  
         // Store ISO2 for hover restoration
         layer._iso2 = iso2;
-        layer._advisory = advisory;
         layer._name = name;
  
         layer.on({
           click() {
-            showInfoPanel(name, iso2, advisory);
+            // Read advisory from *current* snapshot at click time (may have changed via slider)
+            const liveAdvisory = currentSnapshot.countries[iso2];
+            showInfoPanel(name, iso2, liveAdvisory);
           },
           mouseover(e) {
             const currentStyle = getCountryStyle(feature, currentSnapshot);
@@ -153,6 +265,9 @@ fetch('data/snapshot_today.json')
     // Update header meta with real snapshot date
     document.querySelector('.header-meta').textContent =
       `Snapshot: ${currentSnapshot.date}`;
+ 
+    // Build time slider now that we know how many dates exist
+    buildSlider();
   })
   .catch(err => {
     console.error('Load failed:', err);
@@ -177,14 +292,19 @@ fetch('data/snapshot_today.json')
  
 // ── Info panel functions ──────────────────────────────────────────────
  
-function showInfoPanel(countryName, iso2, advisory) {
+async function showInfoPanel(countryName, iso2, advisory) {
   const panel    = document.getElementById('info-panel');
   const nameEl   = document.getElementById('info-country-name');
   const badgeEl  = document.getElementById('info-status-badge');
   const descEl   = document.getElementById('info-description');
   const linkEl   = document.getElementById('info-link');
+  const deltaEl  = document.getElementById('info-delta-badge');
  
   nameEl.textContent = countryName;
+ 
+  // Clear any previous delta badge
+  deltaEl.textContent = '';
+  deltaEl.className   = 'delta-badge hidden';
  
   if (!advisory) {
     badgeEl.textContent  = 'No advisory data';
@@ -230,6 +350,33 @@ function showInfoPanel(countryName, iso2, advisory) {
  
     linkEl.href = `https://www.gov.uk/foreign-travel-advice/${advisory.slug}`;
     linkEl.classList.remove('hidden');
+ 
+    // ── Escalation / improvement badge ───────────────────────────────
+    // Compare against the previous snapshot in the timeline (if one exists)
+    const prevIndex = currentIndex + 1; // dates are descending; prevIndex = one day older
+    if (iso2 && prevIndex < snapshotDates.length) {
+      const prevDate = snapshotDates[prevIndex];
+      try {
+        const prevSnap    = await loadSnapshot(prevDate);
+        const prevAdvisory = prevSnap.countries[iso2];
+        const prevStatus   = prevAdvisory?.status ?? null;
+        const currStatus   = advisory.status ?? null;
+ 
+        const currRank = TIER_RANK[currStatus] ?? 0;
+        const prevRank = TIER_RANK[prevStatus] ?? 0;
+ 
+        if (currRank > prevRank) {
+          deltaEl.textContent = '▲ Escalated';
+          deltaEl.className   = 'delta-badge escalated';
+        } else if (currRank < prevRank) {
+          deltaEl.textContent = '▼ Improved';
+          deltaEl.className   = 'delta-badge improved';
+        }
+        // Equal — leave hidden
+      } catch {
+        // Previous snapshot unavailable — silently skip badge
+      }
+    }
   }
  
   panel.classList.remove('panel-hidden');
