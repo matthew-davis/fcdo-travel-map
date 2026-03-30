@@ -1,5 +1,5 @@
 name: Daily FCDO Advisory Scrape
-
+ 
 on:
   schedule:
     # Run at 06:30 UTC every day (FCDO typically updates overnight UK time)
@@ -11,22 +11,35 @@ on:
         description: "Date label for snapshot (YYYY-MM-DD). Defaults to today."
         required: false
         default: ""
-
+ 
+# Grant the minimum permissions needed for each job
+permissions:
+  contents: write   # job: scrape  — commit snapshot back to repo
+  pages: write      # job: deploy  — publish to GitHub Pages
+  id-token: write   # job: deploy  — required by actions/deploy-pages
+ 
 jobs:
+  # ── Job 1: fetch data and commit snapshot ───────────────────────────
   scrape:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # needed to commit back to the repo
-
+      contents: write
+ 
+    outputs:
+      # Passes "true" to the deploy job only when new data was actually committed.
+      # The deploy job still runs on workflow_dispatch even if no new data landed,
+      # so you can force a redeploy without faking a data change.
+      changed: ${{ steps.commit.outputs.changed }}
+ 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+ 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
+ 
       - name: Run scraper
         run: |
           DATE_ARG=""
@@ -34,19 +47,59 @@ jobs:
             DATE_ARG="--date ${{ github.event.inputs.date_override }}"
           fi
           node scripts/scraper.js $DATE_ARG
-
+ 
       - name: Commit and push snapshot
+        id: commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
+ 
           git add data/snapshots/ data/snapshot_today.json
-
-          # Only commit if there are actual changes
+ 
           if git diff --cached --quiet; then
             echo "No changes to commit — advisory data unchanged since last run."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             TODAY=$(date -u +%Y-%m-%d)
             git commit -m "chore: FCDO snapshot ${TODAY}"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+ 
+  # ── Job 2: deploy to GitHub Pages ───────────────────────────────────
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+ 
+    # Deploy when:
+    #   • new snapshot data was committed  (scheduled run with fresh data)
+    #   • OR the workflow was triggered manually  (force-redeploy)
+    if: needs.scrape.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+ 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+ 
+    permissions:
+      pages: write
+      id-token: write
+ 
+    steps:
+      - name: Checkout repository (with latest committed snapshot)
+        uses: actions/checkout@v4
+        with:
+          # Pull the commit that the scrape job just pushed, if any
+          ref: ${{ github.ref }}
+ 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+ 
+      - name: Upload site to Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the whole repo root — index.html, scripts.js, styles.css, data/
+          path: "."
+ 
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

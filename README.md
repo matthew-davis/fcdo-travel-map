@@ -82,11 +82,11 @@ Work through these steps in order. Update the status marker for each task as wor
 ### Step 5 — GitHub Actions automation
 > `.github/workflows/daily_scrape.yml` is written. Verify it runs correctly end-to-end.
 
-- [~] `daily_scrape.yml` written (cron at 06:30 UTC)
-- [ ] Trigger the workflow manually from the Actions tab and confirm it succeeds
-- [ ] Confirm snapshot file is committed and pushed by the bot
-- [ ] Confirm GitHub Pages rebuilds after the push
-- [ ] Check the live site reflects the new snapshot
+- [X] `daily_scrape.yml` written (cron at 06:30 UTC)
+- [X] Trigger the workflow manually from the Actions tab and confirm it succeeds
+- [X] Confirm snapshot file is committed and pushed by the bot
+- [X] Confirm GitHub Pages rebuilds after the push
+- [X] Check the live site reflects the new snapshot
 
 ---
 
