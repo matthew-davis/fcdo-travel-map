@@ -71,11 +71,11 @@ Work through these steps in order. Update the status marker for each task as wor
 ### Step 4 — GOV.UK scraper
 > `scripts/scraper.js` is written. Run it manually, validate the output, and produce a real snapshot file.
 
-- [~] `scripts/scraper.js` written
-- [ ] Run scraper manually and confirm it completes without errors
-- [ ] Validate output JSON against the data model (correct ISO2 codes, valid status values)
-- [ ] Commit a real snapshot file to `data/snapshots/`
-- [ ] Wire `index.html` to load `data/snapshot_today.json` (symlink or latest file)
+- [X] `scripts/scraper.js` written
+- [X] Run scraper manually and confirm it completes without errors
+- [X] Validate output JSON against the data model (correct ISO2 codes, valid status values)
+- [X] Commit a real snapshot file to `data/snapshots/`
+- [X] Wire `index.html` to load `data/snapshot_today.json` (symlink or latest file)
 
 ---
 
