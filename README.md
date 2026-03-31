@@ -130,8 +130,12 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Optional: search box to zoom/highlight a country by name
 - [ ] Need to generate some kind of stats on visitors optional to also denote where they are looking at the site from
 - [ ] Limit the number of days kept 1 year? peraps maybe just a few months?
-- [ ] Refactor all of the code
 - [X] Add a custom domain
+- [ ] "Loading world polygons..." becomes "Loading world..."
+- [ ] xxx countries coloured becomes countries updated
+- [ ] Move the ledged further down givig the country information panel a bit more room
+- [ ] Add country details to the country details panel (Maybe pulled from Wikipedia side bar, includes flag, capital and details)
+- [ ] Refactor all of the code
 - [ ] Rewrite Readme file
 
 ---
