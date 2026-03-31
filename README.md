@@ -131,7 +131,7 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Need to generate some kind of stats on visitors optional to also denote where they are looking at the site from
 - [ ] Limit the number of days kept 1 year? peraps maybe just a few months?
 - [ ] Refactor all of the code
-- [ ] Add a custom domain
+- [X] Add a custom domain
 - [ ] Rewrite Readme file
 
 ---
