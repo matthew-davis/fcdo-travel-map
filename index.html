@@ -24,8 +24,8 @@
       </div>
     </div>
  
-    <div class="header-meta">
-      Snapshot: —
+    <div id="header-delta" class="header-delta">
+      <span id="header-delta-text">—</span>
     </div>
  
     <div class="header-status">
@@ -36,23 +36,18 @@
  
   <!-- ── Time slider strip ──────────────────────────────────────── -->
   <div id="slider-strip">
-    <span id="slider-oldest" class="slider-endpoint">—</span>
  
-    <div class="slider-track-wrap">
-      <input
-        id="date-slider"
-        type="range"
-        min="0"
-        max="0"
-        value="0"
-        step="1"
-        aria-label="Select snapshot date"
-      />
+    <!-- Date label on the left -->
+    <div id="slider-date-block">
+      <div id="slider-date-label" class="is-latest">—</div>
+      <div id="slider-date-sub">latest</div>
     </div>
  
-    <span id="slider-date-label" class="slider-date-label is-latest">—</span>
+    <!-- Custom canvas timeline -->
+    <div id="slider-track-wrap">
+      <canvas id="timeline-canvas"></canvas>
+    </div>
  
-    <span id="slider-newest" class="slider-endpoint">—</span>
   </div>
  
   <div id="map-container">

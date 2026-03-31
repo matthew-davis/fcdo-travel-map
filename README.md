@@ -98,13 +98,14 @@ Work through these steps in order. Update the status marker for each task as wor
 - [X] Add slider UI to the page header
 - [X] Wire slider to swap the active snapshot and re-colour the map
 - [X] Show a **▲ escalated** / **▼ improved** badge in the info panel when a country's status differs from previous snapshot
-- [ ] Need to troubleshoot colours updating when the slider moves
-- [ ] Need to confirm the bade appears when required
-- [ ] Re-design the slider bar (remove date at beginning and end)
-- [ ] Remove snapshot and date from header and add something else
-- [ ] Slightly less dark water colour, lighter grey
-- [ ] Can I lay lat long lines over the map?
+- [X] Need to troubleshoot colours updating when the slider moves
+- [X] Need to confirm the badge appears when required
+- [X] Re-design the slider bar (remove date at beginning and end)
+- [X] Remove snapshot and date from header and add something else
+- [X] Slightly less dark water colour, lighter grey
+- [X] Can I lay lat long lines over the map?
 - [ ] Better map placement? Against left side of window? Maybe a info bar on right instead of overlap
+- [ ] Country pop up Country name in title area
 
 ---
 
@@ -126,9 +127,11 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Responsive layout for info panel and time slider on small screens
 - [ ] Graceful error handling (missing PDFs, API failures, unknown country codes)
 - [ ] Optional: search box to zoom/highlight a country by name
-- [ ] Need to generate some kind of stats on visitors optional to aso denote where they are looking at the site from
+- [ ] Need to generate some kind of stats on visitors optional to also denote where they are looking at the site from
 - [ ] Limit the number of days kept 1 year? peraps maybe just a few months?
 - [ ] Refactor all of the code
+- [ ] Add a custom domain
+- [ ] Rewrite Readme file
 
 ---
 
