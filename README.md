@@ -118,7 +118,7 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Validate GeoJSON output and render as a Leaflet overlay
 - [ ] Process remaining PDF countries (Israel, Ukraine, etc.)
 - [ ] Only re-process a country when `public_updated_at` changes
-- [ ] Remove Mixed colour option from ledgend and countries
+- [ ] Remove Mixed colour option from legend and countries
 
 ---
 
@@ -129,13 +129,13 @@ Work through these steps in order. Update the status marker for each task as wor
 - [ ] Graceful error handling (missing PDFs, API failures, unknown country codes)
 - [ ] Optional: search box to zoom/highlight a country by name
 - [ ] Need to generate some kind of stats on visitors optional to also denote where they are looking at the site from
-- [ ] Limit the number of days kept 1 year? peraps maybe just a few months?
+- [ ] Limit the number of days kept 1 year? perhaps maybe just a few months?
 - [X] Add a custom domain
-- [ ] "Loading world polygons..." becomes "Loading world..."
-- [ ] xxx countries coloured becomes countries updated
-- [ ] Move the ledged further down givig the country information panel a bit more room
+- [X] "Loading world polygons..." becomes "Loading world..."
+- [X] xxx countries coloured becomes countries updated
+- [ ] Move the legend further down giving the country information panel a bit more room
 - [ ] Add country details to the country details panel (Maybe pulled from Wikipedia side bar, includes flag, capital and details)
-- [ ] Refactor all of the code
+- [ ] Refactor the code
 - [ ] Rewrite Readme file
 
 ---

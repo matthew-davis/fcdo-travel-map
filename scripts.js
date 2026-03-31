@@ -7,9 +7,9 @@ const map = L.map('map', {
   zoomControl: true,
   attributionControl: true,
 });
- 
+
 requestAnimationFrame(() => map.invalidateSize());
- 
+
 // ── Advisory tier colours ─────────────────────────────────────────────
 const TIER_COLORS = {
   avoid_all:               '#e53e3e',
@@ -18,14 +18,14 @@ const TIER_COLORS = {
   null:                    '#2d8a5e',
   unknown:                 '#0f1720',  // dark — no advisory data
 };
- 
+
 const TIER_RANK = {
   avoid_all:               3,
   avoid_all_but_essential: 2,
   some_parts:              1,
   null:                    0,
 };
- 
+
 // ── Country styles ────────────────────────────────────────────────────
 const HOVER_STYLE = {
   fillOpacity: 1,
@@ -33,14 +33,14 @@ const HOVER_STYLE = {
   color: '#3b7dd8',
   opacity: 1,
 };
- 
+
 function getCountryColor(iso2Code, snapshot) {
   const advisory = snapshot.countries[iso2Code];
   if (!advisory) return TIER_COLORS.unknown;
   const status = advisory.status ?? 'null';
   return TIER_COLORS[status] || TIER_COLORS.unknown;
 }
- 
+
 // ── Helper: match GeoJSON property to ISO2 ────────────────────────────
 // Natural Earth 10m has a known bug where France, Norway, Kosovo and
 // several other countries return ISO_A2 = "-99". We fall back to a
@@ -49,7 +49,7 @@ const NAME_TO_ISO2 = {
   // ── Natural Earth -99 bug fixes ───────────────────────────────────
   'France':                        'FR',
   'Norway':                        'NO',
- 
+
   // ── Name mismatches vs what scraper/snapshot expects ─────────────
   'Timor-Leste':                   'TL',   // NE uses hyphenated form
   'East Timor':                    'TL',   // fallback
@@ -67,10 +67,10 @@ const NAME_TO_ISO2 = {
   'Micronesia':                    'FM',
   'Faeroe Is.':                    'FO',
   'Åland':                         'AX',
- 
+
   // ── Taiwan special case — NE stores ISO as "CN-TW" ───────────────
   'Taiwan':                        'TW',
- 
+
   // ── Territories mapped to parent country below ────────────────────
   'Greenland':                     'GL',
   'Guam':                          'GU',
@@ -107,7 +107,7 @@ const NAME_TO_ISO2 = {
   'Niue':                          'NU',
   'Heard I. and McDonald Is.':     'HM',
   'U.S. Minor Outlying Is.':       'UM',
- 
+
   // ── French territories ────────────────────────────────────────────
   'French Guiana':                 'GF',
   'Martinique':                    'MQ',
@@ -121,7 +121,7 @@ const NAME_TO_ISO2 = {
   'Clipperton I.':                 'FR',
   'French S. and Antarctic Lands': 'TF',
 };
- 
+
 // Snapshot key overrides — the FCDO scraper sometimes stores data under
 // a different ISO2 than what Natural Earth resolves to.
 // Maps resolved ISO2 → the actual key used in snapshot.countries{}
@@ -136,7 +136,7 @@ const ISO2_TO_SNAPSHOT_KEY = {
   'TL': 'TIMOR_LESTE',
   'GM': 'THE_GAMBIA',
   'EH': 'WESTERN_SAHARA',
- 
+
   // ── Territory → parent remaps ─────────────────────────────────────
   'AX':    'FI',   // Åland → Finland
   'FO':    'DK',   // Faroe Islands → Denmark
@@ -155,59 +155,59 @@ const ISO2_TO_SNAPSHOT_KEY = {
   'VA':    null,   // Vatican — no FCDO advisory
   'BQ_KZ': 'KZ',  // Baikonur → Kazakhstan
 };
- 
+
 // Territories → parent country snapshot key
 const TERRITORY_TO_PARENT_ISO2 = {
   // French territories
   'GF': 'FR',  'MQ': 'FR',  'GP': 'FR',  'RE': 'FR',
   'YT': 'FR',  'PM': 'FR',  'NC': 'FR',  'PF': 'FR',
   'WF': 'FR',  'TF': 'FR',
- 
+
   // British territories
   'FK': 'GB',  'GS': 'GB',  'SH': 'GB',  'IO': 'GB',
   'PN': 'GB',  'GI': 'GB',  'GG': 'GB',  'JE': 'GB',
   'IM': 'GB',  'TC': 'GB',  'VG': 'GB',  'KY': 'GB',
   'MS': 'GB',  'AI': 'GB',  'BM': 'GB',
- 
+
   // US territories
   'GU': 'US',  'PR': 'US',  'VI': 'US',  'AS': 'US',  'MP': 'US',
- 
+
   // Greenland → Denmark
   'GL': 'DK',
 };
- 
+
 function getISO2FromFeature(feature) {
   const props = feature.properties;
- 
+
   // Try standard ISO2 fields
   let iso2 = props.ISO_A2 || props.iso_a2 || props.ISO2 || props.iso2 || null;
- 
+
   // Natural Earth bug: -99 means the code is missing
   if (!iso2 || iso2 === '-99') {
     iso2 = props.ISO_A2_EH || props.iso_a2_eh || null;
   }
- 
+
   // Taiwan special case — NE stores it as "CN-TW"
   if (iso2 === 'CN-TW') iso2 = 'TW';
- 
+
   if (!iso2 || iso2 === '-99') {
     const name = props.NAME || props.name || props.ADMIN || props.admin || '';
     iso2 = NAME_TO_ISO2[name] || null;
   }
- 
+
   if (!iso2 || iso2 === '-99') return null;
- 
+
   // Apply territory → parent remapping
   iso2 = TERRITORY_TO_PARENT_ISO2[iso2] || iso2;
- 
+
   // Apply snapshot key remapping (handles scraper key differences)
   if (iso2 in ISO2_TO_SNAPSHOT_KEY) {
     return ISO2_TO_SNAPSHOT_KEY[iso2]; // may be null for genuinely unadvised territories
   }
- 
+
   return iso2;
 }
- 
+
 function getCountryStyle(feature, snapshot) {
   const iso2 = getISO2FromFeature(feature);
   const fillColor = getCountryColor(iso2, snapshot);
@@ -219,7 +219,7 @@ function getCountryStyle(feature, snapshot) {
     opacity: 0.5,
   };
 }
- 
+
 function buildTooltipContent(name, iso2, snapshot) {
   const advisory = snapshot?.countries[iso2];
   if (!advisory) return name;
@@ -230,7 +230,7 @@ function buildTooltipContent(name, iso2, snapshot) {
     : '🟢 See travel advice';
   return `${name}<br/><span style="font-size:10px;color:#9ca3af">${statusLabel}</span>`;
 }
- 
+
 // ── State ─────────────────────────────────────────────────────────────
 let countryLayer    = null;
 let graticuleLayer  = null;
@@ -238,7 +238,7 @@ let currentSnapshot = null;
 let snapshotDates   = [];
 let currentIndex    = 0;
 const snapshotCache = new Map();
- 
+
 // ── Snapshot loading ──────────────────────────────────────────────────
 async function loadSnapshot(date) {
   if (snapshotCache.has(date)) return snapshotCache.get(date);
@@ -251,7 +251,7 @@ async function loadSnapshot(date) {
   snapshotCache.set(date, snap);
   return snap;
 }
- 
+
 // ── Apply snapshot to map ─────────────────────────────────────────────
 function applySnapshot(snapshot) {
   currentSnapshot = snapshot;
@@ -264,15 +264,15 @@ function applySnapshot(snapshot) {
   }
   updateDateLabel();
 }
- 
+
 // ── Date label ────────────────────────────────────────────────────────
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
- 
+
 function formatDate(dateStr) {
   const [y, m, d] = dateStr.split('-');
   return `${parseInt(d, 10)} ${MONTHS[parseInt(m, 10) - 1]} ${y}`;
 }
- 
+
 function updateDateLabel() {
   const date    = snapshotDates[currentIndex];
   if (!date) return;
@@ -283,45 +283,45 @@ function updateDateLabel() {
   labelEl.classList.toggle('is-latest', isLatest);
   subEl.textContent   = isLatest ? 'latest' : 'archived';
 }
- 
+
 // ── Header delta indicator ────────────────────────────────────────────
 // Compares currentSnapshot against the snapshot one step back in the
 // slider (currentIndex + 1). Counts how many countries escalated or
 // improved across all four tiers.
 async function updateHeaderDelta() {
   const el = document.getElementById('header-delta-text');
- 
+
   // On the oldest snapshot — nothing to compare against
   const prevIndex = currentIndex + 1;
   if (prevIndex >= snapshotDates.length) {
     el.innerHTML = '<span class="delta-none">No previous data</span>';
     return;
   }
- 
+
   // Show loading state while fetching prev snapshot (likely cached)
   el.innerHTML = '<span class="delta-none">comparing…</span>';
- 
+
   try {
     const prevSnap = await loadSnapshot(snapshotDates[prevIndex]);
     const currCountries = currentSnapshot.countries;
     const prevCountries = prevSnap.countries;
- 
+
     let escalated = 0;
     let improved  = 0;
- 
+
     // Union of all ISO2 codes across both snapshots
     const allKeys = new Set([
       ...Object.keys(currCountries),
       ...Object.keys(prevCountries),
     ]);
- 
+
     for (const iso2 of allKeys) {
       const currRank = TIER_RANK[currCountries[iso2]?.status ?? null] ?? 0;
       const prevRank = TIER_RANK[prevCountries[iso2]?.status ?? null] ?? 0;
       if (currRank > prevRank) escalated++;
       else if (currRank < prevRank) improved++;
     }
- 
+
     if (escalated === 0 && improved === 0) {
       el.innerHTML = '<span class="delta-none">No changes from the previous day</span>';
     } else {
@@ -339,11 +339,11 @@ async function updateHeaderDelta() {
     el.innerHTML = '<span class="delta-none">—</span>';
   }
 }
- 
+
 // ── Canvas timeline ───────────────────────────────────────────────────
 // Orientation: newest (index 0) = RIGHT edge, oldest = LEFT edge.
 // This matches reading direction — time flows left to right.
- 
+
 const TL = {
   padX:         16,
   trackY:       36,
@@ -359,10 +359,10 @@ const TL = {
   colorThumb:   '#3b7dd8',
   colorGlow:    'rgba(59,125,216,0.15)',
 };
- 
+
 let canvas, ctx, canvasW, canvasH;
 let isDragging = false;
- 
+
 function initTimeline() {
   canvas = document.getElementById('timeline-canvas');
   ctx    = canvas.getContext('2d');
@@ -371,7 +371,7 @@ function initTimeline() {
   bindTimelineEvents();
   window.addEventListener('resize', () => { resizeCanvas(); drawTimeline(); });
 }
- 
+
 function resizeCanvas() {
   const wrap = document.getElementById('slider-track-wrap');
   const dpr  = window.devicePixelRatio || 1;
@@ -384,7 +384,7 @@ function resizeCanvas() {
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.scale(dpr, dpr);
 }
- 
+
 // Index 0 (newest) → LEFT edge; index max (oldest) → RIGHT edge
 // Dragging right goes back in time — thumb starts at left on load.
 function indexToX(idx) {
@@ -393,7 +393,7 @@ function indexToX(idx) {
   if (total === 0) return TL.padX + usable / 2;
   return TL.padX + (idx / total) * usable;
 }
- 
+
 // x pixel → nearest index (newest = left = 0)
 function xToIndex(x) {
   const usable = canvasW - TL.padX * 2;
@@ -402,36 +402,36 @@ function xToIndex(x) {
   const frac = Math.max(0, Math.min(1, (x - TL.padX) / usable));
   return Math.round(frac * total);
 }
- 
+
 function drawTimeline() {
   if (!ctx || snapshotDates.length === 0) return;
   ctx.clearRect(0, 0, canvasW, canvasH);
- 
+
   // Track line
   ctx.fillStyle = TL.colorTrack;
   ctx.fillRect(TL.padX, TL.trackY - TL.trackH / 2, canvasW - TL.padX * 2, TL.trackH);
- 
+
   // Pre-compute thumb x so we can suppress labels that would overlap it
   const thumbX        = indexToX(currentIndex);
   const labelClear    = 30; // px either side of thumb to suppress month label
- 
+
   // Ticks — iterate every snapshot date
   for (let i = 0; i < snapshotDates.length; i++) {
     const dateStr  = snapshotDates[i];
     const x        = indexToX(i);
     const [y, m]   = dateStr.split('-');
- 
+
     // snapshotDates is descending (i+1 is older).
     // Month boundary: different month from next entry, or very last entry.
     const nextDate   = snapshotDates[i + 1];
     const [, nm]     = nextDate ? nextDate.split('-') : [];
     const isMonthEnd = !nextDate || nm !== m;
- 
+
     if (isMonthEnd) {
       // Tall tick — always draw the tick itself
       ctx.fillStyle = TL.colorTickMo;
       ctx.fillRect(x - 0.5, TL.trackY - TL.tickMonth / 2, 1, TL.tickMonth);
- 
+
       // Only draw the label if it won't collide with the thumb
       if (Math.abs(x - thumbX) >= labelClear) {
         ctx.font      = TL.labelFont;
@@ -445,36 +445,36 @@ function drawTimeline() {
       ctx.fillRect(x - 0.5, TL.trackY - TL.tickDay / 2, 1, TL.tickDay);
     }
   }
- 
+
   // Thumb
   const tx = indexToX(currentIndex);
- 
+
   // Glow
   ctx.fillStyle = TL.colorGlow;
   ctx.fillRect(tx - 8, 0, 16, canvasH);
- 
+
   // Bar
   ctx.fillStyle = TL.colorThumb;
   ctx.fillRect(tx - TL.thumbW / 2, 6, TL.thumbW, canvasH - 12);
- 
+
   // Cap dots
   ctx.beginPath();
   ctx.arc(tx, 8, 4, 0, Math.PI * 2);
   ctx.fillStyle = TL.colorThumb;
   ctx.fill();
- 
+
   ctx.beginPath();
   ctx.arc(tx, canvasH - 8, 4, 0, Math.PI * 2);
   ctx.fillStyle = TL.colorThumb;
   ctx.fill();
 }
- 
+
 async function seekToIndex(idx) {
   if (idx === currentIndex && snapshotCache.has(snapshotDates[idx])) return;
   currentIndex = idx;
   drawTimeline();
   updateDateLabel();
- 
+
   const date = snapshotDates[idx];
   try {
     const snap = await loadSnapshot(date);
@@ -485,13 +485,13 @@ async function seekToIndex(idx) {
     document.getElementById('slider-date-label').textContent = 'Failed';
   }
 }
- 
+
 function getClientX(e) {
   const rect = canvas.getBoundingClientRect();
   const cx   = e.touches ? e.touches[0].clientX : e.clientX;
   return cx - rect.left;
 }
- 
+
 function bindTimelineEvents() {
   canvas.addEventListener('mousedown', (e) => {
     isDragging = true;
@@ -502,7 +502,7 @@ function bindTimelineEvents() {
     seekToIndex(xToIndex(getClientX(e)));
   });
   window.addEventListener('mouseup', () => { isDragging = false; });
- 
+
   canvas.addEventListener('touchstart', (e) => {
     e.preventDefault();
     isDragging = true;
@@ -515,17 +515,17 @@ function bindTimelineEvents() {
   }, { passive: false });
   window.addEventListener('touchend', () => { isDragging = false; });
 }
- 
+
 // ── Graticule ─────────────────────────────────────────────────────────
 // Generates lat/long grid lines as a GeoJSON layer.
 // 10° minor lines (faint), 30° major lines (slightly more visible),
 // Equator and Prime Meridian highlighted.
 function addGraticule() {
   const features = [];
- 
+
   const STEP_MINOR = 10;
   const STEP_MAJOR = 30;
- 
+
   // Longitude lines (meridians) — vertical
   for (let lon = -180; lon <= 180; lon += STEP_MINOR) {
     const coords = [];
@@ -540,7 +540,7 @@ function addGraticule() {
       geometry: { type: 'LineString', coordinates: coords },
     });
   }
- 
+
   // Latitude lines (parallels) — horizontal
   for (let lat = -90; lat <= 90; lat += STEP_MINOR) {
     const coords = [];
@@ -555,7 +555,7 @@ function addGraticule() {
       geometry: { type: 'LineString', coordinates: coords },
     });
   }
- 
+
   graticuleLayer = L.geoJSON({ type: 'FeatureCollection', features }, {
     style(feature) {
       const { isPrimary, isMajor } = feature.properties;
@@ -566,7 +566,7 @@ function addGraticule() {
     interactive: false,   // never intercept mouse events
   }).addTo(map);
 }
- 
+
 // ── Load snapshot index → advisory data → world polygons ─────────────
 fetch('data/snapshot_index.json')
   .then(r => {
@@ -581,7 +581,7 @@ fetch('data/snapshot_index.json')
   .then(snapshot => {
     currentSnapshot = snapshot;
     snapshotCache.set(snapshotDates[0], snapshot);
-    document.querySelector('.loader-label').textContent = 'Loading world polygons…';
+    document.querySelector('.loader-label').textContent = 'Loading world…';
     return fetch('data/world_10m.json');
   })
   .then(r => {
@@ -597,16 +597,16 @@ fetch('data/snapshot_index.json')
           || feature.properties?.ADMIN
           || 'Unknown';
         const iso2 = getISO2FromFeature(feature);
- 
+
         layer.bindTooltip('', {
           className: 'country-tooltip',
           sticky: true,
           offset: [10, 0],
         });
- 
+
         layer._iso2 = iso2;
         layer._name = name;
- 
+
         layer.on({
           click() {
             showInfoPanel(name, iso2, currentSnapshot.countries[iso2]);
@@ -623,22 +623,22 @@ fetch('data/snapshot_index.json')
         });
       },
     }).addTo(map);
- 
+
     // Graticule sits above country polygons, below UI panels
     addGraticule();
- 
+
     const count = geojson.features?.length ?? 0;
     document.getElementById('count-num').textContent = count;
     document.getElementById('loading').classList.add('hidden');
- 
+
     document.querySelector('.header-status').innerHTML = `
       <span class="status-dot" style="background:#2d8a5e;box-shadow:0 0 6px #2d8a5e"></span>
-      ${count} countries coloured
+      ${count} countries updated
     `;
- 
+
     // Kick off the initial delta comparison
     updateHeaderDelta();
- 
+
     if (snapshotDates.length < 2) {
       document.getElementById('slider-strip').classList.add('hidden');
     } else {
@@ -662,7 +662,7 @@ fetch('data/snapshot_index.json')
       Load failed
     `;
   });
- 
+
 // ── Info panel ────────────────────────────────────────────────────────
 async function showInfoPanel(countryName, iso2, advisory) {
   const placeholder = document.getElementById('info-placeholder');
@@ -672,15 +672,15 @@ async function showInfoPanel(countryName, iso2, advisory) {
   const descEl      = document.getElementById('info-description');
   const linkEl      = document.getElementById('info-link');
   const deltaEl     = document.getElementById('info-delta-badge');
- 
+
   // Switch from placeholder to detail view
   placeholder.classList.add('hidden');
   detail.classList.remove('hidden');
- 
+
   nameEl.textContent  = countryName;
   deltaEl.textContent = '';
   deltaEl.className   = 'delta-badge hidden';
- 
+
   if (!advisory) {
     badgeEl.textContent = 'No advisory data';
     badgeEl.className   = 'status-badge no-data';
@@ -689,7 +689,7 @@ async function showInfoPanel(countryName, iso2, advisory) {
   } else {
     const status = advisory.status;
     let badgeText = '', badgeClass = 'status-badge ', description = '';
- 
+
     switch (status) {
       case 'avoid_all':
         badgeText   = '🔴 Avoid all travel';
@@ -713,13 +713,13 @@ async function showInfoPanel(countryName, iso2, advisory) {
         description = 'No specific FCDO warning. See the full travel advice for guidance on safety, health, and local laws.';
         break;
     }
- 
+
     badgeEl.textContent = badgeText;
     badgeEl.className   = badgeClass;
     descEl.textContent  = description;
     linkEl.href         = `https://www.gov.uk/foreign-travel-advice/${advisory.slug}`;
     linkEl.classList.remove('hidden');
- 
+
     // Escalation / improvement badge
     const prevIndex = currentIndex + 1;
     if (iso2 && prevIndex < snapshotDates.length) {
