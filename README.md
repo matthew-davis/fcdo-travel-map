@@ -104,8 +104,9 @@ Work through these steps in order. Update the status marker for each task as wor
 - [X] Remove snapshot and date from header and add something else
 - [X] Slightly less dark water colour, lighter grey
 - [X] Can I lay lat long lines over the map?
-- [ ] Better map placement? Against left side of window? Maybe a info bar on right instead of overlap
-- [ ] Country pop up Country name in title area
+- [X] Better map placement? Against left side of window? Maybe a info bar on right instead of overlap
+- [X] Country pop up Country name in title area
+- [X] Missing Country data which does exist? France?
 
 ---
 

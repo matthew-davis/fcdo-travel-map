@@ -36,94 +36,89 @@
  
   <!-- ── Time slider strip ──────────────────────────────────────── -->
   <div id="slider-strip">
- 
-    <!-- Date label on the left -->
     <div id="slider-date-block">
       <div id="slider-date-label" class="is-latest">—</div>
       <div id="slider-date-sub">latest</div>
     </div>
- 
-    <!-- Custom canvas timeline -->
     <div id="slider-track-wrap">
       <canvas id="timeline-canvas"></canvas>
     </div>
- 
   </div>
  
-  <div id="map-container">
-    <!-- Loading overlay -->
-    <div id="loading">
-      <div class="loader-ring"></div>
-      <div class="loader-label">Loading snapshot index…</div>
+  <!-- ── Main content row: map + sidebar ───────────────────────── -->
+  <div id="content">
+ 
+    <!-- Map (flush left, fills remaining space) -->
+    <div id="map-container">
+      <div id="loading">
+        <div class="loader-ring"></div>
+        <div class="loader-label">Loading snapshot index…</div>
+      </div>
+      <div id="map"></div>
     </div>
  
-    <div id="map"></div>
+    <!-- Sidebar (fixed right column) -->
+    <aside id="sidebar">
  
-    <!-- Info panel (hidden by default) -->
-    <div id="info-panel" class="panel-hidden">
-      <div class="info-header">
-        <button id="close-panel" class="close-btn">&times;</button>
+      <!-- Country info — shows placeholder until a country is clicked -->
+      <div id="sidebar-info">
+        <div id="info-placeholder">
+          <div class="placeholder-icon">🌍</div>
+          <p>Click any country on the map to see its travel advisory.</p>
+        </div>
+        <div id="info-detail" class="hidden">
+          <h2 id="info-country-name">—</h2>
+          <div id="info-status-badge" class="status-badge">—</div>
+          <div id="info-delta-badge" class="delta-badge hidden"></div>
+          <p id="info-description"></p>
+          <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
+            View full advice on GOV.UK →
+          </a>
+        </div>
       </div>
-      <div class="info-content">
-        <h2 id="info-country-name">—</h2>
-        <div id="info-status-badge" class="status-badge">—</div>
-        <!-- Delta badge: shown when status differs from previous snapshot -->
-        <div id="info-delta-badge" class="delta-badge hidden"></div>
-        <p id="info-description">Click a country to see travel advice.</p>
-        <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
-          View full advice on GOV.UK →
-        </a>
-      </div>
-    </div>
  
-    <!-- Legend -->
-    <div id="legend">
-      <div class="legend-heading">Advisory Tiers</div>
+      <!-- Divider -->
+      <div class="sidebar-divider"></div>
  
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:var(--avoid-all)"></div>
-        <div class="legend-label">
-          Avoid all travel
-          <span class="legend-sub">avoid_all</span>
+      <!-- Legend -->
+      <div id="legend">
+        <div class="legend-heading">Advisory Tiers</div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--avoid-all)"></div>
+          <div class="legend-label">Avoid all travel<span class="legend-sub">avoid_all</span></div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
+          <div class="legend-label">Avoid all but essential<span class="legend-sub">avoid_all_but_essential</span></div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--some-parts)"></div>
+          <div class="legend-label">Mixed (some parts)<span class="legend-sub">some_parts</span></div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--no-warning)"></div>
+          <div class="legend-label">See travel advice<span class="legend-sub">null — no specific warning</span></div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
+          <div class="legend-label">No advisory data<span class="legend-sub">not in FCDO index</span></div>
         </div>
       </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
-        <div class="legend-label">
-          Avoid all but essential
-          <span class="legend-sub">avoid_all_but_essential</span>
-        </div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:var(--some-parts)"></div>
-        <div class="legend-label">
-          Mixed (some parts)
-          <span class="legend-sub">some_parts</span>
-        </div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:var(--no-warning)"></div>
-        <div class="legend-label">
-          See travel advice
-          <span class="legend-sub">null — no specific warning</span>
-        </div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
-        <div class="legend-label">
-          No advisory data
-          <span class="legend-sub">not in FCDO index</span>
-        </div>
-      </div>
-    </div>
  
-    <!-- Country count -->
-    <div id="country-count">
-      <strong id="count-num">—</strong>
-      countries loaded
-    </div>
-  </div>
-</div>
+      <!-- Divider -->
+      <div class="sidebar-divider"></div>
+ 
+      <!-- Country count -->
+      <div id="country-count">
+        <strong id="count-num">—</strong>
+        countries loaded
+      </div>
+ 
+    </aside>
+ 
+  </div><!-- /#content -->
+ 
+</div><!-- /#app -->
 <script src="scripts.js"></script>
 </body>
 </html>

@@ -41,14 +41,171 @@ function getCountryColor(iso2Code, snapshot) {
   return TIER_COLORS[status] || TIER_COLORS.unknown;
 }
  
+// ── Helper: match GeoJSON property to ISO2 ────────────────────────────
+// Natural Earth 10m has a known bug where France, Norway, Kosovo and
+// several other countries return ISO_A2 = "-99". We fall back to a
+// name-based lookup table for those cases.
+const NAME_TO_ISO2 = {
+  // ── Natural Earth -99 bug fixes ───────────────────────────────────
+  'France':                        'FR',
+  'Norway':                        'NO',
+ 
+  // ── Name mismatches vs what scraper/snapshot expects ─────────────
+  'Timor-Leste':                   'TL',   // NE uses hyphenated form
+  'East Timor':                    'TL',   // fallback
+  'Ivory Coast':                   'CI',
+  "Côte d'Ivoire":                 'CI',   // NE uses accented form
+  'W. Sahara':                     'EH',
+  'Dem. Rep. Congo':               'CD',
+  'Congo':                         'CG',
+  'Kosovo':                        'XK',
+  'N. Cyprus':                     'CY',
+  'Northern Cyprus':               'CY',
+  'Somaliland':                    'SO',
+  'Palestine':                     'PS',
+  'Vatican':                       'VA',
+  'Micronesia':                    'FM',
+  'Faeroe Is.':                    'FO',
+  'Åland':                         'AX',
+ 
+  // ── Taiwan special case — NE stores ISO as "CN-TW" ───────────────
+  'Taiwan':                        'TW',
+ 
+  // ── Territories mapped to parent country below ────────────────────
+  'Greenland':                     'GL',
+  'Guam':                          'GU',
+  'Puerto Rico':                   'PR',
+  'Falkland Is.':                  'FK',
+  'Falkland Islands':              'FK',
+  'S. Geo. and the Is.':           'GS',
+  'South Georgia & the Islands':   'GS',
+  'Baikonur':                      'BQ_KZ',   // direct remap below
+  'St-Martin':                     'MF',
+  'Sint Maarten':                  'SX',
+  'Curaçao':                       'CW',
+  'Aruba':                         'AW',
+  'St. Vin. and Gren.':            'VC',
+  'St. Kitts and Nevis':           'KN',
+  'St-Barthélemy':                 'BL',
+  'Turks and Caicos Is.':          'TC',
+  'Anguilla':                      'AI',
+  'British Virgin Is.':            'VG',
+  'Cayman Is.':                    'KY',
+  'Bermuda':                       'BM',
+  'Montserrat':                    'MS',
+  'Pitcairn Is.':                  'PN',
+  'Saint Helena':                  'SH',
+  'Br. Indian Ocean Ter.':         'IO',
+  'Gibraltar':                     'GI',
+  'Jersey':                        'JE',
+  'Guernsey':                      'GG',
+  'Isle of Man':                   'IM',
+  'Hong Kong':                     'HK',
+  'Macao':                         'MO',
+  'Norfolk Island':                'NF',
+  'Cook Is.':                      'CK',
+  'Niue':                          'NU',
+  'Heard I. and McDonald Is.':     'HM',
+  'U.S. Minor Outlying Is.':       'UM',
+ 
+  // ── French territories ────────────────────────────────────────────
+  'French Guiana':                 'GF',
+  'Martinique':                    'MQ',
+  'Guadeloupe':                    'GP',
+  'Réunion':                       'RE',
+  'Mayotte':                       'YT',
+  'Saint Pierre and Miquelon':     'PM',
+  'New Caledonia':                 'NC',
+  'French Polynesia':              'PF',
+  'Wallis and Futuna Is.':         'WF',
+  'Clipperton I.':                 'FR',
+  'French S. and Antarctic Lands': 'TF',
+};
+ 
+// Snapshot key overrides — the FCDO scraper sometimes stores data under
+// a different ISO2 than what Natural Earth resolves to.
+// Maps resolved ISO2 → the actual key used in snapshot.countries{}
+const ISO2_TO_SNAPSHOT_KEY = {
+  // ── Scraper slug-derived key overrides ────────────────────────────
+  // These countries weren't matched in country_list.json so the scraper
+  // fell back to slugToKey() which uppercases the slug instead of using ISO2
+  'CZ': 'CZECHIA',
+  'CI': 'COTE_D_IVOIRE',
+  'XK': 'KOSOVO',
+  'CG': 'CONGO',
+  'TL': 'TIMOR_LESTE',
+  'GM': 'THE_GAMBIA',
+  'EH': 'WESTERN_SAHARA',
+ 
+  // ── Territory → parent remaps ─────────────────────────────────────
+  'AX':    'FI',   // Åland → Finland
+  'FO':    'DK',   // Faroe Islands → Denmark
+  'HK':    'CN',   // Hong Kong → China
+  'MO':    'CN',   // Macao → China
+  'NF':    'AU',   // Norfolk Island → Australia
+  'CK':    'NZ',   // Cook Islands → New Zealand
+  'NU':    'NZ',   // Niue → New Zealand
+  'HM':    'AU',   // Heard & McDonald → Australia
+  'UM':    'US',   // US Minor Outlying Islands → USA
+  'MF':    'FR',   // St Martin (French part) → France
+  'BL':    'FR',   // St Barthélemy → France
+  'SX':    'NL',   // Sint Maarten → Netherlands
+  'CW':    'NL',   // Curaçao → Netherlands
+  'AW':    'NL',   // Aruba → Netherlands
+  'VA':    null,   // Vatican — no FCDO advisory
+  'BQ_KZ': 'KZ',  // Baikonur → Kazakhstan
+};
+ 
+// Territories → parent country snapshot key
+const TERRITORY_TO_PARENT_ISO2 = {
+  // French territories
+  'GF': 'FR',  'MQ': 'FR',  'GP': 'FR',  'RE': 'FR',
+  'YT': 'FR',  'PM': 'FR',  'NC': 'FR',  'PF': 'FR',
+  'WF': 'FR',  'TF': 'FR',
+ 
+  // British territories
+  'FK': 'GB',  'GS': 'GB',  'SH': 'GB',  'IO': 'GB',
+  'PN': 'GB',  'GI': 'GB',  'GG': 'GB',  'JE': 'GB',
+  'IM': 'GB',  'TC': 'GB',  'VG': 'GB',  'KY': 'GB',
+  'MS': 'GB',  'AI': 'GB',  'BM': 'GB',
+ 
+  // US territories
+  'GU': 'US',  'PR': 'US',  'VI': 'US',  'AS': 'US',  'MP': 'US',
+ 
+  // Greenland → Denmark
+  'GL': 'DK',
+};
+ 
 function getISO2FromFeature(feature) {
   const props = feature.properties;
-  return props.ISO_A2
-    || props.iso_a2
-    || props.ISO2
-    || props.iso2
-    || props.ADM0_A3?.slice(0, 2)
-    || null;
+ 
+  // Try standard ISO2 fields
+  let iso2 = props.ISO_A2 || props.iso_a2 || props.ISO2 || props.iso2 || null;
+ 
+  // Natural Earth bug: -99 means the code is missing
+  if (!iso2 || iso2 === '-99') {
+    iso2 = props.ISO_A2_EH || props.iso_a2_eh || null;
+  }
+ 
+  // Taiwan special case — NE stores it as "CN-TW"
+  if (iso2 === 'CN-TW') iso2 = 'TW';
+ 
+  if (!iso2 || iso2 === '-99') {
+    const name = props.NAME || props.name || props.ADMIN || props.admin || '';
+    iso2 = NAME_TO_ISO2[name] || null;
+  }
+ 
+  if (!iso2 || iso2 === '-99') return null;
+ 
+  // Apply territory → parent remapping
+  iso2 = TERRITORY_TO_PARENT_ISO2[iso2] || iso2;
+ 
+  // Apply snapshot key remapping (handles scraper key differences)
+  if (iso2 in ISO2_TO_SNAPSHOT_KEY) {
+    return ISO2_TO_SNAPSHOT_KEY[iso2]; // may be null for genuinely unadvised territories
+  }
+ 
+  return iso2;
 }
  
 function getCountryStyle(feature, snapshot) {
@@ -402,9 +559,9 @@ function addGraticule() {
   graticuleLayer = L.geoJSON({ type: 'FeatureCollection', features }, {
     style(feature) {
       const { isPrimary, isMajor } = feature.properties;
-      if (isPrimary) return { color: '#3d5278', weight: 0.8, opacity: 0.7, interactive: false };
-      if (isMajor)   return { color: '#2a3a52', weight: 0.5, opacity: 0.6, interactive: false };
-      return            { color: '#1e2d42', weight: 0.3, opacity: 0.4, interactive: false };
+      if (isPrimary) return { color: '#5b7aaa', weight: 0.8, opacity: 0.8, interactive: false };
+      if (isMajor)   return { color: '#3d5278', weight: 0.5, opacity: 0.7, interactive: false };
+      return            { color: '#2a3f5f', weight: 0.3, opacity: 0.6, interactive: false };
     },
     interactive: false,   // never intercept mouse events
   }).addTo(map);
@@ -508,12 +665,17 @@ fetch('data/snapshot_index.json')
  
 // ── Info panel ────────────────────────────────────────────────────────
 async function showInfoPanel(countryName, iso2, advisory) {
-  const panel   = document.getElementById('info-panel');
-  const nameEl  = document.getElementById('info-country-name');
-  const badgeEl = document.getElementById('info-status-badge');
-  const descEl  = document.getElementById('info-description');
-  const linkEl  = document.getElementById('info-link');
-  const deltaEl = document.getElementById('info-delta-badge');
+  const placeholder = document.getElementById('info-placeholder');
+  const detail      = document.getElementById('info-detail');
+  const nameEl      = document.getElementById('info-country-name');
+  const badgeEl     = document.getElementById('info-status-badge');
+  const descEl      = document.getElementById('info-description');
+  const linkEl      = document.getElementById('info-link');
+  const deltaEl     = document.getElementById('info-delta-badge');
+ 
+  // Switch from placeholder to detail view
+  placeholder.classList.add('hidden');
+  detail.classList.remove('hidden');
  
   nameEl.textContent  = countryName;
   deltaEl.textContent = '';
@@ -577,18 +739,4 @@ async function showInfoPanel(countryName, iso2, advisory) {
       }
     }
   }
- 
-  panel.classList.remove('panel-hidden');
 }
- 
-function closeInfoPanel() {
-  document.getElementById('info-panel').classList.add('panel-hidden');
-}
- 
-document.getElementById('close-panel').addEventListener('click', closeInfoPanel);
- 
-map.on('click', (e) => {
-  if (!e.originalEvent.target.closest('.leaflet-interactive')) {
-    closeInfoPanel();
-  }
-});
