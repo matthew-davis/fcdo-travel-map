@@ -1,7 +1,6 @@
 {
   "type": "module",
   "dependencies": {
-    "@turf/turf": "^7.3.4",
     "sharp": "^0.34.5"
   }
 }

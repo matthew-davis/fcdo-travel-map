@@ -1,34 +1,27 @@
 name: Daily FCDO Advisory Scrape
- 
+
 on:
   schedule:
-    # Run at 06:30 UTC every day (FCDO typically updates overnight UK time)
     - cron: "30 6 * * *"
   workflow_dispatch:
-    # Allow manual trigger from the Actions tab
     inputs:
       date_override:
         description: "Date label for snapshot (YYYY-MM-DD). Defaults to today."
         required: false
         default: ""
  
-# Grant the minimum permissions needed for each job
 permissions:
-  contents: write   # job: scrape  — commit snapshot back to repo
-  pages: write      # job: deploy  — publish to GitHub Pages
-  id-token: write   # job: deploy  — required by actions/deploy-pages
+  contents: write
+  pages: write
+  id-token: write
  
 jobs:
-  # ── Job 1: fetch data and commit snapshot ───────────────────────────
   scrape:
     runs-on: ubuntu-latest
     permissions:
       contents: write
  
     outputs:
-      # Passes "true" to the deploy job only when new data was actually committed.
-      # The deploy job still runs on workflow_dispatch even if no new data landed,
-      # so you can force a redeploy without faking a data change.
       changed: ${{ steps.commit.outputs.changed }}
  
     steps:
@@ -40,6 +33,14 @@ jobs:
         with:
           node-version: "20"
  
+      - name: Install dependencies
+        run: npm install
+ 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils imagemagick
+ 
       - name: Run scraper
         run: |
           DATE_ARG=""
@@ -48,13 +49,16 @@ jobs:
           fi
           node scripts/scraper.js $DATE_ARG
  
+      - name: Process map images for changed countries
+        run: node scripts/update_maps.js
+ 
       - name: Commit and push snapshot
         id: commit
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
  
-          git add data/snapshots/ data/snapshot_today.json data/snapshot_index.json
+          git add data/snapshots/ data/snapshot_today.json data/snapshot_index.json data/maps/
  
           if git diff --cached --quiet; then
             echo "No changes to commit — advisory data unchanged since last run."
@@ -66,14 +70,10 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
  
-  # ── Job 2: deploy to GitHub Pages ───────────────────────────────────
   deploy:
     needs: scrape
     runs-on: ubuntu-latest
  
-    # Deploy when:
-    #   • new snapshot data was committed  (scheduled run with fresh data)
-    #   • OR the workflow was triggered manually  (force-redeploy)
     if: needs.scrape.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
  
     environment:
@@ -88,7 +88,6 @@ jobs:
       - name: Checkout repository (with latest committed snapshot)
         uses: actions/checkout@v4
         with:
-          # Pull the commit that the scrape job just pushed, if any
           ref: ${{ github.ref }}
  
       - name: Configure GitHub Pages
@@ -97,7 +96,6 @@ jobs:
       - name: Upload site to Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the whole repo root — index.html, scripts.js, styles.css, data/
           path: "."
  
       - name: Deploy to GitHub Pages

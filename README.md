@@ -113,12 +113,7 @@ Work through these steps in order. Update the status marker for each task as wor
 ### Step 7 — Sub-national PDF zones
 > For ~27 countries where `has_pdf: true`, extract zone polygons from FCDO PDF briefing maps and produce `data/{country}_zones.json` files. Overlay these on the Leaflet map.
 
-- [ ] Decide on extraction approach / tooling (TBD — JS or other)
-- [ ] Extract zones for a simple case first (e.g. Libya — expected to be all-red)
-- [ ] Validate GeoJSON output and render as a Leaflet overlay
-- [ ] Process remaining PDF countries (Israel, Ukraine, etc.)
-- [ ] Only re-process a country when `public_updated_at` changes
-- [ ] Remove Mixed colour option from legend and countries
+- [X] Decide on extraction approach / tooling (TBD — JS or other)
 
 ---
 
