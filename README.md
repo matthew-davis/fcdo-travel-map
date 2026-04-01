@@ -1,201 +1,168 @@
-# FCDO Travel Advisory World Map — Project Knowledge Base
-
-**Last updated:** March 2026  
-**Status:** In progress — scraper and GitHub Actions written; map UI not yet started.
-
+# FCDO Travel Advisory World Map
+ 
+A live, interactive world map showing UK Foreign, Commonwealth & Development Office (FCDO) travel advisory levels for every country. The map updates automatically every day, pulling the latest advice directly from the GOV.UK Content API.
+ 
 ---
-
-## What This Project Is
-
-A website displaying a world map coloured by UK Foreign, Commonwealth & Development Office (FCDO) travel advisory levels. Users can click any country to see advisory details and a link to the full FCDO advice page. A time slider lets users scrub back through history to watch advisories change over time.
-
-The site updates daily via an automated scraper pulling from the GOV.UK Content API.
-
+ 
+## What It Does
+ 
+Every country on the map is coloured by its current FCDO advisory tier:
+ 
+| Colour | Tier | Meaning |
+|--------|------|---------|
+| 🔴 Red | Avoid all travel | FCDO advises against all travel to this country |
+| 🟠 Orange | Avoid all but essential | FCDO advises against all but essential travel |
+| 🟡 Yellow | Mixed (some parts) | Advisory applies to parts of the country only |
+| 🟢 Green | See travel advice | No specific warning — check the full advice |
+| ⬛ Dark | No data | Country not currently in the FCDO index |
+ 
+Clicking or tapping any country opens a detail panel showing:
+ 
+- The country's flag, capital, population, population density and official languages
+- A short Wikipedia summary of the country
+- The current FCDO advisory tier and description
+- An FCDO zone map image for countries with mixed advisories
+- A direct link to the full advice on GOV.UK
+- An escalation or improvement badge when the advisory has changed since the previous day
+ 
+A **time slider** at the top of the page lets you scrub back through the full history of snapshots to watch how advisories have changed over time.
+ 
+A **search box** in the sidebar lets you find any country by name — the map zooms to it and highlights it automatically.
+ 
 ---
-
-## Repository & Files
-
-Claude has access to all repo files via the project, **except** files in `data/` which are too large for the context window.
-
-| File | Description |
-|------|-------------|
-| `index.html` | Main map page — **not yet written** |
-| `scripts.js` | Front-end JS — currently contains hardcoded sample snapshot data; map wiring not yet done |
-| `scripts/scraper.js` | Node.js scraper hitting the GOV.UK Content API |
-| `.github/workflows/daily_scrape.yml` | GitHub Actions cron job (06:30 UTC daily) |
-
-| Data file | Description |
-|-----------|-------------|
-| `data/world_10m.json` | Natural Earth 10m base map (~240 countries) — exists locally, not in context |
-| `data/snapshots/` | Daily snapshot JSONs — directory exists; populated by scraper |
-
+ 
+## How It Works
+ 
+### Data pipeline
+ 
+A Node.js scraper (`scripts/scraper.js`) hits the GOV.UK Content API each day and writes a snapshot JSON file to `data/snapshots/snapshot_YYYY-MM-DD.json`. It also maintains `data/snapshot_today.json` (always the latest) and `data/snapshot_index.json` (the list of all available dates for the time slider).
+ 
+The scraper runs automatically at **06:30 UTC daily** via a GitHub Actions workflow (`.github/workflows/daily_scrape.yml`). If the advisory data has changed since the previous run, the workflow commits the new snapshot and redeploys the site to GitHub Pages. If nothing has changed, no commit is made.
+ 
+### Front end
+ 
+The site is entirely static — no server, no database, no build step. It is a single HTML page (`index.html`) with a CSS stylesheet (`styles.css`) and a JavaScript file (`scripts.js`).
+ 
+On load, the page fetches `snapshot_index.json` to discover available dates, loads the latest snapshot, then loads the Natural Earth 10m world polygon GeoJSON (`data/world_10m.json`) and renders it with [Leaflet.js](https://leafletjs.com/). Each country polygon is coloured by matching its ISO 3166-1 alpha-2 code against the snapshot data.
+ 
+Country detail data (flag, capital, population, languages) is fetched on demand from the [REST Countries API](https://restcountries.com/). The Wikipedia summary extract is fetched on demand from the [Wikipedia REST API](https://en.wikipedia.org/api/rest_v1/). Both are cached in memory for the session.
+ 
+### Advisory zone maps
+ 
+For countries where the FCDO publishes a PDF briefing map showing specific zones (`has_pdf: true` in the snapshot), the scraper downloads and converts the PDF to a JPEG image, which is stored in `data/maps/` and displayed in the country detail panel.
+ 
 ---
-
-## Progress Checklist
-
-Work through these steps in order. Update the status marker for each task as work progresses.
-
-**Status key:** `[ ]` not started · `[~]` in progress · `[x]` done
-
+ 
+## Repository Structure
+ 
+```
+├── index.html                  # Main page
+├── styles.css                  # Stylesheet
+├── scripts.js                  # Front-end JavaScript
+├── scripts/
+│   ├── scraper.js              # Daily GOV.UK scraper
+│   ├── smart_extract.js        # PDF advisory map extractor
+│   └── update_maps.js          # Checks for changed countries and re-extracts maps
+├── data/
+│   ├── world_10m.json          # Natural Earth 10m country polygons
+│   ├── country_list.json       # ISO2 ↔ slug mapping used by the scraper
+│   ├── snapshot_today.json     # Latest snapshot (symlink / copy)
+│   ├── snapshot_index.json     # Index of all available snapshot dates
+│   ├── snapshots/              # Daily snapshot archive
+│   │   └── snapshot_YYYY-MM-DD.json
+│   └── maps/                   # FCDO advisory zone images
+│       └── {ISO2}_{date}.jpg
+└── .github/
+    └── workflows/
+        └── daily_scrape.yml    # GitHub Actions cron job
+```
+ 
 ---
-
-### Step 1 — Static map shell
-> Build `index.html`: Leaflet map with CartoDB dark tiles, load `data/world_10m.json`, render all countries in a neutral colour. No advisory logic yet — just confirm polygons load and display correctly.
-
-- [X] Create `index.html` with Leaflet and CartoDB tile layer
-- [X] Load and render `data/world_10m.json` country polygons
-- [X] Confirm all ~240 countries display correctly in browser
-
----
-
-### Step 2 — Colour countries from snapshot
-> Wire the map to colour countries using a snapshot JSON. Use the sample data already in `scripts.js` or write a hand-crafted snapshot file. Confirm all four advisory tiers render with the correct colours.
-
-- [X] Define the four tier colours in JS (red / orange / yellow / green)
-- [X] Load a snapshot JSON and apply colours to matching country polygons
-- [X] Confirm all four status values render correctly
-- [X] Handle `null` status (green / no warning) and unknown ISO codes gracefully
-
----
-
-### Step 3 — Country click panel
-> Add a side panel. Clicking a country polygon shows: name, advisory level, human-readable description, and a link to `gov.uk/foreign-travel-advice/{slug}`.
-
-- [X] Add side panel HTML/CSS to `index.html`
-- [X] Wire Leaflet click events on country polygons
-- [X] Display name, status badge, description text, and GOV.UK link
-- [X] Handle click on a country with no advisory data
-
----
-
-### Step 4 — GOV.UK scraper
-> `scripts/scraper.js` is written. Run it manually, validate the output, and produce a real snapshot file.
-
-- [X] `scripts/scraper.js` written
-- [X] Run scraper manually and confirm it completes without errors
-- [X] Validate output JSON against the data model (correct ISO2 codes, valid status values)
-- [X] Commit a real snapshot file to `data/snapshots/`
-- [X] Wire `index.html` to load `data/snapshot_today.json` (symlink or latest file)
-
----
-
-### Step 5 — GitHub Actions automation
-> `.github/workflows/daily_scrape.yml` is written. Verify it runs correctly end-to-end.
-
-- [X] `daily_scrape.yml` written (cron at 06:30 UTC)
-- [X] Trigger the workflow manually from the Actions tab and confirm it succeeds
-- [X] Confirm snapshot file is committed and pushed by the bot
-- [X] Confirm GitHub Pages rebuilds after the push
-- [X] Check the live site reflects the new snapshot
-
----
-
-### Step 6 — Time slider
-> Add a date slider to the header. The page loads an index of available snapshots and lets the user scrub between dates.
-
-- [X] Generate / maintain a `data/snapshot_index.json` listing all available snapshot dates
-- [X] Update the scraper to append to this index on each run
-- [X] Add slider UI to the page header
-- [X] Wire slider to swap the active snapshot and re-colour the map
-- [X] Show a **▲ escalated** / **▼ improved** badge in the info panel when a country's status differs from previous snapshot
-- [X] Need to troubleshoot colours updating when the slider moves
-- [X] Need to confirm the badge appears when required
-- [X] Re-design the slider bar (remove date at beginning and end)
-- [X] Remove snapshot and date from header and add something else
-- [X] Slightly less dark water colour, lighter grey
-- [X] Can I lay lat long lines over the map?
-- [X] Better map placement? Against left side of window? Maybe a info bar on right instead of overlap
-- [X] Country pop up Country name in title area
-- [X] Missing Country data which does exist? France?
-
----
-
-### Step 7 — Sub-national PDF zones
-> For ~27 countries where `has_pdf: true`, extract zone polygons from FCDO PDF briefing maps and produce `data/{country}_zones.json` files. Overlay these on the Leaflet map.
-
-- [X] Decide on extraction approach / tooling (TBD — JS or other)
-
----
-
-### Step 8 — Polish & mobile
-> Responsive layout, graceful error handling, optional search.
-
-- [ ] Responsive layout for info panel and time slider on small screens
-- [ ] Graceful error handling (missing PDFs, API failures, unknown country codes)
-- [ ] Optional: search box to zoom/highlight a country by name
-- [ ] Need to generate some kind of stats on visitors optional to also denote where they are looking at the site from
-- [ ] Limit the number of days kept 1 year? perhaps maybe just a few months?
-- [X] Add a custom domain
-- [X] "Loading world polygons..." becomes "Loading world..."
-- [X] xxx countries coloured becomes countries updated
-- [ ] Move the legend further down giving the country information panel a bit more room
-- [ ] Add country details to the country details panel (Maybe pulled from Wikipedia side bar, includes flag, capital and details)
-- [ ] Refactor the code
-- [ ] Rewrite Readme file
-
----
-
-## Design Decisions
-
-- **Leaflet.js** for the map — open source, no API key, fully client-side
-- **CartoDB dark tiles** for the basemap — free, no key required
-- **Natural Earth 10m** for country polygons — `data/world_10m.geojson`
-- **Four advisory tiers** matching FCDO's classification:
-  - 🔴 `avoid_all` — advises against all travel
-  - 🟠 `avoid_all_but_essential` — avoid all but essential travel
-  - 🟡 `some_parts` — mixed sub-national advisory
-  - 🟢 `null` — see travel advice / no specific warning
-- **GitHub Pages** for hosting — free, static, no server required
-- **GitHub Actions** for scheduling — daily cron at 06:30 UTC
-- **No Python** — all scripting is JavaScript / Node.js
-- **Pre-processed zone JSON** — PDF zone extraction runs offline; outputs static `{country}_zones.json` committed to repo
-
----
-
-## Data Model
-
-Each daily snapshot: `data/snapshots/snapshot_{YYYY-MM-DD}.json`
-
+ 
+## Snapshot Format
+ 
+Each daily snapshot is a JSON file with the following structure:
+ 
 ```json
 {
-  "date": "2026-03-03",
-  "generated_at": "2026-03-03T08:00:00Z",
+  "date": "2026-04-01",
+  "generated_at": "2026-04-01T06:35:12Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
-    "IL": { "status": "some_parts", "name": "Israel", "slug": "israel", "has_pdf": true },
-    "FR": { "status": null, "name": "France", "slug": "france", "has_pdf": false }
+    "IL": {
+      "status": "some_parts",
+      "name": "Israel",
+      "slug": "israel",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/...",
+      "updated_at": "2026-03-28T10:00:00Z"
+    },
+    "FR": {
+      "status": null,
+      "name": "France",
+      "slug": "france",
+      "has_pdf": false,
+      "updated_at": "2026-02-18T11:39:22Z"
+    }
   }
 }
 ```
-
-`status` values: `"avoid_all"` · `"avoid_all_but_essential"` · `"some_parts"` · `null`
-
-`has_pdf` — whether the FCDO page includes a PDF briefing map with sub-national zones.
+ 
+`status` is one of `"avoid_all"`, `"avoid_all_but_essential"`, `"some_parts"`, or `null` (no specific warning).
+ 
+---
+ 
+## Running Locally
+ 
+The front end requires files to be served over HTTP — opening `index.html` directly from the filesystem will not work due to browser fetch restrictions.
+ 
+```bash
+# Using Node.js
+npx serve .
+```
+ 
+Then open `http://localhost:3000` (or whichever port is shown).
+ 
+To run the scraper manually:
+ 
+```bash
+npm install
+node scripts/scraper.js
+```
+ 
+---
+ 
+## Tech Stack
+ 
+| Component | Technology |
+|-----------|------------|
+| Map rendering | [Leaflet.js](https://leafletjs.com/) |
+| Base map tiles | [CartoDB Dark Matter](https://carto.com/basemaps/) (free, no API key) |
+| Country polygons | [Natural Earth 10m](https://www.naturalearthdata.com/) |
+| Advisory data | [GOV.UK Content API](https://content-api.publishing.service.gov.uk/) |
+| Country facts | [REST Countries API](https://restcountries.com/) |
+| Country summaries | [Wikipedia REST API](https://en.wikipedia.org/api/rest_v1/) |
+| Hosting | [GitHub Pages](https://pages.github.com/) |
+| Automation | [GitHub Actions](https://github.com/features/actions) |
+| Fonts | [Google Fonts](https://fonts.google.com/) — Syne + DM Mono |
+ 
+---
+ 
+## Data Sources & Licences
+ 
+- **FCDO travel advice** — Crown Copyright, published under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+- **Natural Earth** — Public domain
+- **REST Countries** — [Mozilla Public Licence 2.0](https://restcountries.com/)
+- **Wikipedia extracts** — [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ---
 
-## GOV.UK Content API
+## Possible improvements to come
 
-No authentication required.
+- [ ] Add a favicon
+- [ ] Design review
+- [ ] Functionality review
+- [ ] Refactor the code
+- [ ] Integrate with GDELT data depicting conflicts
 
-```
-GET https://www.gov.uk/api/content/foreign-travel-advice/{slug}
-GET https://www.gov.uk/api/content/foreign-travel-advice   ← full country index
-```
 
-Key response fields:
-- `details.alert_status` — array of machine-readable advisory level strings
-- `details.image.url` — PDF briefing map URL (if present)
-- `public_updated_at` — ISO timestamp of last update
-
-Example slugs: `israel`, `france`, `south-korea`, `democratic-republic-of-the-congo`, `usa`
-
----
-
-## Useful Links
-
-- FCDO travel advice index: https://www.gov.uk/foreign-travel-advice
-- GOV.UK Content API docs: https://content-api.publishing.service.gov.uk/reference.html
-- API example: https://www.gov.uk/api/content/foreign-travel-advice/israel
-- Natural Earth data: https://naciscdn.org/naturalearth/
-- world-atlas npm package: https://www.npmjs.com/package/world-atlas

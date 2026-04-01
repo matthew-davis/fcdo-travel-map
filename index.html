@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FCDO Travel Advisory Map</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script data-goatcounter="https://travelmap.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,11 +25,9 @@
         FCDO Travel Advisory <span>/ World Map</span>
       </div>
     </div>
- 
     <div id="header-delta" class="header-delta">
       <span id="header-delta-text">—</span>
     </div>
- 
     <div class="header-status">
       <span class="status-dot"></span>
       Polygons loading…
@@ -48,7 +48,7 @@
   <!-- ── Main content row: map + sidebar ───────────────────────── -->
   <div id="content">
  
-    <!-- Map (flush left, fills remaining space) -->
+    <!-- Map -->
     <div id="map-container">
       <div id="loading">
         <div class="loader-ring"></div>
@@ -57,68 +57,143 @@
       <div id="map"></div>
     </div>
  
-    <!-- Sidebar (fixed right column) -->
+    <!-- Sidebar -->
     <aside id="sidebar">
  
-      <!-- Country info — shows placeholder until a country is clicked -->
+      <!-- ── Search ────────────────────────────────────────────── -->
+      <div id="search-box">
+        <div id="search-input-wrap">
+          <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+          </svg>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search country…"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <button id="search-clear" aria-label="Clear search">✕</button>
+        </div>
+        <ul id="search-results" role="listbox" aria-label="Country suggestions"></ul>
+      </div>
+ 
+      <div class="sidebar-divider"></div>
+ 
+      <!-- ── Country info ───────────────────────────────────────── -->
       <div id="sidebar-info">
+ 
+        <!-- Placeholder -->
         <div id="info-placeholder">
           <div class="placeholder-icon">🌍</div>
-          <p>Click any country on the map to see its travel advisory.</p>
+          <p>Click or tap any country to see its travel advisory.</p>
         </div>
+ 
+        <!-- Detail view -->
         <div id="info-detail" class="hidden">
-          <h2 id="info-country-name">—</h2>
-          <div id="info-status-badge" class="status-badge">—</div>
-          <div id="info-delta-badge" class="delta-badge hidden"></div>
+ 
+          <!-- Flag + name header -->
+          <div id="info-header">
+            <img id="info-flag" src="" alt="" />
+            <h2 id="info-country-name">—</h2>
+          </div>
+ 
+          <!-- Advisory badge + delta -->
+          <div id="info-badges">
+            <div id="info-status-badge" class="status-badge">—</div>
+            <div id="info-delta-badge" class="delta-badge hidden"></div>
+          </div>
+ 
+          <!-- Fact grid: capital, population, density, languages -->
+          <div id="info-facts" class="hidden">
+            <div class="fact-item">
+              <span class="fact-label">Capital</span>
+              <span class="fact-value" id="fact-capital">—</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Population</span>
+              <span class="fact-value" id="fact-population">—</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Density</span>
+              <span class="fact-value" id="fact-density">—</span>
+            </div>
+            <div class="fact-item fact-item--wide">
+              <span class="fact-label">Languages</span>
+              <span class="fact-value" id="fact-languages">—</span>
+            </div>
+          </div>
+ 
+          <!-- Wikipedia extract -->
+          <p id="info-extract" class="hidden"></p>
+ 
+          <!-- Advisory description -->
           <p id="info-description"></p>
+ 
+          <!-- FCDO advisory map image (shown when has_pdf) -->
+          <div id="info-map-wrap" class="hidden">
+            <div class="info-map-label">FCDO Advisory Map</div>
+            <a id="info-map-link" href="#" target="_blank" rel="noopener">
+              <img id="info-map-img" src="" alt="FCDO advisory zone map" />
+            </a>
+          </div>
+ 
+          <!-- GOV.UK link -->
           <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
             View full advice on GOV.UK →
           </a>
+ 
         </div>
       </div>
  
-      <!-- Divider -->
-      <div class="sidebar-divider"></div>
- 
-      <!-- Legend -->
-      <div id="legend">
-        <div class="legend-heading">Advisory Tiers</div>
-        <div class="legend-item">
-          <div class="legend-swatch" style="background:var(--avoid-all)"></div>
-          <div class="legend-label">Avoid all travel<span class="legend-sub">avoid_all</span></div>
+      <div id="sidebar-bottom">
+        <div class="sidebar-divider"></div>
+        <div id="legend">
+          <div class="legend-heading">Advisory Tiers</div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--avoid-all)"></div>
+            <div class="legend-label">Avoid all travel<span class="legend-sub">avoid_all</span></div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
+            <div class="legend-label">Avoid all but essential<span class="legend-sub">avoid_all_but_essential</span></div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--some-parts)"></div>
+            <div class="legend-label">Mixed (some parts)<span class="legend-sub">some_parts</span></div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--no-warning)"></div>
+            <div class="legend-label">See travel advice<span class="legend-sub">null — no specific warning</span></div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
+            <div class="legend-label">No advisory data<span class="legend-sub">not in FCDO index</span></div>
+          </div>
         </div>
-        <div class="legend-item">
-          <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
-          <div class="legend-label">Avoid all but essential<span class="legend-sub">avoid_all_but_essential</span></div>
+        <div class="sidebar-divider"></div>
+        <div id="country-count">
+          <div id="country-count-row">
+            <div>
+              <strong id="count-num">—</strong>
+              countries loaded
+            </div>
+            <button id="reset-map-btn" title="Reset map view">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 0 1-9.201 2.466l-.312-.311h2.433a.75.75 0 0 0 0-1.5H5.498a.75.75 0 0 0-.75.75v3.498a.75.75 0 0 0 1.5 0v-1.732l.31.31a7 7 0 0 0 11.712-3.138.75.75 0 0 0-1.449-.39Zm1.23-3.723a.75.75 0 0 0 .219-.53V3.198a.75.75 0 0 0-1.5 0v1.73l-.31-.31A7 7 0 0 0 2.239 8.188a.75.75 0 1 0 1.448.389A5.5 5.5 0 0 1 13.89 6.11l.311.31h-2.432a.75.75 0 0 0 0 1.5h3.498a.75.75 0 0 0 .53-.219Z" clip-rule="evenodd" />
+              </svg>
+              Reset view
+            </button>
+          </div>
         </div>
-        <div class="legend-item">
-          <div class="legend-swatch" style="background:var(--some-parts)"></div>
-          <div class="legend-label">Mixed (some parts)<span class="legend-sub">some_parts</span></div>
-        </div>
-        <div class="legend-item">
-          <div class="legend-swatch" style="background:var(--no-warning)"></div>
-          <div class="legend-label">See travel advice<span class="legend-sub">null — no specific warning</span></div>
-        </div>
-        <div class="legend-item">
-          <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
-          <div class="legend-label">No advisory data<span class="legend-sub">not in FCDO index</span></div>
-        </div>
-      </div>
- 
-      <!-- Divider -->
-      <div class="sidebar-divider"></div>
- 
-      <!-- Country count -->
-      <div id="country-count">
-        <strong id="count-num">—</strong>
-        countries loaded
       </div>
  
     </aside>
+  </div>
  
-  </div><!-- /#content -->
- 
-</div><!-- /#app -->
+</div>
 <script src="scripts.js"></script>
 </body>
 </html>
