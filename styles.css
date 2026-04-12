@@ -12,7 +12,7 @@
   --surface:       #111520;
   --border:        #1e2535;
   --text:          #c8d0e0;
-  --text-muted:    #4a5568;
+  --text-muted:    #718096;
   --accent:        #3b7dd8;
   --sidebar-w:     320px;
  
@@ -197,11 +197,14 @@ header {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  opacity: 0.5;
   line-height: 1;
 }
 #slider-track-wrap { flex: 1; height: 100%; cursor: crosshair; }
 #timeline-canvas { display: block; width: 100%; height: 100%; cursor: crosshair; }
+#timeline-canvas:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
  
 /* ══════════════════════════════════════════════════════════════════
    LOADING OVERLAY
@@ -278,6 +281,12 @@ header {
   transition: color 0.15s;
 }
 #search-clear:hover { color: var(--text); }
+#search-clear:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+  color: var(--text);
+}
 #search-results {
   list-style: none;
   position: absolute;
@@ -309,6 +318,11 @@ header {
 #search-results li:last-child { border-bottom: none; }
 #search-results li:hover,
 #search-results li.active { background: var(--neutral-hover); }
+#search-results li:focus-visible {
+  background: var(--neutral-hover);
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
 .search-result-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
@@ -521,6 +535,10 @@ header {
 }
 .gov-link:hover  { background: #4a90e2; }
 .gov-link:active { background: #2d6ab8; }
+.gov-link:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
 .gov-link.hidden { display: none; }
  
 /* ══════════════════════════════════════════════════════════════════
@@ -603,6 +621,11 @@ header {
 #reset-map-btn:active {
   background: rgba(59,125,216,0.18);
 }
+#reset-map-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
 #reset-map-btn svg {
   width: 13px;
   height: 13px;
@@ -632,6 +655,10 @@ header {
 }
 .leaflet-control-zoom a:hover  { background: var(--neutral-hover) !important; }
 .leaflet-control-zoom a:active { background: var(--accent) !important; color: white !important; }
+.leaflet-control-zoom a:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: -2px;
+}
 .leaflet-control-attribution {
   background: rgba(10,13,18,0.7) !important;
   color: var(--text-muted) !important;

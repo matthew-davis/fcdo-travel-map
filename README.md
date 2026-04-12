@@ -159,10 +159,7 @@ node scripts/scraper.js
 
 ## Possible improvements to come
 
-- [ ] Something to tell me if the app is down
 - [ ] Design review
 - [ ] Functionality review
 - [ ] Refactor the code
 - [ ] Integrate with GDELT data depicting conflicts
-
-

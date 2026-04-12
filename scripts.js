@@ -253,6 +253,9 @@ let canvas, ctx, canvasW, canvasH, isDragging = false;
 function initTimeline() {
   canvas = document.getElementById('timeline-canvas');
   ctx    = canvas.getContext('2d');
+  canvas.setAttribute('aria-valuemax', String(snapshotDates.length - 1));
+  canvas.setAttribute('aria-valuenow', '0');
+  canvas.setAttribute('aria-valuetext', snapshotDates[0]);
   resizeCanvas(); drawTimeline(); bindTimelineEvents();
   window.addEventListener('resize', () => { resizeCanvas(); drawTimeline(); });
 }
@@ -305,6 +308,8 @@ function drawTimeline() {
 async function seekToIndex(idx) {
   if (idx === currentIndex && snapshotCache.has(snapshotDates[idx])) return;
   currentIndex = idx; drawTimeline(); updateDateLabel();
+  canvas.setAttribute('aria-valuenow', String(idx));
+  canvas.setAttribute('aria-valuetext', snapshotDates[idx]);
   try {
     const snap = await loadSnapshot(snapshotDates[idx]);
     applySnapshot(snap); updateHeaderDelta();
@@ -325,6 +330,13 @@ function bindTimelineEvents() {
   canvas.addEventListener('touchstart', e => { e.preventDefault(); isDragging = true; seekToIndex(xToIndex(getClientX(e))); }, { passive: false });
   window.addEventListener('touchmove',  e => { if (!isDragging) return; e.preventDefault(); seekToIndex(xToIndex(getClientX(e))); }, { passive: false });
   window.addEventListener('touchend',   () => isDragging = false);
+  canvas.addEventListener('keydown', e => {
+    const last = snapshotDates.length - 1;
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); seekToIndex(Math.max(currentIndex - 1, 0)); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); seekToIndex(Math.min(currentIndex + 1, last)); }
+    if (e.key === 'Home')       { e.preventDefault(); seekToIndex(0); }
+    if (e.key === 'End')        { e.preventDefault(); seekToIndex(last); }
+  });
 }
  
 // ── Graticule ─────────────────────────────────────────────────────────
@@ -717,6 +729,7 @@ async function showInfoPanel(countryName, iso2, advisory) {
   // Reset state
   flagEl.classList.remove('loaded');
   flagEl.src = '';
+  flagEl.alt = `Flag of ${countryName}`;
   nameEl.textContent = countryName;
   deltaEl.textContent = ''; deltaEl.className = 'delta-badge hidden';
   factsEl.classList.add('hidden');
