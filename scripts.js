@@ -709,9 +709,10 @@ async function showInfoPanel(countryName, iso2, advisory) {
   const detail      = document.getElementById('info-detail');
   const placeholder = document.getElementById('info-placeholder');
  
-  // Switch to detail view immediately
+  // Switch to detail view immediately, collapse legend to give info panel focus
   placeholder.classList.add('hidden');
   detail.classList.remove('hidden');
+  document.getElementById('legend').open = false;
  
   // Reset enriched fields to loading state while fetches run
   const flagEl       = document.getElementById('info-flag');

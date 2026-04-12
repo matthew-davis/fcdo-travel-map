@@ -27,6 +27,7 @@
       </div>
     </div>
     <div id="header-delta" class="header-delta">
+      <span class="delta-label">Changes</span>
       <span id="header-delta-text">—</span>
     </div>
     <div class="header-status">
@@ -158,30 +159,6 @@
  
       <div id="sidebar-bottom">
         <div class="sidebar-divider"></div>
-        <div id="legend">
-          <div class="legend-heading">Advisory Tiers</div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--avoid-all)"></div>
-            <div class="legend-label">Avoid all travel<span class="legend-sub">avoid_all</span></div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
-            <div class="legend-label">Avoid all but essential<span class="legend-sub">avoid_all_but_essential</span></div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--some-parts)"></div>
-            <div class="legend-label">Mixed (some parts)<span class="legend-sub">some_parts</span></div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--no-warning)"></div>
-            <div class="legend-label">See travel advice<span class="legend-sub">null — no specific warning</span></div>
-          </div>
-          <div class="legend-item">
-            <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
-            <div class="legend-label">No advisory data<span class="legend-sub">not in FCDO index</span></div>
-          </div>
-        </div>
-        <div class="sidebar-divider"></div>
         <div id="country-count">
           <div id="country-count-row">
             <div>
@@ -196,6 +173,32 @@
             </button>
           </div>
         </div>
+        <div class="sidebar-divider"></div>
+        <details id="legend" open>
+          <summary class="legend-heading">Advisory Tiers</summary>
+          <div class="legend-items">
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:var(--avoid-all)"></div>
+              <div class="legend-label">Avoid all travel<span class="legend-sub">avoid_all</span></div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:var(--avoid-ess)"></div>
+              <div class="legend-label">Avoid all but essential<span class="legend-sub">avoid_all_but_essential</span></div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:var(--some-parts)"></div>
+              <div class="legend-label">Mixed (some parts)<span class="legend-sub">some_parts</span></div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:var(--no-warning)"></div>
+              <div class="legend-label">See travel advice<span class="legend-sub">null — no specific warning</span></div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-swatch" style="background:var(--neutral);border:1px solid var(--border)"></div>
+              <div class="legend-label">No advisory data<span class="legend-sub">not in FCDO index</span></div>
+            </div>
+          </div>
+        </details>
       </div>
  
     </aside>
