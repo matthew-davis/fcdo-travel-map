@@ -249,7 +249,7 @@ const TL = {
   padX: 16, trackY: 36, trackH: 2, tickDay: 5, tickMonth: 16, thumbW: 2,
   labelFont: '9px "DM Mono", monospace',
   colorTrack: '#1e2535', colorTick: '#3d5278', colorTickMo: '#5b7aaa',
-  colorLabel: '#718096', colorThumb: '#3b7dd8', colorGlow: 'rgba(59,125,216,0.18)',
+  colorLabel: '#718096', colorThumb: '#3b7dd8', colorGlow: 'rgba(59,125,216,0.16)',
 };
 let canvas, ctx, canvasW, canvasH, isDragging = false;
  
