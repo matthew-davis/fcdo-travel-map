@@ -159,8 +159,6 @@ node scripts/scraper.js
 
 ## Possible improvements to come
 
-- [X] Add a favicon
-- [ ] Puerto rico not coloured in, and it should be part of the USA colouring
 - [ ] Something to tell me if the app is down
 - [ ] Design review
 - [ ] Functionality review

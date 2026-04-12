@@ -129,7 +129,7 @@ const ISO2_TO_SNAPSHOT_KEY = {
  
 const TERRITORY_TO_PARENT_ISO2 = {
   'RE': 'FR', 'PM': 'FR', 'NC': 'FR', 'TF': 'FR',
-  'GU': 'US', 'VI': 'US', 'AS': 'US', 'MP': 'US',
+  'GU': 'US', 'VI': 'US', 'AS': 'US', 'MP': 'US', 'PR': 'US',
   'GL': 'DK',
 };
  
