@@ -160,6 +160,7 @@ node scripts/scraper.js
 ## Possible improvements to come
 
 - [ ] Add a favicon
+- [ ] Something to tell me if the app is down
 - [ ] Design review
 - [ ] Functionality review
 - [ ] Refactor the code
