@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="app">
- 
+
   <header>
     <div class="header-brand">
       <div class="header-flag">
@@ -35,12 +35,13 @@
       Polygons loading…
     </div>
   </header>
- 
+
   <!-- ── Time slider strip ──────────────────────────────────────── -->
   <div id="slider-strip">
     <div id="slider-date-block">
       <div id="slider-date-label" class="is-latest">—</div>
       <div id="slider-date-sub">latest</div>
+      <button id="slider-today-btn" class="hidden" aria-label="Jump to latest snapshot">← Latest</button>
     </div>
     <div id="slider-track-wrap">
       <canvas id="timeline-canvas"
@@ -52,10 +53,10 @@
               aria-valuetext="latest"></canvas>
     </div>
   </div>
- 
+
   <!-- ── Main content row: map + sidebar ───────────────────────── -->
   <div id="content">
- 
+
     <!-- Map -->
     <div id="map-container" role="region" aria-label="FCDO travel advisory map">
       <div id="loading" role="status" aria-live="polite">
@@ -64,10 +65,10 @@
       </div>
       <div id="map"></div>
     </div>
- 
+
     <!-- Sidebar -->
     <aside id="sidebar" aria-label="Country information and search">
- 
+
       <!-- ── Search ────────────────────────────────────────────── -->
       <div id="search-box">
         <div id="search-input-wrap">
@@ -88,34 +89,46 @@
         </div>
         <ul id="search-results" role="listbox" aria-label="Country suggestions"></ul>
       </div>
- 
+
       <div class="sidebar-divider"></div>
- 
+
       <!-- ── Country info ───────────────────────────────────────── -->
       <div id="sidebar-info">
- 
+
         <!-- Placeholder -->
         <div id="info-placeholder">
-          <div class="placeholder-icon">🌍</div>
-          <p>Click or tap any country to see its travel advisory.</p>
+          <div class="placeholder-icon">🗺️</div>
+          <p class="placeholder-headline">Explore travel advisories</p>
+          <p class="placeholder-sub">Click or tap any country on the map to see its FCDO advisory level, country facts, and a link to the official GOV.UK advice.</p>
         </div>
- 
+
         <!-- Detail view -->
         <div id="info-detail" class="hidden">
- 
+
           <!-- Flag + name header -->
           <div id="info-header">
             <img id="info-flag" src="" alt="" />
             <h2 id="info-country-name">—</h2>
           </div>
- 
+
           <!-- Advisory badge + delta -->
           <div id="info-badges">
             <div id="info-status-badge" class="status-badge">—</div>
-            <div id="info-delta-badge" class="delta-badge hidden"></div>
+            <div id="info-delta-badge" class="delta-badge delta-badge--ghost"></div>
           </div>
- 
-          <!-- Fact grid: capital, population, density, languages -->
+
+          <!-- Advisory description — shown immediately, above async content -->
+          <p id="info-description"></p>
+
+          <!-- Last updated + GOV.UK link -->
+          <div id="info-meta">
+            <span id="info-updated" class="hidden"></span>
+            <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
+              View full advice on GOV.UK →
+            </a>
+          </div>
+
+          <!-- Fact grid: capital, population, density, languages (async) -->
           <div id="info-facts" class="hidden">
             <div class="fact-item">
               <span class="fact-label">Capital</span>
@@ -134,13 +147,10 @@
               <span class="fact-value" id="fact-languages">—</span>
             </div>
           </div>
- 
-          <!-- Wikipedia extract -->
+
+          <!-- Wikipedia extract (async) -->
           <p id="info-extract" class="hidden"></p>
- 
-          <!-- Advisory description -->
-          <p id="info-description"></p>
- 
+
           <!-- FCDO advisory map image (shown when has_pdf) -->
           <div id="info-map-wrap" class="hidden">
             <div class="info-map-label">FCDO Advisory Map</div>
@@ -148,15 +158,10 @@
               <img id="info-map-img" src="" alt="FCDO advisory zone map" />
             </a>
           </div>
- 
-          <!-- GOV.UK link -->
-          <a id="info-link" href="#" target="_blank" rel="noopener" class="gov-link hidden">
-            View full advice on GOV.UK →
-          </a>
- 
+
         </div>
       </div>
- 
+
       <div id="sidebar-bottom">
         <div class="sidebar-divider"></div>
         <div id="country-count">
@@ -200,10 +205,10 @@
           </div>
         </details>
       </div>
- 
+
     </aside>
   </div>
- 
+
 </div>
 <script src="scripts.js"></script>
 </body>

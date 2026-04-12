@@ -211,8 +211,31 @@ header {
   color: var(--text-muted);
   line-height: 1;
 }
-#slider-track-wrap { flex: 1; height: 100%; cursor: crosshair; touch-action: none; }
-#timeline-canvas { display: block; width: 100%; height: 100%; cursor: crosshair; touch-action: none; }
+#slider-date-sub.is-history { color: #d69e2e; }
+#slider-today-btn {
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  margin-top: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.6;
+  transition: background 0.15s;
+}
+#slider-today-btn:hover { background: rgba(59,125,216,0.12); }
+#slider-today-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#slider-track-wrap { flex: 1; height: 100%; cursor: grab; touch-action: none; }
+#slider-track-wrap:active { cursor: grabbing; }
+#timeline-canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+#timeline-canvas:active { cursor: grabbing; }
 #timeline-canvas:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
@@ -370,7 +393,17 @@ header {
   padding: 20px 0;
 }
 .placeholder-icon { font-size: 32px; opacity: 0.4; }
-#info-placeholder p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.placeholder-headline {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.placeholder-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
  
 #info-detail.hidden { display: none; }
  
@@ -437,9 +470,9 @@ header {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.delta-badge.escalated { background: rgba(229,62,62,0.12); color: #fc8181; border: 1px solid rgba(229,62,62,0.25); }
-.delta-badge.improved  { background: rgba(45,138,94,0.12); color: #68d391; border: 1px solid rgba(45,138,94,0.25); }
-.delta-badge.hidden    { display: none; }
+.delta-badge.escalated    { background: rgba(229,62,62,0.12); color: #fc8181; border: 1px solid rgba(229,62,62,0.25); }
+.delta-badge.improved     { background: rgba(45,138,94,0.12); color: #68d391; border: 1px solid rgba(45,138,94,0.25); }
+.delta-badge--ghost       { opacity: 0; pointer-events: none; }
  
 /* ── Fact grid ───────────────────────────────────────────────────── */
 #info-facts {
@@ -497,7 +530,21 @@ header {
   font-size: 13px;
   line-height: 1.6;
   color: var(--text);
+  margin-bottom: 12px;
+}
+
+/* ── Meta row: last updated + GOV.UK link ───────────────────────── */
+#info-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 16px;
+}
+#info-updated {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
 }
  
 /* ── FCDO advisory map image ─────────────────────────────────────── */

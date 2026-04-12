@@ -207,7 +207,10 @@ function updateDateLabel() {
   const isLatest = currentIndex === 0;
   document.getElementById('slider-date-label').textContent = formatDate(date);
   document.getElementById('slider-date-label').classList.toggle('is-latest', isLatest);
-  document.getElementById('slider-date-sub').textContent = isLatest ? 'latest' : 'archived';
+  const sub = document.getElementById('slider-date-sub');
+  sub.textContent = isLatest ? 'latest' : 'history';
+  sub.classList.toggle('is-history', !isLatest);
+  document.getElementById('slider-today-btn').classList.toggle('hidden', isLatest);
 }
  
 // ── Header delta ──────────────────────────────────────────────────────
@@ -245,8 +248,8 @@ async function updateHeaderDelta() {
 const TL = {
   padX: 16, trackY: 36, trackH: 2, tickDay: 5, tickMonth: 16, thumbW: 2,
   labelFont: '9px "DM Mono", monospace',
-  colorTrack: '#1e2535', colorTick: '#2a3550', colorTickMo: '#3d5278',
-  colorLabel: '#4a5568', colorThumb: '#3b7dd8', colorGlow: 'rgba(59,125,216,0.15)',
+  colorTrack: '#1e2535', colorTick: '#3d5278', colorTickMo: '#5b7aaa',
+  colorLabel: '#718096', colorThumb: '#3b7dd8', colorGlow: 'rgba(59,125,216,0.18)',
 };
 let canvas, ctx, canvasW, canvasH, isDragging = false;
  
@@ -324,9 +327,16 @@ function getClientX(e) {
   return (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
 }
 function bindTimelineEvents() {
-  canvas.addEventListener('mousedown', e => { isDragging = true; seekToIndex(xToIndex(getClientX(e))); });
+  canvas.addEventListener('mousedown', e => {
+    isDragging = true;
+    canvas.style.cursor = 'grabbing';
+    seekToIndex(xToIndex(getClientX(e)));
+  });
   window.addEventListener('mousemove', e => { if (isDragging) seekToIndex(xToIndex(getClientX(e))); });
-  window.addEventListener('mouseup',   () => isDragging = false);
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    canvas.style.cursor = 'grab';
+  });
   canvas.addEventListener('touchstart', e => { e.preventDefault(); isDragging = true; seekToIndex(xToIndex(getClientX(e))); }, { passive: false });
   window.addEventListener('touchmove',  e => { if (!isDragging) return; e.preventDefault(); seekToIndex(xToIndex(getClientX(e))); }, { passive: false });
   window.addEventListener('touchend',   () => isDragging = false);
@@ -337,6 +347,7 @@ function bindTimelineEvents() {
     if (e.key === 'Home')       { e.preventDefault(); seekToIndex(0); }
     if (e.key === 'End')        { e.preventDefault(); seekToIndex(last); }
   });
+  document.getElementById('slider-today-btn').addEventListener('click', () => seekToIndex(0));
 }
  
 // ── Graticule ─────────────────────────────────────────────────────────
@@ -732,11 +743,12 @@ async function showInfoPanel(countryName, iso2, advisory) {
   flagEl.src = '';
   flagEl.alt = `Flag of ${countryName}`;
   nameEl.textContent = countryName;
-  deltaEl.textContent = ''; deltaEl.className = 'delta-badge hidden';
+  deltaEl.textContent = '\u00A0'; deltaEl.className = 'delta-badge delta-badge--ghost';
   factsEl.classList.add('hidden');
   extractEl.classList.add('hidden'); extractEl.textContent = '';
   mapWrapEl.classList.add('hidden');
   linkEl.classList.add('hidden');
+  document.getElementById('info-updated').classList.add('hidden');
  
   // ── Advisory badge ──────────────────────────────────────────────
   if (!advisory) {
@@ -775,6 +787,14 @@ async function showInfoPanel(countryName, iso2, advisory) {
       mapWrapEl.classList.remove('hidden');
     }
  
+    // ── Last updated ─────────────────────────────────────────────
+    const updatedEl = document.getElementById('info-updated');
+    if (advisory.updated_at) {
+      const d = new Date(advisory.updated_at);
+      updatedEl.textContent = `Updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+      updatedEl.classList.remove('hidden');
+    }
+
     // ── GOV.UK link ───────────────────────────────────────────────
     linkEl.href = `https://www.gov.uk/foreign-travel-advice/${advisory.slug}`;
     linkEl.classList.remove('hidden');
