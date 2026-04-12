@@ -9,7 +9,11 @@ on:
         description: "Date label for snapshot (YYYY-MM-DD). Defaults to today."
         required: false
         default: ""
- 
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pages: write
