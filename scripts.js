@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════════════
  
 // ── Mobile detection ──────────────────────────────────────────────────
-function isMobile() { return window.innerWidth < 768; }
+function isMobile() { return window.innerWidth < 1024; }
  
 // ── Map init ──────────────────────────────────────────────────────────
 const map = L.map('map', {
