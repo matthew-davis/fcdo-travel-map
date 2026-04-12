@@ -80,8 +80,9 @@ const TIER_COLORS = {
 };
 const TIER_RANK = { avoid_all: 3, avoid_all_but_essential: 2, some_parts: 1, null: 0 };
  
-const HOVER_STYLE = { fillOpacity: 1, weight: 1.5, color: '#3b7dd8', opacity: 1 };
-const SEARCH_HIGHLIGHT_STYLE = { fillOpacity: 1, weight: 2.5, color: '#f6e05e', opacity: 1 };
+const HOVER_STYLE    = { fillOpacity: 1, weight: 2,   color: '#7eb3f5', opacity: 1 };
+const SELECTED_STYLE = { fillOpacity: 1, weight: 2.5, color: '#fbbf24', opacity: 1 };
+let selectedLayer = null;
  
 function getCountryColor(iso2, snapshot) {
   const advisory = snapshot.countries[iso2];
@@ -159,12 +160,14 @@ function getCountryStyle(feature, snapshot) {
  
 function buildTooltipContent(name, iso2, snapshot) {
   const advisory = snapshot?.countries[iso2];
-  if (!advisory) return name;
-  const lbl = advisory.status === 'avoid_all'               ? '🔴 Avoid all travel'
-            : advisory.status === 'avoid_all_but_essential' ? '🟠 Avoid all but essential'
-            : advisory.status === 'some_parts'              ? '🟡 Some parts'
-            : '🟢 See travel advice';
-  return `${name}<br/><span style="font-size:10px;color:#9ca3af">${lbl}</span>`;
+  const color = advisory ? (TIER_COLORS[advisory.status ?? 'null'] || TIER_COLORS.unknown) : TIER_COLORS.unknown;
+  const lbl = !advisory                                      ? 'No advisory data'
+            : advisory.status === 'avoid_all'               ? 'Avoid all travel'
+            : advisory.status === 'avoid_all_but_essential' ? 'Avoid all but essential'
+            : advisory.status === 'some_parts'              ? 'Mixed advisory'
+            : 'See travel advice';
+  const pdfNote = advisory?.has_pdf ? ' · zone map' : '';
+  return `<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:${color};display:inline-block;flex-shrink:0"></span><strong>${name}</strong></span><br/><span style="font-size:10px;color:#9ca3af">${lbl}${pdfNote}</span>`;
 }
  
 // ── State ─────────────────────────────────────────────────────────────
@@ -192,6 +195,12 @@ function applySnapshot(snapshot) {
   if (countryLayer) countryLayer.eachLayer(l => {
     if (l.feature) l.setStyle(getCountryStyle(l.feature, snapshot));
   });
+  // Reapply selected highlight after bulk style reset
+  if (selectedLayer && selectedLayer.feature) {
+    selectedLayer.setStyle(SELECTED_STYLE);
+    selectedLayer.bringToFront();
+    if (graticuleLayer) graticuleLayer.bringToFront();
+  }
   updateDateLabel();
 }
  
@@ -352,20 +361,19 @@ function bindTimelineEvents() {
  
 // ── Graticule ─────────────────────────────────────────────────────────
 function addGraticule() {
-  const features = [], SM = 10, MA = 30;
-  for (let lon = -180; lon <= 180; lon += SM) {
+  const features = [], MA = 30;
+  for (let lon = -180; lon <= 180; lon += MA) {
     const coords = []; for (let lat = -90; lat <= 90; lat++) coords.push([lon, lat]);
-    features.push({ type: 'Feature', properties: { isMajor: lon % MA === 0, isPrimary: lon === 0 }, geometry: { type: 'LineString', coordinates: coords } });
+    features.push({ type: 'Feature', properties: { isPrimary: lon === 0 }, geometry: { type: 'LineString', coordinates: coords } });
   }
-  for (let lat = -90; lat <= 90; lat += SM) {
+  for (let lat = -90; lat <= 90; lat += MA) {
     const coords = []; for (let lon = -180; lon <= 180; lon++) coords.push([lon, lat]);
-    features.push({ type: 'Feature', properties: { isMajor: lat % MA === 0, isPrimary: lat === 0 }, geometry: { type: 'LineString', coordinates: coords } });
+    features.push({ type: 'Feature', properties: { isPrimary: lat === 0 }, geometry: { type: 'LineString', coordinates: coords } });
   }
   graticuleLayer = L.geoJSON({ type: 'FeatureCollection', features }, {
     style(f) {
       if (f.properties.isPrimary) return { color: '#5b7aaa', weight: 0.8, opacity: 0.8, interactive: false };
-      if (f.properties.isMajor)   return { color: '#3d5278', weight: 0.5, opacity: 0.7, interactive: false };
-      return { color: '#2a3f5f', weight: 0.3, opacity: 0.6, interactive: false };
+      return { color: '#3d5278', weight: 0.5, opacity: 0.6, interactive: false };
     },
     interactive: false,
   }).addTo(map);
@@ -449,7 +457,7 @@ function formatLanguages(languages) {
 }
  
 // ── Search ────────────────────────────────────────────────────────────
-let searchIndex = [], activeResultIndex = -1, searchHighlightTimer = null;
+let searchIndex = [], activeResultIndex = -1;
  
 function buildSearchIndex() {
   searchIndex = [];
@@ -528,8 +536,7 @@ function selectResult(entry) {
   input.value = ''; document.getElementById('search-clear').style.display = 'none';
   closeResults(); input.blur();
   zoomToLayer(entry.layer);
-  highlightLayer(entry.layer);
-  showInfoPanel(entry.name, entry.iso2, currentSnapshot?.countries[entry.iso2]);
+  showInfoPanel(entry.name, entry.iso2, currentSnapshot?.countries[entry.iso2], entry.layer);
   if (isMobile()) document.getElementById('sidebar').scrollTo({ top: 0, behavior: 'smooth' });
 }
  
@@ -540,16 +547,6 @@ function zoomToLayer(layer) {
   } catch (e) { /* point features etc */ }
 }
  
-function highlightLayer(layer) {
-  if (searchHighlightTimer) { clearTimeout(searchHighlightTimer); searchHighlightTimer = null; }
-  layer.setStyle(SEARCH_HIGHLIGHT_STYLE); layer.bringToFront();
-  if (graticuleLayer) graticuleLayer.bringToFront();
-  searchHighlightTimer = setTimeout(() => {
-    if (countryLayer && layer.feature) countryLayer.resetStyle(layer);
-    if (graticuleLayer) graticuleLayer.bringToFront();
-    searchHighlightTimer = null;
-  }, 1800);
-}
  
 function initSearch() {
   const input = document.getElementById('search-input');
@@ -678,17 +675,19 @@ fetch('data/snapshot_index.json')
         layer._iso2 = iso2; layer._name = name;
         layer.on({
           click() {
-            showInfoPanel(name, iso2, currentSnapshot.countries[iso2]);
+            showInfoPanel(name, iso2, currentSnapshot.countries[iso2], layer);
             if (isMobile()) document.getElementById('sidebar').scrollTo({ top: 0, behavior: 'smooth' });
           },
           mouseover(e) {
             if (isMobile()) return;
             e.target.getTooltip().setContent(buildTooltipContent(name, iso2, currentSnapshot));
+            if (e.target === selectedLayer) return;
             e.target.setStyle({ ...getCountryStyle(feature, currentSnapshot), ...HOVER_STYLE });
             e.target.bringToFront();
           },
           mouseout(e) {
             if (isMobile()) return;
+            if (e.target === selectedLayer) return;
             countryLayer.resetStyle(e.target);
             if (graticuleLayer) graticuleLayer.bringToFront();
           },
@@ -704,7 +703,7 @@ fetch('data/snapshot_index.json')
     document.getElementById('count-num').textContent = count;
     document.getElementById('loading').classList.add('hidden');
     document.querySelector('.header-status').innerHTML = `
-      <span class="status-dot" style="background:#2d8a5e;box-shadow:0 0 6px #2d8a5e"></span>
+      <span class="status-dot" style="background:#22c55e;box-shadow:0 0 6px #22c55e"></span>
       ${count} countries updated
     `;
     updateHeaderDelta();
@@ -715,11 +714,32 @@ fetch('data/snapshot_index.json')
   })
   .catch(err => { console.error('Load failed:', err); showLoadError(err.message); });
  
+// ── Relative time helper ──────────────────────────────────────────────
+function relativeTime(dateStr) {
+  if (!dateStr) return null;
+  const days = Math.floor((Date.now() - new Date(dateStr)) / 86400000);
+  if (days === 0)  return 'today';
+  if (days === 1)  return 'yesterday';
+  if (days < 30)   return `${days} days ago`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months} month${months === 1 ? '' : 's'} ago`;
+  const years = Math.floor(months / 12);
+  return `${years} year${years === 1 ? '' : 's'} ago`;
+}
+
 // ── Info panel ────────────────────────────────────────────────────────
-async function showInfoPanel(countryName, iso2, advisory) {
+async function showInfoPanel(countryName, iso2, advisory, layer = null) {
   const detail      = document.getElementById('info-detail');
   const placeholder = document.getElementById('info-placeholder');
  
+  // Update selected layer highlight
+  if (selectedLayer && selectedLayer !== layer) {
+    if (countryLayer && selectedLayer.feature) countryLayer.resetStyle(selectedLayer);
+  }
+  selectedLayer = layer;
+  if (layer) { layer.setStyle(SELECTED_STYLE); layer.bringToFront(); }
+  if (graticuleLayer) graticuleLayer.bringToFront();
+
   // Switch to detail view immediately, collapse legend to give info panel focus
   placeholder.classList.add('hidden');
   detail.classList.remove('hidden');
@@ -760,21 +780,21 @@ async function showInfoPanel(countryName, iso2, advisory) {
     let badgeText = '', badgeClass = 'status-badge ', description = '';
     switch (status) {
       case 'avoid_all':
-        badgeText = '🔴 Avoid all travel'; badgeClass += 'avoid-all';
-        description = 'The FCDO advises against all travel to this country.';
+        badgeText = 'Avoid all travel'; badgeClass += 'avoid-all';
+        description = 'The FCDO advises against all travel to this country. Travel insurance is unlikely to be valid. Check the full GOV.UK advice before making any plans.';
         break;
       case 'avoid_all_but_essential':
-        badgeText = '🟠 Avoid all but essential'; badgeClass += 'avoid-essential';
-        description = 'The FCDO advises against all but essential travel to this country.';
+        badgeText = 'Avoid all but essential'; badgeClass += 'avoid-essential';
+        description = 'The FCDO advises against all but essential travel. This may affect your travel insurance. Review the full advice for specific areas and circumstances.';
         break;
       case 'some_parts':
-        badgeText = '🟡 Mixed advisory (some parts)'; badgeClass += 'some-parts';
-        description = 'The FCDO advises against travel to some parts of this country.';
-        if (advisory.has_pdf) description += ' An advisory zone map is shown below.';
+        badgeText = 'Mixed advisory'; badgeClass += 'some-parts';
+        description = 'The FCDO advises against travel to some parts of this country. Other areas may be considered safe.';
+        if (advisory.has_pdf) description += ' An FCDO advisory zone map is shown below.';
         break;
       default:
-        badgeText = '🟢 See travel advice'; badgeClass += 'no-warning';
-        description = 'No specific FCDO warning. See the full travel advice for guidance.';
+        badgeText = 'See travel advice'; badgeClass += 'no-warning';
+        description = 'No specific FCDO travel warning for this country. Standard precautions still apply — review the full GOV.UK advice before travelling.';
         break;
     }
     badgeEl.textContent = badgeText; badgeEl.className = badgeClass;
@@ -791,7 +811,9 @@ async function showInfoPanel(countryName, iso2, advisory) {
     const updatedEl = document.getElementById('info-updated');
     if (advisory.updated_at) {
       const d = new Date(advisory.updated_at);
-      updatedEl.textContent = `Updated ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+      const abs = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      const rel = relativeTime(advisory.updated_at);
+      updatedEl.textContent = rel ? `Updated ${abs} (${rel})` : `Updated ${abs}`;
       updatedEl.classList.remove('hidden');
     }
 
