@@ -159,7 +159,4 @@ node scripts/scraper.js
 
 ## Possible improvements to come
 
-- [ ] Functionality review
-- [ ] Refactor the code
-- [ ] Rewrite the Readme
-- [ ] Integrate with GDELT data depicting conflicts
+- [ ] Integrate with GDELT data depicting conflicts on the map
