@@ -159,7 +159,7 @@ node scripts/scraper.js
 
 ## Possible improvements to come
 
-- [ ] Design review
 - [ ] Functionality review
 - [ ] Refactor the code
+- [ ] Rewrite the Readme
 - [ ] Integrate with GDELT data depicting conflicts

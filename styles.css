@@ -86,7 +86,7 @@ header {
  
 /* ── Sidebar ─────────────────────────────────────────────────────── */
 #sidebar {
-  flex: 0 0 var(--sidebar-w);
+  flex: 1 0 var(--sidebar-w);
   display: flex;
   flex-direction: column;
   min-height: 0;
