@@ -1,8 +1,16 @@
 {
-  "date": "2026-10-10",
-  "generated_at": "2026-10-10T12:52:32.944Z",
+  "date": "2026-10-11",
+  "generated_at": "2026-10-11T13:16:33.004Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "SA": {
+      "status": "some_parts",
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac7df44ec9d3aba1e013ade/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed11__WEB___1_.jpg",
+      "updated_at": "2026-10-10T16:52:06+01:00"
+    },
     "MX": {
       "status": "some_parts",
       "name": "Mexico",
@@ -25,14 +33,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac8aa84f1ba855cc196a9be/FCDO__TA__016_-_Eritrea_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-10-09T10:14:54+01:00"
-    },
-    "SA": {
-      "status": "some_parts",
-      "name": "Saudi Arabia",
-      "slug": "saudi-arabia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac7df44ec9d3aba1e013ade/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed11__WEB___1_.jpg",
-      "updated_at": "2026-10-09T16:00:16+01:00"
     },
     "TZ": {
       "status": "some_parts",
