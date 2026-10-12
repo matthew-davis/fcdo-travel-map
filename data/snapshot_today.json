@@ -1,15 +1,38 @@
 {
-  "date": "2026-10-11",
-  "generated_at": "2026-10-11T13:16:33.004Z",
+  "date": "2026-10-12",
+  "generated_at": "2026-10-12T15:53:00.225Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "ER": {
+      "status": "some_parts",
+      "name": "Eritrea",
+      "slug": "eritrea",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac8aa84f1ba855cc196a9be/FCDO__TA__016_-_Eritrea_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-10-12T12:48:05+01:00"
+    },
+    "SB": {
+      "status": null,
+      "name": "Solomon Islands",
+      "slug": "solomon-islands",
+      "has_pdf": false,
+      "updated_at": "2026-10-12T12:44:41+01:00"
+    },
     "SA": {
       "status": "some_parts",
       "name": "Saudi Arabia",
       "slug": "saudi-arabia",
       "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac7df44ec9d3aba1e013ade/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed11__WEB___1_.jpg",
-      "updated_at": "2026-10-10T16:52:06+01:00"
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
+      "updated_at": "2026-10-11T22:11:44+01:00"
+    },
+    "TH": {
+      "status": "some_parts",
+      "name": "Thailand",
+      "slug": "thailand",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b4383915f7123658010e/FCDO__TA__040_-_Thailand_Travel_Advice_Ed8__WEB_.jpg",
+      "updated_at": "2026-10-12T10:20:34+01:00"
     },
     "MX": {
       "status": "some_parts",
@@ -25,14 +48,6 @@
       "slug": "panama",
       "has_pdf": false,
       "updated_at": "2026-10-09T21:08:09+01:00"
-    },
-    "ER": {
-      "status": "some_parts",
-      "name": "Eritrea",
-      "slug": "eritrea",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac8aa84f1ba855cc196a9be/FCDO__TA__016_-_Eritrea_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-09T10:14:54+01:00"
     },
     "TZ": {
       "status": "some_parts",
@@ -580,14 +595,6 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T12:48:06+00:00"
     },
-    "TH": {
-      "status": "some_parts",
-      "name": "Thailand",
-      "slug": "thailand",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b4383915f7123658010e/FCDO__TA__040_-_Thailand_Travel_Advice_Ed8__WEB_.jpg",
-      "updated_at": "2026-09-28T06:10:02+01:00"
-    },
     "TJ": {
       "status": null,
       "name": "Tajikistan",
@@ -615,13 +622,6 @@
       "slug": "south-korea",
       "has_pdf": false,
       "updated_at": "2026-05-14T11:06:39+01:00"
-    },
-    "SB": {
-      "status": null,
-      "name": "Solomon Islands",
-      "slug": "solomon-islands",
-      "has_pdf": false,
-      "updated_at": "2026-05-26T09:39:14+01:00"
     },
     "SG": {
       "status": null,
