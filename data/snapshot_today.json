@@ -1,8 +1,61 @@
 {
-  "date": "2026-10-12",
-  "generated_at": "2026-10-12T15:53:00.225Z",
+  "date": "2026-10-13",
+  "generated_at": "2026-10-13T14:28:05.201Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "KZ": {
+      "status": null,
+      "name": "Kazakhstan",
+      "slug": "kazakhstan",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T15:04:04+01:00"
+    },
+    "PK": {
+      "status": "some_parts",
+      "name": "Pakistan",
+      "slug": "pakistan",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T13:37:00+01:00"
+    },
+    "YE": {
+      "status": "avoid_all",
+      "name": "Yemen",
+      "slug": "yemen",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/5f4e3445e90e071c6f74664e/FCDO__TA__047_-_Yemen_Travel_Advice_Ed1__WEB_.jpg",
+      "updated_at": "2026-07-31T10:35:27+01:00"
+    },
+    "KE": {
+      "status": "some_parts",
+      "name": "Kenya",
+      "slug": "kenya",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
+      "updated_at": "2026-10-13T12:59:44+01:00"
+    },
+    "MU": {
+      "status": null,
+      "name": "Mauritius",
+      "slug": "mauritius",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T10:06:03+01:00"
+    },
+    "MX": {
+      "status": "some_parts",
+      "name": "Mexico",
+      "slug": "mexico",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-10-13T09:45:22+01:00"
+    },
+    "SA": {
+      "status": "some_parts",
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
+      "updated_at": "2026-10-11T22:11:44+01:00"
+    },
     "ER": {
       "status": "some_parts",
       "name": "Eritrea",
@@ -18,14 +71,6 @@
       "has_pdf": false,
       "updated_at": "2026-10-12T12:44:41+01:00"
     },
-    "SA": {
-      "status": "some_parts",
-      "name": "Saudi Arabia",
-      "slug": "saudi-arabia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
-      "updated_at": "2026-10-11T22:11:44+01:00"
-    },
     "TH": {
       "status": "some_parts",
       "name": "Thailand",
@@ -33,14 +78,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b4383915f7123658010e/FCDO__TA__040_-_Thailand_Travel_Advice_Ed8__WEB_.jpg",
       "updated_at": "2026-10-12T10:20:34+01:00"
-    },
-    "MX": {
-      "status": "some_parts",
-      "name": "Mexico",
-      "slug": "mexico",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-09T21:19:56+01:00"
     },
     "PA": {
       "status": null,
@@ -72,14 +109,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6991cc717da91680ad7f4436/Bangladesh_map.jpg",
       "updated_at": "2026-10-09T11:14:33+01:00"
-    },
-    "KE": {
-      "status": "some_parts",
-      "name": "Kenya",
-      "slug": "kenya",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
-      "updated_at": "2026-10-09T09:38:13+01:00"
     },
     "CL": {
       "status": null,
@@ -674,13 +703,6 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:25:21+00:00"
     },
-    "PK": {
-      "status": "some_parts",
-      "name": "Pakistan",
-      "slug": "pakistan",
-      "has_pdf": false,
-      "updated_at": "2026-09-22T11:07:03+01:00"
-    },
     "KP": {
       "status": "avoid_all_but_essential",
       "name": "North Korea",
@@ -829,14 +851,6 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a426c9db9f58f0eb4c13f4d/FCDO__TA__046_-_Western_Sahara_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-06-29T14:34:01+01:00"
     },
-    "YE": {
-      "status": "avoid_all",
-      "name": "Yemen",
-      "slug": "yemen",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/5f4e3445e90e071c6f74664e/FCDO__TA__047_-_Yemen_Travel_Advice_Ed1__WEB_.jpg",
-      "updated_at": "2026-07-31T10:35:27+01:00"
-    },
     "MY": {
       "status": "some_parts",
       "name": "Malaysia",
@@ -957,13 +971,6 @@
       "slug": "costa-rica",
       "has_pdf": false,
       "updated_at": "2026-05-19T11:42:25+01:00"
-    },
-    "KZ": {
-      "status": null,
-      "name": "Kazakhstan",
-      "slug": "kazakhstan",
-      "has_pdf": false,
-      "updated_at": "2026-03-30T11:09:15+01:00"
     },
     "CU": {
       "status": "avoid_all_but_essential",
@@ -1525,13 +1532,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/690369fee2ebc0fb39a51ffc/FCDO_TA_026_-_Mali_Travel_Advice_Ed7_WEB.jpg",
       "updated_at": "2026-07-10T14:24:11+01:00"
-    },
-    "MU": {
-      "status": null,
-      "name": "Mauritius",
-      "slug": "mauritius",
-      "has_pdf": false,
-      "updated_at": "2026-09-04T16:08:37+01:00"
     },
     "MZ": {
       "status": "some_parts",
