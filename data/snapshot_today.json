@@ -1,8 +1,46 @@
 {
-  "date": "2026-10-13",
-  "generated_at": "2026-10-13T14:28:05.201Z",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-14T12:13:37.452Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "VE": {
+      "status": "some_parts",
+      "name": "Venezuela",
+      "slug": "venezuela",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6b088b9bd90e63a2521da/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed4__WEB_.jpg",
+      "updated_at": "2026-10-14T10:31:54+01:00"
+    },
+    "KH": {
+      "status": "some_parts",
+      "name": "Cambodia",
+      "slug": "cambodia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
+      "updated_at": "2026-03-19T14:03:23+00:00"
+    },
+    "MU": {
+      "status": null,
+      "name": "Mauritius",
+      "slug": "mauritius",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T19:31:08+01:00"
+    },
+    "SA": {
+      "status": "some_parts",
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
+      "updated_at": "2026-10-13T17:09:24+01:00"
+    },
+    "BE": {
+      "status": null,
+      "name": "Belgium",
+      "slug": "belgium",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T15:33:30+01:00"
+    },
     "KZ": {
       "status": null,
       "name": "Kazakhstan",
@@ -33,13 +71,6 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-10-13T12:59:44+01:00"
     },
-    "MU": {
-      "status": null,
-      "name": "Mauritius",
-      "slug": "mauritius",
-      "has_pdf": false,
-      "updated_at": "2026-10-13T10:06:03+01:00"
-    },
     "MX": {
       "status": "some_parts",
       "name": "Mexico",
@@ -47,14 +78,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-10-13T09:45:22+01:00"
-    },
-    "SA": {
-      "status": "some_parts",
-      "name": "Saudi Arabia",
-      "slug": "saudi-arabia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
-      "updated_at": "2026-10-11T22:11:44+01:00"
     },
     "ER": {
       "status": "some_parts",
@@ -162,13 +185,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1ff177916cd732dcdaae97/FCDO_TA_022_-_Israel_Travel_Advice_Ed29_WEB.jpg",
       "updated_at": "2026-07-22T13:43:56+01:00"
-    },
-    "BE": {
-      "status": null,
-      "name": "Belgium",
-      "slug": "belgium",
-      "has_pdf": false,
-      "updated_at": "2026-10-07T16:20:34+01:00"
     },
     "AL": {
       "status": null,
@@ -1280,14 +1296,6 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:00:39+00:00"
     },
-    "VE": {
-      "status": "some_parts",
-      "name": "Venezuela",
-      "slug": "venezuela",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6b088b9bd90e63a2521da/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed4__WEB_.jpg",
-      "updated_at": "2026-09-02T15:49:14+01:00"
-    },
     "AO": {
       "status": "some_parts",
       "name": "Angola",
@@ -1416,14 +1424,6 @@
       "slug": "eswatini",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:32:46+00:00"
-    },
-    "KH": {
-      "status": "some_parts",
-      "name": "Cambodia",
-      "slug": "cambodia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
-      "updated_at": "2026-03-19T14:03:23+00:00"
     },
     "BN": {
       "status": null,
