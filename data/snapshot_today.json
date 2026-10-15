@@ -1,8 +1,38 @@
 {
-  "date": "2026-10-14",
-  "generated_at": "2026-10-14T12:13:37.452Z",
+  "date": "2026-10-15",
+  "generated_at": "2026-10-15T11:54:37.241Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "CO": {
+      "status": "some_parts",
+      "name": "Colombia",
+      "slug": "colombia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
+      "updated_at": "2026-10-15T11:21:54+01:00"
+    },
+    "TR": {
+      "status": "some_parts",
+      "name": "Turkey",
+      "slug": "turkey",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6faa2a2495f2d259f13d2/FCDO_TA_043_-_Turkey_Travel_Advice_Ed4_WEB.jpg",
+      "updated_at": "2026-10-15T10:34:15+01:00"
+    },
+    "SN": {
+      "status": null,
+      "name": "Senegal",
+      "slug": "senegal",
+      "has_pdf": false,
+      "updated_at": "2026-10-15T10:00:14+01:00"
+    },
+    "MU": {
+      "status": null,
+      "name": "Mauritius",
+      "slug": "mauritius",
+      "has_pdf": false,
+      "updated_at": "2026-10-14T20:09:22+01:00"
+    },
     "VE": {
       "status": "some_parts",
       "name": "Venezuela",
@@ -11,6 +41,21 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6b088b9bd90e63a2521da/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed4__WEB_.jpg",
       "updated_at": "2026-10-14T10:31:54+01:00"
     },
+    "PK": {
+      "status": "some_parts",
+      "name": "Pakistan",
+      "slug": "pakistan",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T13:37:00+01:00"
+    },
+    "UA": {
+      "status": "some_parts",
+      "name": "Ukraine",
+      "slug": "ukraine",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
+      "updated_at": "2026-10-02T09:30:25+01:00"
+    },
     "KH": {
       "status": "some_parts",
       "name": "Cambodia",
@@ -18,13 +63,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-03-19T14:03:23+00:00"
-    },
-    "MU": {
-      "status": null,
-      "name": "Mauritius",
-      "slug": "mauritius",
-      "has_pdf": false,
-      "updated_at": "2026-10-13T19:31:08+01:00"
     },
     "SA": {
       "status": "some_parts",
@@ -47,13 +85,6 @@
       "slug": "kazakhstan",
       "has_pdf": false,
       "updated_at": "2026-10-13T15:04:04+01:00"
-    },
-    "PK": {
-      "status": "some_parts",
-      "name": "Pakistan",
-      "slug": "pakistan",
-      "has_pdf": false,
-      "updated_at": "2026-10-13T13:37:00+01:00"
     },
     "YE": {
       "status": "avoid_all",
@@ -239,22 +270,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/615dcb70d3bf7f55fd843aea/FCDO__TA__002_-_Algeria_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-09-25T16:01:59+01:00"
-    },
-    "UA": {
-      "status": "some_parts",
-      "name": "Ukraine",
-      "slug": "ukraine",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
-      "updated_at": "2026-10-02T09:30:25+01:00"
-    },
-    "TR": {
-      "status": "some_parts",
-      "name": "Turkey",
-      "slug": "turkey",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6faa2a2495f2d259f13d2/FCDO_TA_043_-_Turkey_Travel_Advice_Ed4_WEB.jpg",
-      "updated_at": "2026-09-21T14:00:49+01:00"
     },
     "CH": {
       "status": null,
@@ -1196,14 +1211,6 @@
       "has_pdf": false,
       "updated_at": "2026-08-28T16:22:35+01:00"
     },
-    "CO": {
-      "status": "some_parts",
-      "name": "Colombia",
-      "slug": "colombia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
-      "updated_at": "2026-10-06T13:48:58+01:00"
-    },
     "EC": {
       "status": "some_parts",
       "name": "Ecuador",
@@ -1585,13 +1592,6 @@
       "slug": "sao-tome-and-principe",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:33:54+00:00"
-    },
-    "SN": {
-      "status": null,
-      "name": "Senegal",
-      "slug": "senegal",
-      "has_pdf": false,
-      "updated_at": "2026-05-13T16:45:46+01:00"
     },
     "SL": {
       "status": null,
