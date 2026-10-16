@@ -1,8 +1,45 @@
 {
-  "date": "2026-10-15",
-  "generated_at": "2026-10-15T11:54:37.241Z",
+  "date": "2026-10-16",
+  "generated_at": "2026-10-16T11:45:12.417Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "SA": {
+      "status": "some_parts",
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
+      "updated_at": "2026-10-15T19:01:21+01:00"
+    },
+    "AL": {
+      "status": null,
+      "name": "Albania",
+      "slug": "albania",
+      "has_pdf": false,
+      "updated_at": "2026-10-15T16:44:54+01:00"
+    },
+    "KR": {
+      "status": null,
+      "name": "South Korea",
+      "slug": "south-korea",
+      "has_pdf": false,
+      "updated_at": "2026-05-14T11:06:39+01:00"
+    },
+    "MU": {
+      "status": null,
+      "name": "Mauritius",
+      "slug": "mauritius",
+      "has_pdf": false,
+      "updated_at": "2026-10-15T15:40:02+01:00"
+    },
+    "VE": {
+      "status": "some_parts",
+      "name": "Venezuela",
+      "slug": "venezuela",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad0dbf749ba86d6c953ca62/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed5__WEB___2_.jpg",
+      "updated_at": "2026-10-14T10:31:54+01:00"
+    },
     "CO": {
       "status": "some_parts",
       "name": "Colombia",
@@ -26,21 +63,6 @@
       "has_pdf": false,
       "updated_at": "2026-10-15T10:00:14+01:00"
     },
-    "MU": {
-      "status": null,
-      "name": "Mauritius",
-      "slug": "mauritius",
-      "has_pdf": false,
-      "updated_at": "2026-10-14T20:09:22+01:00"
-    },
-    "VE": {
-      "status": "some_parts",
-      "name": "Venezuela",
-      "slug": "venezuela",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a6b088b9bd90e63a2521da/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed4__WEB_.jpg",
-      "updated_at": "2026-10-14T10:31:54+01:00"
-    },
     "PK": {
       "status": "some_parts",
       "name": "Pakistan",
@@ -63,14 +85,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-03-19T14:03:23+00:00"
-    },
-    "SA": {
-      "status": "some_parts",
-      "name": "Saudi Arabia",
-      "slug": "saudi-arabia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
-      "updated_at": "2026-10-13T17:09:24+01:00"
     },
     "BE": {
       "status": null,
@@ -216,13 +230,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1ff177916cd732dcdaae97/FCDO_TA_022_-_Israel_Travel_Advice_Ed29_WEB.jpg",
       "updated_at": "2026-07-22T13:43:56+01:00"
-    },
-    "AL": {
-      "status": null,
-      "name": "Albania",
-      "slug": "albania",
-      "has_pdf": false,
-      "updated_at": "2026-08-13T16:28:50+01:00"
     },
     "IL": {
       "status": "some_parts",
@@ -675,13 +682,6 @@
       "slug": "sri-lanka",
       "has_pdf": false,
       "updated_at": "2026-09-21T15:39:53+01:00"
-    },
-    "KR": {
-      "status": null,
-      "name": "South Korea",
-      "slug": "south-korea",
-      "has_pdf": false,
-      "updated_at": "2026-05-14T11:06:39+01:00"
     },
     "SG": {
       "status": null,
