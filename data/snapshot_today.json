@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-16",
-  "generated_at": "2026-10-16T11:45:12.417Z",
+  "date": "2026-10-17",
+  "generated_at": "2026-10-17T11:02:39.652Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
     "SA": {
@@ -8,8 +8,47 @@
       "name": "Saudi Arabia",
       "slug": "saudi-arabia",
       "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6acce628a57ddfe32196ab30/FCDO__TA__034_-_Saudi_Arabia_Travel_Advice_Ed12__WEB_.jpg",
-      "updated_at": "2026-10-15T19:01:21+01:00"
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad296060f7b53973e02684c/FCDO_TA_034_-_Saudi_Arabia_Travel_Advice_Ed13_WEB.jpg",
+      "updated_at": "2026-10-16T22:40:31+01:00"
+    },
+    "ET": {
+      "status": "some_parts",
+      "name": "Ethiopia",
+      "slug": "ethiopia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
+      "updated_at": "2026-10-16T17:03:39+01:00"
+    },
+    "MX": {
+      "status": "some_parts",
+      "name": "Mexico",
+      "slug": "mexico",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-10-16T16:29:42+01:00"
+    },
+    "NG": {
+      "status": "some_parts",
+      "name": "Nigeria",
+      "slug": "nigeria",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad23601dfa45fcb6753cb2e/Nigeria_JPG.jpg",
+      "updated_at": "2026-10-16T15:52:35+01:00"
+    },
+    "MU": {
+      "status": null,
+      "name": "Mauritius",
+      "slug": "mauritius",
+      "has_pdf": false,
+      "updated_at": "2026-10-16T13:27:02+01:00"
+    },
+    "KE": {
+      "status": "some_parts",
+      "name": "Kenya",
+      "slug": "kenya",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
+      "updated_at": "2026-10-16T13:02:22+01:00"
     },
     "AL": {
       "status": null,
@@ -24,13 +63,6 @@
       "slug": "south-korea",
       "has_pdf": false,
       "updated_at": "2026-05-14T11:06:39+01:00"
-    },
-    "MU": {
-      "status": null,
-      "name": "Mauritius",
-      "slug": "mauritius",
-      "has_pdf": false,
-      "updated_at": "2026-10-15T15:40:02+01:00"
     },
     "VE": {
       "status": "some_parts",
@@ -107,22 +139,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/5f4e3445e90e071c6f74664e/FCDO__TA__047_-_Yemen_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-07-31T10:35:27+01:00"
-    },
-    "KE": {
-      "status": "some_parts",
-      "name": "Kenya",
-      "slug": "kenya",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
-      "updated_at": "2026-10-13T12:59:44+01:00"
-    },
-    "MX": {
-      "status": "some_parts",
-      "name": "Mexico",
-      "slug": "mexico",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-13T09:45:22+01:00"
     },
     "ER": {
       "status": "some_parts",
@@ -214,14 +230,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a196a3465bc5f798327f4fe/FCDO_TA_012_-_Democratic_Repbulic_of_the_Congo_Travel_Advice_Ed20_WEB.jpg",
       "updated_at": "2026-10-08T13:20:38+01:00"
-    },
-    "ET": {
-      "status": "some_parts",
-      "name": "Ethiopia",
-      "slug": "ethiopia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
-      "updated_at": "2026-10-07T16:46:25+01:00"
     },
     "PS": {
       "status": "some_parts",
@@ -1562,14 +1570,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69021020918e1f940b3cf7e5/FCDO__TA__029_-_Niger_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-08-29T15:30:01+01:00"
-    },
-    "NG": {
-      "status": "some_parts",
-      "name": "Nigeria",
-      "slug": "nigeria",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a4d04e84889d85e75ab4154/FCDO__TA__030_-_Nigeria_Travel_Advice_Ed11__WEB_.jpg",
-      "updated_at": "2026-09-28T15:46:12+01:00"
     },
     "RE": {
       "status": null,
