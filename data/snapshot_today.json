@@ -1,15 +1,22 @@
 {
-  "date": "2026-10-17",
-  "generated_at": "2026-10-17T11:02:39.652Z",
+  "date": "2026-10-18",
+  "generated_at": "2026-10-18T11:33:13.683Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "BE": {
+      "status": null,
+      "name": "Belgium",
+      "slug": "belgium",
+      "has_pdf": false,
+      "updated_at": "2026-10-17T20:49:24+01:00"
+    },
     "SA": {
       "status": "some_parts",
       "name": "Saudi Arabia",
       "slug": "saudi-arabia",
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad296060f7b53973e02684c/FCDO_TA_034_-_Saudi_Arabia_Travel_Advice_Ed13_WEB.jpg",
-      "updated_at": "2026-10-16T22:40:31+01:00"
+      "updated_at": "2026-10-17T17:25:35+01:00"
     },
     "ET": {
       "status": "some_parts",
@@ -117,13 +124,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-03-19T14:03:23+00:00"
-    },
-    "BE": {
-      "status": null,
-      "name": "Belgium",
-      "slug": "belgium",
-      "has_pdf": false,
-      "updated_at": "2026-10-13T15:33:30+01:00"
     },
     "KZ": {
       "status": null,
