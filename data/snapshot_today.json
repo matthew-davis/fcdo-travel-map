@@ -1,8 +1,61 @@
 {
-  "date": "2026-10-20",
-  "generated_at": "2026-10-20T11:56:35.804Z",
+  "date": "2026-10-21",
+  "generated_at": "2026-10-21T12:10:32.295Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "SA": {
+      "status": "some_parts",
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad296060f7b53973e02684c/FCDO_TA_034_-_Saudi_Arabia_Travel_Advice_Ed13_WEB.jpg",
+      "updated_at": "2026-10-21T12:35:47+01:00"
+    },
+    "IT": {
+      "status": null,
+      "name": "Italy",
+      "slug": "italy",
+      "has_pdf": false,
+      "updated_at": "2026-10-21T11:01:07+01:00"
+    },
+    "VE": {
+      "status": "some_parts",
+      "name": "Venezuela",
+      "slug": "venezuela",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad0dbf749ba86d6c953ca62/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed5__WEB___2_.jpg",
+      "updated_at": "2026-10-14T10:31:54+01:00"
+    },
+    "MW": {
+      "status": null,
+      "name": "Malawi",
+      "slug": "malawi",
+      "has_pdf": false,
+      "updated_at": "2026-10-20T15:35:09+01:00"
+    },
+    "TZ": {
+      "status": "some_parts",
+      "name": "Tanzania",
+      "slug": "tanzania",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/690e25f165da22dd57729905/FCDO__TA__086_-_Tanzania_Travel_Advice_Ed1__WEB_.jpg",
+      "updated_at": "2026-10-20T15:04:46+01:00"
+    },
+    "SC": {
+      "status": null,
+      "name": "Seychelles",
+      "slug": "seychelles",
+      "has_pdf": false,
+      "updated_at": "2026-10-20T14:59:57+01:00"
+    },
+    "MX": {
+      "status": "some_parts",
+      "name": "Mexico",
+      "slug": "mexico",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-10-20T14:20:31+01:00"
+    },
     "MR": {
       "status": "some_parts",
       "name": "Mauritania",
@@ -40,14 +93,6 @@
       "has_pdf": false,
       "updated_at": "2026-10-17T20:49:24+01:00"
     },
-    "SA": {
-      "status": "some_parts",
-      "name": "Saudi Arabia",
-      "slug": "saudi-arabia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad296060f7b53973e02684c/FCDO_TA_034_-_Saudi_Arabia_Travel_Advice_Ed13_WEB.jpg",
-      "updated_at": "2026-10-17T17:25:35+01:00"
-    },
     "ET": {
       "status": "some_parts",
       "name": "Ethiopia",
@@ -55,14 +100,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
       "updated_at": "2026-10-16T17:03:39+01:00"
-    },
-    "MX": {
-      "status": "some_parts",
-      "name": "Mexico",
-      "slug": "mexico",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-16T16:29:42+01:00"
     },
     "NG": {
       "status": "some_parts",
@@ -93,14 +130,6 @@
       "slug": "south-korea",
       "has_pdf": false,
       "updated_at": "2026-05-14T11:06:39+01:00"
-    },
-    "VE": {
-      "status": "some_parts",
-      "name": "Venezuela",
-      "slug": "venezuela",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad0dbf749ba86d6c953ca62/FCDO__TA__045_-_Venezuela_Travel_Advice_Ed5__WEB___2_.jpg",
-      "updated_at": "2026-10-14T10:31:54+01:00"
     },
     "CO": {
       "status": "some_parts",
@@ -184,14 +213,6 @@
       "slug": "panama",
       "has_pdf": false,
       "updated_at": "2026-10-09T21:08:09+01:00"
-    },
-    "TZ": {
-      "status": "some_parts",
-      "name": "Tanzania",
-      "slug": "tanzania",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/690e25f165da22dd57729905/FCDO__TA__086_-_Tanzania_Travel_Advice_Ed1__WEB_.jpg",
-      "updated_at": "2026-10-09T14:57:22+01:00"
     },
     "PE": {
       "status": "some_parts",
@@ -471,13 +492,6 @@
       "has_pdf": false,
       "updated_at": "2026-09-23T12:48:46+01:00"
     },
-    "IT": {
-      "status": null,
-      "name": "Italy",
-      "slug": "italy",
-      "has_pdf": false,
-      "updated_at": "2026-10-02T13:49:28+01:00"
-    },
     "IE": {
       "status": null,
       "name": "Ireland",
@@ -705,13 +719,6 @@
       "slug": "singapore",
       "has_pdf": false,
       "updated_at": "2026-03-19T14:08:04+00:00"
-    },
-    "SC": {
-      "status": null,
-      "name": "Seychelles",
-      "slug": "seychelles",
-      "has_pdf": false,
-      "updated_at": "2026-01-21T12:01:13+00:00"
     },
     "WS": {
       "status": null,
@@ -1532,13 +1539,6 @@
       "slug": "madagascar",
       "has_pdf": false,
       "updated_at": "2026-09-09T14:30:36+01:00"
-    },
-    "MW": {
-      "status": null,
-      "name": "Malawi",
-      "slug": "malawi",
-      "has_pdf": false,
-      "updated_at": "2026-07-03T10:59:53+01:00"
     },
     "ML": {
       "status": "avoid_all",
