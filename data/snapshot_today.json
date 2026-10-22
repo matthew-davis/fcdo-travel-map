@@ -1,8 +1,46 @@
 {
-  "date": "2026-10-21",
-  "generated_at": "2026-10-21T12:10:32.295Z",
+  "date": "2026-10-22",
+  "generated_at": "2026-10-22T12:17:00.991Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "RS": {
+      "status": null,
+      "name": "Serbia",
+      "slug": "serbia",
+      "has_pdf": false,
+      "updated_at": "2026-10-22T10:20:25+01:00"
+    },
+    "BD": {
+      "status": "some_parts",
+      "name": "Bangladesh",
+      "slug": "bangladesh",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6991cc717da91680ad7f4436/Bangladesh_map.jpg",
+      "updated_at": "2026-10-22T09:30:24+01:00"
+    },
+    "NG": {
+      "status": "some_parts",
+      "name": "Nigeria",
+      "slug": "nigeria",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad23601dfa45fcb6753cb2e/Nigeria_JPG.jpg",
+      "updated_at": "2026-10-21T18:00:06+01:00"
+    },
+    "TM": {
+      "status": null,
+      "name": "Turkmenistan",
+      "slug": "turkmenistan",
+      "has_pdf": false,
+      "updated_at": "2026-10-21T15:50:49+01:00"
+    },
+    "ET": {
+      "status": "some_parts",
+      "name": "Ethiopia",
+      "slug": "ethiopia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
+      "updated_at": "2026-10-21T15:37:51+01:00"
+    },
     "SA": {
       "status": "some_parts",
       "name": "Saudi Arabia",
@@ -92,22 +130,6 @@
       "slug": "belgium",
       "has_pdf": false,
       "updated_at": "2026-10-17T20:49:24+01:00"
-    },
-    "ET": {
-      "status": "some_parts",
-      "name": "Ethiopia",
-      "slug": "ethiopia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
-      "updated_at": "2026-10-16T17:03:39+01:00"
-    },
-    "NG": {
-      "status": "some_parts",
-      "name": "Nigeria",
-      "slug": "nigeria",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad23601dfa45fcb6753cb2e/Nigeria_JPG.jpg",
-      "updated_at": "2026-10-16T15:52:35+01:00"
     },
     "KE": {
       "status": "some_parts",
@@ -221,14 +243,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6645e81e993111924d9d365a/FCDO__TA__093_-_Peru_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-10-09T14:35:03+01:00"
-    },
-    "BD": {
-      "status": "some_parts",
-      "name": "Bangladesh",
-      "slug": "bangladesh",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6991cc717da91680ad7f4436/Bangladesh_map.jpg",
-      "updated_at": "2026-10-09T11:14:33+01:00"
     },
     "CL": {
       "status": null,
@@ -356,13 +370,6 @@
       "slug": "slovakia",
       "has_pdf": false,
       "updated_at": "2026-08-28T14:01:26+01:00"
-    },
-    "RS": {
-      "status": null,
-      "name": "Serbia",
-      "slug": "serbia",
-      "has_pdf": false,
-      "updated_at": "2026-08-13T16:18:02+01:00"
     },
     "SM": {
       "status": null,
@@ -662,13 +669,6 @@
       "slug": "tuvalu",
       "has_pdf": false,
       "updated_at": "2026-03-19T14:07:18+00:00"
-    },
-    "TM": {
-      "status": null,
-      "name": "Turkmenistan",
-      "slug": "turkmenistan",
-      "has_pdf": false,
-      "updated_at": "2026-06-04T13:53:56+01:00"
     },
     "TO": {
       "status": null,
