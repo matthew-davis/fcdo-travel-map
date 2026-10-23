@@ -1,8 +1,29 @@
 {
-  "date": "2026-10-22",
-  "generated_at": "2026-10-22T12:17:00.991Z",
+  "date": "2026-10-23",
+  "generated_at": "2026-10-23T11:54:53.445Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "RE": {
+      "status": null,
+      "name": "Réunion",
+      "slug": "reunion",
+      "has_pdf": false,
+      "updated_at": "2026-10-22T18:05:28+01:00"
+    },
+    "GP": {
+      "status": null,
+      "name": "Guadeloupe",
+      "slug": "guadeloupe",
+      "has_pdf": false,
+      "updated_at": "2026-10-22T18:02:17+01:00"
+    },
+    "FR": {
+      "status": null,
+      "name": "France",
+      "slug": "france",
+      "has_pdf": false,
+      "updated_at": "2026-10-22T17:57:33+01:00"
+    },
     "RS": {
       "status": null,
       "name": "Serbia",
@@ -101,13 +122,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/675319b87e5323915d6a0428/FCDO__TA__027_-_Mauritania_Travel_Advice_Ed6__WEB_.jpg",
       "updated_at": "2026-10-19T20:07:15+01:00"
-    },
-    "FR": {
-      "status": null,
-      "name": "France",
-      "slug": "france",
-      "has_pdf": false,
-      "updated_at": "2026-10-19T18:40:21+01:00"
     },
     "TR": {
       "status": "some_parts",
@@ -1061,13 +1075,6 @@
       "has_pdf": false,
       "updated_at": "2025-12-10T13:53:19+00:00"
     },
-    "GP": {
-      "status": null,
-      "name": "Guadeloupe",
-      "slug": "guadeloupe",
-      "has_pdf": false,
-      "updated_at": "2025-12-10T13:54:06+00:00"
-    },
     "GT": {
       "status": "some_parts",
       "name": "Guatemala",
@@ -1570,13 +1577,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69021020918e1f940b3cf7e5/FCDO__TA__029_-_Niger_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-08-29T15:30:01+01:00"
-    },
-    "RE": {
-      "status": null,
-      "name": "Réunion",
-      "slug": "reunion",
-      "has_pdf": false,
-      "updated_at": "2025-12-10T13:30:27+00:00"
     },
     "RW": {
       "status": "some_parts",
