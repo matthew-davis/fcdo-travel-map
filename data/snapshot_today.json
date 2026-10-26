@@ -1,8 +1,16 @@
 {
-  "date": "2026-10-25",
-  "generated_at": "2026-10-25T11:54:02.357Z",
+  "date": "2026-10-26",
+  "generated_at": "2026-10-26T13:25:46.257Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "JO": {
+      "status": "some_parts",
+      "name": "Jordan",
+      "slug": "jordan",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a8dadd63b22fb169dc18d46/FCDO__TA__087_-_Jordan_Travel_Advice_Ed2__WEB_.jpg",
+      "updated_at": "2026-10-25T15:33:37+00:00"
+    },
     "SC": {
       "status": null,
       "name": "Seychelles",
@@ -24,14 +32,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69021020918e1f940b3cf7e5/FCDO__TA__029_-_Niger_Travel_Advice_Ed5__WEB_.jpg",
       "updated_at": "2026-10-23T16:14:29+01:00"
-    },
-    "JO": {
-      "status": "some_parts",
-      "name": "Jordan",
-      "slug": "jordan",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a8dadd63b22fb169dc18d46/FCDO__TA__087_-_Jordan_Travel_Advice_Ed2__WEB_.jpg",
-      "updated_at": "2026-10-23T14:49:26+01:00"
     },
     "AZ": {
       "status": "some_parts",
