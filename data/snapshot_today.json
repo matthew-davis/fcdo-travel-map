@@ -1,8 +1,39 @@
 {
-  "date": "2026-10-26",
-  "generated_at": "2026-10-26T13:25:46.257Z",
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T12:32:36.640Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "CG": {
+      "status": "some_parts",
+      "name": "Congo",
+      "slug": "congo",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/678a6b24d0561c11b91d05b9/FCDO__TA__011_-_Congo_Travel_Advice_Ed4__WEB_.jpg",
+      "updated_at": "2026-10-27T12:00:20+00:00"
+    },
+    "SV": {
+      "status": null,
+      "name": "El Salvador",
+      "slug": "el-salvador",
+      "has_pdf": false,
+      "updated_at": "2026-10-27T11:06:26+00:00"
+    },
+    "ET": {
+      "status": "some_parts",
+      "name": "Ethiopia",
+      "slug": "ethiopia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
+      "updated_at": "2026-10-26T16:58:29+00:00"
+    },
+    "BF": {
+      "status": "avoid_all",
+      "name": "Burkina Faso",
+      "slug": "burkina-faso",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6880fe502b6fd60b7c160f72/FCDO_TA_006_-_Burkina_Faso_Travel_Advice_Ed2_WEB.jpg",
+      "updated_at": "2026-10-26T15:58:48+00:00"
+    },
     "JO": {
       "status": "some_parts",
       "name": "Jordan",
@@ -91,14 +122,6 @@
       "slug": "turkmenistan",
       "has_pdf": false,
       "updated_at": "2026-10-21T15:50:49+01:00"
-    },
-    "ET": {
-      "status": "some_parts",
-      "name": "Ethiopia",
-      "slug": "ethiopia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
-      "updated_at": "2026-10-21T15:37:51+01:00"
     },
     "SA": {
       "status": "some_parts",
@@ -1076,13 +1099,6 @@
       "has_pdf": false,
       "updated_at": "2026-08-07T16:02:53+01:00"
     },
-    "SV": {
-      "status": null,
-      "name": "El Salvador",
-      "slug": "el-salvador",
-      "has_pdf": false,
-      "updated_at": "2026-06-17T14:04:09+01:00"
-    },
     "GD": {
       "status": null,
       "name": "Grenada",
@@ -1356,14 +1372,6 @@
       "has_pdf": false,
       "updated_at": "2026-06-01T14:04:17+01:00"
     },
-    "BF": {
-      "status": "avoid_all",
-      "name": "Burkina Faso",
-      "slug": "burkina-faso",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6880fe502b6fd60b7c160f72/FCDO_TA_006_-_Burkina_Faso_Travel_Advice_Ed2_WEB.jpg",
-      "updated_at": "2025-12-10T13:14:03+00:00"
-    },
     "BI": {
       "status": "some_parts",
       "name": "Burundi",
@@ -1416,14 +1424,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/60dc7052e90e07717b84dc57/FCDO__TA__010_-_Chad_Travel_Advice_Ed4__WEB_.jpg",
       "updated_at": "2026-08-06T12:06:47+01:00"
-    },
-    "CG": {
-      "status": "some_parts",
-      "name": "Congo",
-      "slug": "congo",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/678a6b24d0561c11b91d05b9/FCDO__TA__011_-_Congo_Travel_Advice_Ed4__WEB_.jpg",
-      "updated_at": "2026-06-02T11:16:18+01:00"
     },
     "CI": {
       "status": "some_parts",
