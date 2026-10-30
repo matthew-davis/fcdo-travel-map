@@ -1,14 +1,52 @@
 {
-  "date": "2026-10-29",
-  "generated_at": "2026-10-29T13:30:18.393Z",
+  "date": "2026-10-30",
+  "generated_at": "2026-10-30T13:19:17.148Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "US": {
+      "status": null,
+      "name": "USA",
+      "slug": "usa",
+      "has_pdf": false,
+      "updated_at": "2026-10-30T12:59:38+00:00"
+    },
+    "KE": {
+      "status": "some_parts",
+      "name": "Kenya",
+      "slug": "kenya",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
+      "updated_at": "2026-10-30T12:31:34+00:00"
+    },
+    "UA": {
+      "status": "some_parts",
+      "name": "Ukraine",
+      "slug": "ukraine",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
+      "updated_at": "2026-10-02T09:30:25+01:00"
+    },
+    "KZ": {
+      "status": null,
+      "name": "Kazakhstan",
+      "slug": "kazakhstan",
+      "has_pdf": false,
+      "updated_at": "2026-10-13T15:04:04+01:00"
+    },
+    "CO": {
+      "status": "some_parts",
+      "name": "Colombia",
+      "slug": "colombia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
+      "updated_at": "2026-10-30T00:40:46+00:00"
+    },
     "IT": {
       "status": null,
       "name": "Italy",
       "slug": "italy",
       "has_pdf": false,
-      "updated_at": "2026-10-28T16:15:33+00:00"
+      "updated_at": "2026-10-29T14:15:12+00:00"
     },
     "NG": {
       "status": "some_parts",
@@ -24,14 +62,6 @@
       "slug": "spain",
       "has_pdf": false,
       "updated_at": "2026-10-28T13:02:06+00:00"
-    },
-    "KE": {
-      "status": "some_parts",
-      "name": "Kenya",
-      "slug": "kenya",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
-      "updated_at": "2026-10-28T11:16:05+00:00"
     },
     "BR": {
       "status": "some_parts",
@@ -355,28 +385,12 @@
       "has_pdf": false,
       "updated_at": "2026-05-14T11:06:39+01:00"
     },
-    "CO": {
-      "status": "some_parts",
-      "name": "Colombia",
-      "slug": "colombia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
-      "updated_at": "2026-10-15T11:21:54+01:00"
-    },
     "SN": {
       "status": null,
       "name": "Senegal",
       "slug": "senegal",
       "has_pdf": false,
       "updated_at": "2026-10-15T10:00:14+01:00"
-    },
-    "UA": {
-      "status": "some_parts",
-      "name": "Ukraine",
-      "slug": "ukraine",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
-      "updated_at": "2026-10-02T09:30:25+01:00"
     },
     "KH": {
       "status": "some_parts",
@@ -385,13 +399,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-03-19T14:03:23+00:00"
-    },
-    "KZ": {
-      "status": null,
-      "name": "Kazakhstan",
-      "slug": "kazakhstan",
-      "has_pdf": false,
-      "updated_at": "2026-10-13T15:04:04+01:00"
     },
     "ER": {
       "status": "some_parts",
@@ -1220,13 +1227,6 @@
       "slug": "turks-and-caicos-islands",
       "has_pdf": false,
       "updated_at": "2026-03-13T16:34:25+00:00"
-    },
-    "US": {
-      "status": null,
-      "name": "USA",
-      "slug": "usa",
-      "has_pdf": false,
-      "updated_at": "2026-08-18T10:29:04+01:00"
     },
     "AR": {
       "status": null,
