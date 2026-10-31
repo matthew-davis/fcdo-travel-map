@@ -1,22 +1,37 @@
 {
-  "date": "2026-10-30",
-  "generated_at": "2026-10-30T13:19:17.148Z",
+  "date": "2026-10-31",
+  "generated_at": "2026-10-31T12:55:46.494Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "ET": {
+      "status": "some_parts",
+      "name": "Ethiopia",
+      "slug": "ethiopia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ae507553d3bf10d23546273/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed45_WEB.jpg",
+      "updated_at": "2026-10-30T21:20:19+00:00"
+    },
     "US": {
       "status": null,
       "name": "USA",
       "slug": "usa",
       "has_pdf": false,
-      "updated_at": "2026-10-30T12:59:38+00:00"
+      "updated_at": "2026-10-30T16:55:54+00:00"
     },
-    "KE": {
+    "KZ": {
+      "status": null,
+      "name": "Kazakhstan",
+      "slug": "kazakhstan",
+      "has_pdf": false,
+      "updated_at": "2026-10-30T14:52:10+00:00"
+    },
+    "TZ": {
       "status": "some_parts",
-      "name": "Kenya",
-      "slug": "kenya",
+      "name": "Tanzania",
+      "slug": "tanzania",
       "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
-      "updated_at": "2026-10-30T12:31:34+00:00"
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/690e25f165da22dd57729905/FCDO__TA__086_-_Tanzania_Travel_Advice_Ed1__WEB_.jpg",
+      "updated_at": "2026-10-30T14:45:53+00:00"
     },
     "UA": {
       "status": "some_parts",
@@ -26,12 +41,13 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
       "updated_at": "2026-10-02T09:30:25+01:00"
     },
-    "KZ": {
-      "status": null,
-      "name": "Kazakhstan",
-      "slug": "kazakhstan",
-      "has_pdf": false,
-      "updated_at": "2026-10-13T15:04:04+01:00"
+    "KE": {
+      "status": "some_parts",
+      "name": "Kenya",
+      "slug": "kenya",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
+      "updated_at": "2026-10-30T12:31:34+00:00"
     },
     "CO": {
       "status": "some_parts",
@@ -229,14 +245,6 @@
       "has_pdf": false,
       "updated_at": "2026-10-27T11:06:26+00:00"
     },
-    "ET": {
-      "status": "some_parts",
-      "name": "Ethiopia",
-      "slug": "ethiopia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ab5808ba9c3d267bccceedc/FCDO_TA_017_-_Ethiopia_Travel_Advice_Ed44_WEB__003_.jpg",
-      "updated_at": "2026-10-26T16:58:29+00:00"
-    },
     "BF": {
       "status": "avoid_all",
       "name": "Burkina Faso",
@@ -332,14 +340,6 @@
       "slug": "malawi",
       "has_pdf": false,
       "updated_at": "2026-10-20T15:35:09+01:00"
-    },
-    "TZ": {
-      "status": "some_parts",
-      "name": "Tanzania",
-      "slug": "tanzania",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/690e25f165da22dd57729905/FCDO__TA__086_-_Tanzania_Travel_Advice_Ed1__WEB_.jpg",
-      "updated_at": "2026-10-20T15:04:46+01:00"
     },
     "MX": {
       "status": "some_parts",
