@@ -1,8 +1,16 @@
 {
-  "date": "2026-10-31",
-  "generated_at": "2026-10-31T12:55:46.494Z",
+  "date": "2026-11-01",
+  "generated_at": "2026-11-01T13:41:03.795Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "EC": {
+      "status": "some_parts",
+      "name": "Ecuador",
+      "slug": "ecuador",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/65a1082ce96df50014f8452c/FCDO__TA__014_-_Ecuador_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-11-01T02:47:08+00:00"
+    },
     "ET": {
       "status": "some_parts",
       "name": "Ethiopia",
@@ -1256,14 +1264,6 @@
       "slug": "japan",
       "has_pdf": false,
       "updated_at": "2026-08-28T16:22:35+01:00"
-    },
-    "EC": {
-      "status": "some_parts",
-      "name": "Ecuador",
-      "slug": "ecuador",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/65a1082ce96df50014f8452c/FCDO__TA__014_-_Ecuador_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-02T16:26:29+01:00"
     },
     "ID": {
       "status": null,
