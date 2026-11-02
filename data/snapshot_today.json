@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-01",
-  "generated_at": "2026-11-01T13:41:03.795Z",
+  "date": "2026-11-02",
+  "generated_at": "2026-11-02T16:25:21.673Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
     "EC": {
@@ -9,7 +9,7 @@
       "slug": "ecuador",
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/65a1082ce96df50014f8452c/FCDO__TA__014_-_Ecuador_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-11-01T02:47:08+00:00"
+      "updated_at": "2026-11-01T19:30:00+00:00"
     },
     "ET": {
       "status": "some_parts",
