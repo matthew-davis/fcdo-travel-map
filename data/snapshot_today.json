@@ -1,8 +1,36 @@
 {
-  "date": "2026-11-02",
-  "generated_at": "2026-11-02T16:25:21.673Z",
+  "date": "2026-11-03",
+  "generated_at": "2026-11-03T14:31:35.154Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "IT": {
+      "status": null,
+      "name": "Italy",
+      "slug": "italy",
+      "has_pdf": false,
+      "updated_at": "2026-11-03T11:56:35+00:00"
+    },
+    "MG": {
+      "status": null,
+      "name": "Madagascar",
+      "slug": "madagascar",
+      "has_pdf": false,
+      "updated_at": "2026-09-09T14:30:36+01:00"
+    },
+    "GR": {
+      "status": null,
+      "name": "Greece",
+      "slug": "greece",
+      "has_pdf": false,
+      "updated_at": "2026-11-03T11:18:20+00:00"
+    },
+    "MN": {
+      "status": null,
+      "name": "Mongolia",
+      "slug": "mongolia",
+      "has_pdf": false,
+      "updated_at": "2026-08-07T13:03:24+01:00"
+    },
     "EC": {
       "status": "some_parts",
       "name": "Ecuador",
@@ -64,13 +92,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
       "updated_at": "2026-10-30T00:40:46+00:00"
-    },
-    "IT": {
-      "status": null,
-      "name": "Italy",
-      "slug": "italy",
-      "has_pdf": false,
-      "updated_at": "2026-10-29T14:15:12+00:00"
     },
     "NG": {
       "status": "some_parts",
@@ -653,13 +674,6 @@
       "has_pdf": false,
       "updated_at": "2026-09-23T16:27:57+01:00"
     },
-    "GR": {
-      "status": null,
-      "name": "Greece",
-      "slug": "greece",
-      "has_pdf": false,
-      "updated_at": "2026-08-11T10:17:58+01:00"
-    },
     "GI": {
       "status": null,
       "name": "Gibraltar",
@@ -919,13 +933,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6931608e502f392086ee8bc8/FCDO_TA_064_-_Myanmar_Ed10_WEB.jpg",
       "updated_at": "2026-08-04T11:16:35+01:00"
-    },
-    "MN": {
-      "status": null,
-      "name": "Mongolia",
-      "slug": "mongolia",
-      "has_pdf": false,
-      "updated_at": "2026-08-07T13:03:24+01:00"
     },
     "FM": {
       "status": null,
@@ -1547,13 +1554,6 @@
       "slug": "liberia",
       "has_pdf": false,
       "updated_at": "2026-05-27T14:27:30+01:00"
-    },
-    "MG": {
-      "status": null,
-      "name": "Madagascar",
-      "slug": "madagascar",
-      "has_pdf": false,
-      "updated_at": "2026-09-09T14:30:36+01:00"
     },
     "ML": {
       "status": "avoid_all",
