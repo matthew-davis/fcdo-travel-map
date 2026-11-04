@@ -1,21 +1,44 @@
 {
-  "date": "2026-11-03",
-  "generated_at": "2026-11-03T14:31:35.154Z",
+  "date": "2026-11-04",
+  "generated_at": "2026-11-04T14:46:26.642Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
-    "IT": {
+    "TD": {
+      "status": "some_parts",
+      "name": "Chad",
+      "slug": "chad",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/60dc7052e90e07717b84dc57/FCDO__TA__010_-_Chad_Travel_Advice_Ed4__WEB_.jpg",
+      "updated_at": "2026-11-04T14:33:29+00:00"
+    },
+    "MD": {
+      "status": "some_parts",
+      "name": "Moldova",
+      "slug": "moldova",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/620fb5b8d3bf7f4f05879a08/FCDO__TA__058_-_Moldova_Travel_Advice_Ed1__WEB_.jpg",
+      "updated_at": "2025-12-10T13:44:10+00:00"
+    },
+    "PY": {
       "status": null,
-      "name": "Italy",
-      "slug": "italy",
+      "name": "Paraguay",
+      "slug": "paraguay",
       "has_pdf": false,
-      "updated_at": "2026-11-03T11:56:35+00:00"
+      "updated_at": "2026-11-03T20:29:30+00:00"
     },
     "MG": {
       "status": null,
       "name": "Madagascar",
       "slug": "madagascar",
       "has_pdf": false,
-      "updated_at": "2026-09-09T14:30:36+01:00"
+      "updated_at": "2026-11-03T16:23:39+00:00"
+    },
+    "IT": {
+      "status": null,
+      "name": "Italy",
+      "slug": "italy",
+      "has_pdf": false,
+      "updated_at": "2026-11-03T11:56:35+00:00"
     },
     "GR": {
       "status": null,
@@ -595,14 +618,6 @@
       "slug": "monaco",
       "has_pdf": false,
       "updated_at": "2025-12-10T13:45:13+00:00"
-    },
-    "MD": {
-      "status": "some_parts",
-      "name": "Moldova",
-      "slug": "moldova",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/620fb5b8d3bf7f4f05879a08/FCDO__TA__058_-_Moldova_Travel_Advice_Ed1__WEB_.jpg",
-      "updated_at": "2025-12-10T13:44:10+00:00"
     },
     "YT": {
       "status": null,
@@ -1307,13 +1322,6 @@
       "has_pdf": false,
       "updated_at": "2025-12-30T14:37:59+00:00"
     },
-    "PY": {
-      "status": null,
-      "name": "Paraguay",
-      "slug": "paraguay",
-      "has_pdf": false,
-      "updated_at": "2026-01-21T16:11:30+00:00"
-    },
     "PF": {
       "status": null,
       "name": "French Polynesia",
@@ -1423,14 +1431,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/664616ceb7249a4c6e9d3673/FCDO__TA__009_-_Central_African_Republic_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-05-28T12:08:37+01:00"
-    },
-    "TD": {
-      "status": "some_parts",
-      "name": "Chad",
-      "slug": "chad",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/60dc7052e90e07717b84dc57/FCDO__TA__010_-_Chad_Travel_Advice_Ed4__WEB_.jpg",
-      "updated_at": "2026-08-06T12:06:47+01:00"
     },
     "CI": {
       "status": "some_parts",
