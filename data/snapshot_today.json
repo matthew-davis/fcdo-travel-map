@@ -1,8 +1,46 @@
 {
-  "date": "2026-11-06",
-  "generated_at": "2026-11-06T14:29:33.376Z",
+  "date": "2026-11-07",
+  "generated_at": "2026-11-07T13:23:55.119Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "KE": {
+      "status": "some_parts",
+      "name": "Kenya",
+      "slug": "kenya",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6aee02f75f999d401cc42b9c/FCDO__TA__055_-_Kenya_Travel_Advice_Ed8__WEB_.jpg",
+      "updated_at": "2026-11-06T17:00:48+00:00"
+    },
+    "CM": {
+      "status": "some_parts",
+      "name": "Cameroon",
+      "slug": "cameroon",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/698a079585bc7d6ba0fbc82e/FCDO__TA__008_-_Cameroon_Travel_Advice_Ed6__WEB_.jpg",
+      "updated_at": "2026-11-06T16:22:46+00:00"
+    },
+    "PE": {
+      "status": "some_parts",
+      "name": "Peru",
+      "slug": "peru",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6645e81e993111924d9d365a/FCDO__TA__093_-_Peru_Travel_Advice_Ed3__WEB_.jpg",
+      "updated_at": "2026-11-06T16:13:51+00:00"
+    },
+    "NP": {
+      "status": null,
+      "name": "Nepal",
+      "slug": "nepal",
+      "has_pdf": false,
+      "updated_at": "2026-10-01T13:09:36+01:00"
+    },
+    "BW": {
+      "status": null,
+      "name": "Botswana",
+      "slug": "botswana",
+      "has_pdf": false,
+      "updated_at": "2026-11-06T14:39:38+00:00"
+    },
     "UG": {
       "status": null,
       "name": "Uganda",
@@ -181,14 +219,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/663398524d8bb7378fb6c167/FCDO__TA__044_-_Ukraine_Travel_Advice_Ed12__WEB___1_.jpg",
       "updated_at": "2026-10-02T09:30:25+01:00"
-    },
-    "KE": {
-      "status": "some_parts",
-      "name": "Kenya",
-      "slug": "kenya",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/696a6280448fedc1eb4248f0/FCDO__TA__055_-_Kenya_Travel_Advice_Ed7__WEB_.jpg",
-      "updated_at": "2026-10-30T12:31:34+00:00"
     },
     "CO": {
       "status": "some_parts",
@@ -541,14 +571,6 @@
       "slug": "panama",
       "has_pdf": false,
       "updated_at": "2026-10-09T21:08:09+01:00"
-    },
-    "PE": {
-      "status": "some_parts",
-      "name": "Peru",
-      "slug": "peru",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6645e81e993111924d9d365a/FCDO__TA__093_-_Peru_Travel_Advice_Ed3__WEB_.jpg",
-      "updated_at": "2026-10-09T14:35:03+01:00"
     },
     "CL": {
       "status": null,
@@ -979,13 +1001,6 @@
       "has_pdf": false,
       "updated_at": "2026-03-19T14:06:12+00:00"
     },
-    "NP": {
-      "status": null,
-      "name": "Nepal",
-      "slug": "nepal",
-      "has_pdf": false,
-      "updated_at": "2026-10-01T13:09:36+01:00"
-    },
     "NR": {
       "status": null,
       "name": "Nauru",
@@ -1395,13 +1410,6 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6437d3f1db4ba90013448e0a/FCDO__TA__053_-_Angola_Travel_Advice_Ed2__WEB_.jpg",
       "updated_at": "2026-05-28T11:50:56+01:00"
     },
-    "BW": {
-      "status": null,
-      "name": "Botswana",
-      "slug": "botswana",
-      "has_pdf": false,
-      "updated_at": "2026-06-01T14:04:17+01:00"
-    },
     "BI": {
       "status": "some_parts",
       "name": "Burundi",
@@ -1409,14 +1417,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/69ca741595a323ea3496ed17/FCDO_TA_007_-_Burundi_Travel_Advice_Ed7_WEB.jpg",
       "updated_at": "2026-05-21T16:02:33+01:00"
-    },
-    "CM": {
-      "status": "some_parts",
-      "name": "Cameroon",
-      "slug": "cameroon",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/698a079585bc7d6ba0fbc82e/FCDO__TA__008_-_Cameroon_Travel_Advice_Ed6__WEB_.jpg",
-      "updated_at": "2026-02-09T16:16:46+00:00"
     },
     "CK": {
       "status": null,
