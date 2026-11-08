@@ -1,8 +1,15 @@
 {
-  "date": "2026-11-07",
-  "generated_at": "2026-11-07T13:23:55.119Z",
+  "date": "2026-11-08",
+  "generated_at": "2026-11-08T13:44:40.818Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "PL": {
+      "status": null,
+      "name": "Poland",
+      "slug": "poland",
+      "has_pdf": false,
+      "updated_at": "2026-11-07T15:53:32+00:00"
+    },
     "KE": {
       "status": "some_parts",
       "name": "Kenya",
@@ -658,13 +665,6 @@
       "slug": "portugal",
       "has_pdf": false,
       "updated_at": "2026-08-11T10:21:44+01:00"
-    },
-    "PL": {
-      "status": null,
-      "name": "Poland",
-      "slug": "poland",
-      "has_pdf": false,
-      "updated_at": "2026-08-11T10:21:18+01:00"
     },
     "NO": {
       "status": null,
