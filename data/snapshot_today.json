@@ -1,8 +1,38 @@
 {
-  "date": "2026-11-08",
-  "generated_at": "2026-11-08T13:44:40.818Z",
+  "date": "2026-11-09",
+  "generated_at": "2026-11-09T16:44:04.115Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "ER": {
+      "status": "some_parts",
+      "name": "Eritrea",
+      "slug": "eritrea",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac8aa84f1ba855cc196a9be/FCDO__TA__016_-_Eritrea_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-11-09T16:20:13+00:00"
+    },
+    "CI": {
+      "status": "some_parts",
+      "name": "Côte d'Ivoire",
+      "slug": "cote-d-ivoire",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/66152612c4c84de468346aee/FCDO__TA__049_-_C%C3%B4te_d_Ivoire_Travel_Advice_Ed3__WEB_.jpg",
+      "updated_at": "2026-11-09T16:16:31+00:00"
+    },
+    "SZ": {
+      "status": null,
+      "name": "Eswatini",
+      "slug": "eswatini",
+      "has_pdf": false,
+      "updated_at": "2026-11-09T14:38:31+00:00"
+    },
+    "CL": {
+      "status": null,
+      "name": "Chile",
+      "slug": "chile",
+      "has_pdf": false,
+      "updated_at": "2026-11-09T12:06:58+00:00"
+    },
     "PL": {
       "status": null,
       "name": "Poland",
@@ -549,14 +579,6 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6980b459ec71a16669612e19/FCDO__TA__085_-_Cambodia_Travel_Advice_Ed7__WEB_.jpg",
       "updated_at": "2026-03-19T14:03:23+00:00"
     },
-    "ER": {
-      "status": "some_parts",
-      "name": "Eritrea",
-      "slug": "eritrea",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ac8aa84f1ba855cc196a9be/FCDO__TA__016_-_Eritrea_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-12T12:48:05+01:00"
-    },
     "SB": {
       "status": null,
       "name": "Solomon Islands",
@@ -578,13 +600,6 @@
       "slug": "panama",
       "has_pdf": false,
       "updated_at": "2026-10-09T21:08:09+01:00"
-    },
-    "CL": {
-      "status": null,
-      "name": "Chile",
-      "slug": "chile",
-      "has_pdf": false,
-      "updated_at": "2026-10-09T00:26:56+01:00"
     },
     "CD": {
       "status": "some_parts",
@@ -1447,14 +1462,6 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/664616ceb7249a4c6e9d3673/FCDO__TA__009_-_Central_African_Republic_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-05-28T12:08:37+01:00"
     },
-    "CI": {
-      "status": "some_parts",
-      "name": "Côte d'Ivoire",
-      "slug": "cote-d-ivoire",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/66152612c4c84de468346aee/FCDO__TA__049_-_C%C3%B4te_d_Ivoire_Travel_Advice_Ed3__WEB_.jpg",
-      "updated_at": "2026-05-29T16:11:15+01:00"
-    },
     "DJ": {
       "status": "some_parts",
       "name": "Djibouti",
@@ -1476,13 +1483,6 @@
       "slug": "china",
       "has_pdf": false,
       "updated_at": "2026-08-27T23:02:55+01:00"
-    },
-    "SZ": {
-      "status": null,
-      "name": "Eswatini",
-      "slug": "eswatini",
-      "has_pdf": false,
-      "updated_at": "2025-12-10T13:32:46+00:00"
     },
     "BN": {
       "status": null,
