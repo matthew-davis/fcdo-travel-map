@@ -1,8 +1,23 @@
 {
-  "date": "2026-11-09",
-  "generated_at": "2026-11-09T16:44:04.115Z",
+  "date": "2026-11-10",
+  "generated_at": "2026-11-10T15:07:14.999Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "PT": {
+      "status": null,
+      "name": "Portugal",
+      "slug": "portugal",
+      "has_pdf": false,
+      "updated_at": "2026-11-10T14:25:20+00:00"
+    },
+    "NG": {
+      "status": "some_parts",
+      "name": "Nigeria",
+      "slug": "nigeria",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad23601dfa45fcb6753cb2e/Nigeria_JPG.jpg",
+      "updated_at": "2026-11-10T14:13:23+00:00"
+    },
     "ER": {
       "status": "some_parts",
       "name": "Eritrea",
@@ -264,14 +279,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
       "updated_at": "2026-10-30T00:40:46+00:00"
-    },
-    "NG": {
-      "status": "some_parts",
-      "name": "Nigeria",
-      "slug": "nigeria",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6ad23601dfa45fcb6753cb2e/Nigeria_JPG.jpg",
-      "updated_at": "2026-10-28T13:48:23+00:00"
     },
     "ES": {
       "status": null,
@@ -673,13 +680,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/621cd8428fa8f54915f43831/FCDO__TA__059_-_Russia_Travel_Advice_Ed1__WEB_.jpg",
       "updated_at": "2026-09-18T11:01:11+01:00"
-    },
-    "PT": {
-      "status": null,
-      "name": "Portugal",
-      "slug": "portugal",
-      "has_pdf": false,
-      "updated_at": "2026-08-11T10:21:44+01:00"
     },
     "NO": {
       "status": null,
