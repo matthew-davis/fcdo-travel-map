@@ -1,8 +1,16 @@
 {
-  "date": "2026-11-12",
-  "generated_at": "2026-11-12T15:29:51.263Z",
+  "date": "2026-11-13",
+  "generated_at": "2026-11-13T14:47:00.396Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "GE": {
+      "status": "some_parts",
+      "name": "Georgia",
+      "slug": "georgia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/690481e4823bdda9488b24cf/FCDO_TA_018_-_Georgia_Travel_Advice_Ed4_WEB.jpg",
+      "updated_at": "2026-11-12T16:54:23+00:00"
+    },
     "PT": {
       "status": null,
       "name": "Portugal",
@@ -820,14 +828,6 @@
       "slug": "germany",
       "has_pdf": false,
       "updated_at": "2026-08-11T10:18:05+01:00"
-    },
-    "GE": {
-      "status": "some_parts",
-      "name": "Georgia",
-      "slug": "georgia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/690481e4823bdda9488b24cf/FCDO_TA_018_-_Georgia_Travel_Advice_Ed4_WEB.jpg",
-      "updated_at": "2026-09-15T13:48:38+01:00"
     },
     "FI": {
       "status": null,
