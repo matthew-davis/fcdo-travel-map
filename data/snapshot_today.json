@@ -1,8 +1,15 @@
 {
-  "date": "2026-11-15",
-  "generated_at": "2026-11-15T14:12:12.690Z",
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16T16:15:10.636Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "MG": {
+      "status": null,
+      "name": "Madagascar",
+      "slug": "madagascar",
+      "has_pdf": false,
+      "updated_at": "2026-11-16T10:56:40+00:00"
+    },
     "US": {
       "status": null,
       "name": "USA",
@@ -53,13 +60,6 @@
       "slug": "trinidad-and-tobago",
       "has_pdf": false,
       "updated_at": "2026-11-11T16:31:16+00:00"
-    },
-    "MG": {
-      "status": null,
-      "name": "Madagascar",
-      "slug": "madagascar",
-      "has_pdf": false,
-      "updated_at": "2026-11-11T15:51:34+00:00"
     },
     "PL": {
       "status": null,
