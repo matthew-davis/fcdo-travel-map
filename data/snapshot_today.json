@@ -1,8 +1,38 @@
 {
-  "date": "2026-11-16",
-  "generated_at": "2026-11-16T16:15:10.636Z",
+  "date": "2026-11-17",
+  "generated_at": "2026-11-17T16:20:50.031Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "BR": {
+      "status": "some_parts",
+      "name": "Brazil",
+      "slug": "brazil",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/661e86507469198185bd3e6f/FCDO__TA__092_-_Brazil_Travel_Advice_Ed3__WEB_.jpg",
+      "updated_at": "2026-11-17T13:27:42+00:00"
+    },
+    "FI": {
+      "status": null,
+      "name": "Finland",
+      "slug": "finland",
+      "has_pdf": false,
+      "updated_at": "2026-11-17T13:27:15+00:00"
+    },
+    "TW": {
+      "status": null,
+      "name": "Taiwan",
+      "slug": "taiwan",
+      "has_pdf": false,
+      "updated_at": "2026-08-28T13:31:24+01:00"
+    },
+    "GT": {
+      "status": "some_parts",
+      "name": "Guatemala",
+      "slug": "guatemala",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/65fac0c89316f5001d64c3c0/FCDO__TA__095_-_Guatemala_Travel_Advice_Ed1__WEB_.jpg",
+      "updated_at": "2026-11-16T16:17:57+00:00"
+    },
     "MG": {
       "status": null,
       "name": "Madagascar",
@@ -180,14 +210,6 @@
       "has_pdf": false,
       "updated_at": "2026-11-05T14:10:53+00:00"
     },
-    "GT": {
-      "status": "some_parts",
-      "name": "Guatemala",
-      "slug": "guatemala",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/65fac0c89316f5001d64c3c0/FCDO__TA__095_-_Guatemala_Travel_Advice_Ed1__WEB_.jpg",
-      "updated_at": "2026-11-05T14:10:49+00:00"
-    },
     "SV": {
       "status": null,
       "name": "El Salvador",
@@ -323,14 +345,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6a1022481eb143220d8d27b8/FCDO__TA__054_-_Colombia_Travel_Advice_Ed5__WEB___3_.jpg",
       "updated_at": "2026-10-30T00:40:46+00:00"
-    },
-    "BR": {
-      "status": "some_parts",
-      "name": "Brazil",
-      "slug": "brazil",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/661e86507469198185bd3e6f/FCDO__TA__092_-_Brazil_Travel_Advice_Ed3__WEB_.jpg",
-      "updated_at": "2026-10-28T10:42:46+00:00"
     },
     "CY": {
       "status": null,
@@ -837,13 +851,6 @@
       "has_pdf": false,
       "updated_at": "2026-08-11T10:18:05+01:00"
     },
-    "FI": {
-      "status": null,
-      "name": "Finland",
-      "slug": "finland",
-      "has_pdf": false,
-      "updated_at": "2026-08-11T10:18:13+01:00"
-    },
     "EE": {
       "status": null,
       "name": "Estonia",
@@ -971,13 +978,6 @@
       "slug": "tajikistan",
       "has_pdf": false,
       "updated_at": "2026-08-19T15:15:52+01:00"
-    },
-    "TW": {
-      "status": null,
-      "name": "Taiwan",
-      "slug": "taiwan",
-      "has_pdf": false,
-      "updated_at": "2026-08-28T13:31:24+01:00"
     },
     "LK": {
       "status": null,
