@@ -1,8 +1,24 @@
 {
-  "date": "2026-11-19",
-  "generated_at": "2026-11-19T15:57:27.173Z",
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T15:41:04.092Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "EC": {
+      "status": "some_parts",
+      "name": "Ecuador",
+      "slug": "ecuador",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/65a1082ce96df50014f8452c/FCDO__TA__014_-_Ecuador_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-11-20T13:14:04+00:00"
+    },
+    "RU": {
+      "status": "avoid_all",
+      "name": "Russia",
+      "slug": "russia",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/621cd8428fa8f54915f43831/FCDO__TA__059_-_Russia_Travel_Advice_Ed1__WEB_.jpg",
+      "updated_at": "2026-09-18T11:01:11+01:00"
+    },
     "LA": {
       "status": "some_parts",
       "name": "Laos",
@@ -461,14 +477,6 @@
       "has_pdf": false,
       "updated_at": "2026-08-07T13:03:24+01:00"
     },
-    "EC": {
-      "status": "some_parts",
-      "name": "Ecuador",
-      "slug": "ecuador",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/65a1082ce96df50014f8452c/FCDO__TA__014_-_Ecuador_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-11-01T19:30:00+00:00"
-    },
     "ET": {
       "status": "some_parts",
       "name": "Ethiopia",
@@ -739,14 +747,6 @@
       "slug": "romania",
       "has_pdf": false,
       "updated_at": "2026-09-18T14:15:40+01:00"
-    },
-    "RU": {
-      "status": "avoid_all",
-      "name": "Russia",
-      "slug": "russia",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/621cd8428fa8f54915f43831/FCDO__TA__059_-_Russia_Travel_Advice_Ed1__WEB_.jpg",
-      "updated_at": "2026-09-18T11:01:11+01:00"
     },
     "NO": {
       "status": null,
