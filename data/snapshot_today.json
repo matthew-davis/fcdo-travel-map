@@ -1,8 +1,22 @@
 {
-  "date": "2026-11-20",
-  "generated_at": "2026-11-20T15:41:04.092Z",
+  "date": "2026-11-21",
+  "generated_at": "2026-11-21T14:51:08.584Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "US": {
+      "status": null,
+      "name": "USA",
+      "slug": "usa",
+      "has_pdf": false,
+      "updated_at": "2026-11-20T19:57:12+00:00"
+    },
+    "BS": {
+      "status": null,
+      "name": "Bahamas",
+      "slug": "bahamas",
+      "has_pdf": false,
+      "updated_at": "2026-05-28T17:01:45+01:00"
+    },
     "EC": {
       "status": "some_parts",
       "name": "Ecuador",
@@ -225,13 +239,6 @@
       "slug": "madagascar",
       "has_pdf": false,
       "updated_at": "2026-11-16T10:56:40+00:00"
-    },
-    "US": {
-      "status": null,
-      "name": "USA",
-      "slug": "usa",
-      "has_pdf": false,
-      "updated_at": "2026-11-14T02:26:03+00:00"
     },
     "AF": {
       "status": "avoid_all",
@@ -1155,13 +1162,6 @@
       "slug": "aruba",
       "has_pdf": false,
       "updated_at": "2026-07-07T14:03:43+01:00"
-    },
-    "BS": {
-      "status": null,
-      "name": "Bahamas",
-      "slug": "bahamas",
-      "has_pdf": false,
-      "updated_at": "2026-05-28T17:01:45+01:00"
     },
     "BB": {
       "status": null,
