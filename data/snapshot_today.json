@@ -1,8 +1,16 @@
 {
-  "date": "2026-11-23",
-  "generated_at": "2026-11-23T18:37:44.039Z",
+  "date": "2026-11-24",
+  "generated_at": "2026-11-24T18:05:18.152Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "MX": {
+      "status": "some_parts",
+      "name": "Mexico",
+      "slug": "mexico",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
+      "updated_at": "2026-11-24T10:36:16+00:00"
+    },
     "ET": {
       "status": "some_parts",
       "name": "Ethiopia",
@@ -72,14 +80,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6565efa562180b000dce830a/FCDO__TA__025_-_Malaysia_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-11-18T15:21:43+00:00"
-    },
-    "MX": {
-      "status": "some_parts",
-      "name": "Mexico",
-      "slug": "mexico",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/69a1c6c8ec82ce45f05bd70e/FCDO__TA__065_-_Mexico_Travel_Advice_Ed5__WEB_.jpg",
-      "updated_at": "2026-10-20T14:20:31+01:00"
     },
     "PK": {
       "status": "some_parts",
