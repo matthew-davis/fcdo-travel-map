@@ -1,8 +1,36 @@
 {
-  "date": "2026-11-24",
-  "generated_at": "2026-11-24T18:05:18.152Z",
+  "date": "2026-11-25",
+  "generated_at": "2026-11-25T17:29:39.920Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "RS": {
+      "status": null,
+      "name": "Serbia",
+      "slug": "serbia",
+      "has_pdf": false,
+      "updated_at": "2026-11-25T15:24:11+00:00"
+    },
+    "MW": {
+      "status": null,
+      "name": "Malawi",
+      "slug": "malawi",
+      "has_pdf": false,
+      "updated_at": "2026-11-25T11:22:56+00:00"
+    },
+    "KM": {
+      "status": null,
+      "name": "Comoros",
+      "slug": "comoros",
+      "has_pdf": false,
+      "updated_at": "2026-11-25T10:50:56+00:00"
+    },
+    "XK": {
+      "status": null,
+      "name": "Kosovo",
+      "slug": "kosovo",
+      "has_pdf": false,
+      "updated_at": "2026-09-23T12:48:46+01:00"
+    },
     "MX": {
       "status": "some_parts",
       "name": "Mexico",
@@ -604,13 +632,6 @@
       "has_pdf": false,
       "updated_at": "2026-10-22T17:57:33+01:00"
     },
-    "RS": {
-      "status": null,
-      "name": "Serbia",
-      "slug": "serbia",
-      "has_pdf": false,
-      "updated_at": "2026-10-22T10:20:25+01:00"
-    },
     "BD": {
       "status": "some_parts",
       "name": "Bangladesh",
@@ -625,13 +646,6 @@
       "slug": "turkmenistan",
       "has_pdf": false,
       "updated_at": "2026-10-21T15:50:49+01:00"
-    },
-    "MW": {
-      "status": null,
-      "name": "Malawi",
-      "slug": "malawi",
-      "has_pdf": false,
-      "updated_at": "2026-10-20T15:35:09+01:00"
     },
     "MR": {
       "status": "some_parts",
@@ -831,13 +845,6 @@
       "slug": "latvia",
       "has_pdf": false,
       "updated_at": "2026-08-11T10:17:07+01:00"
-    },
-    "XK": {
-      "status": null,
-      "name": "Kosovo",
-      "slug": "kosovo",
-      "has_pdf": false,
-      "updated_at": "2026-09-23T12:48:46+01:00"
     },
     "IE": {
       "status": null,
@@ -1468,13 +1475,6 @@
       "slug": "cape-verde",
       "has_pdf": false,
       "updated_at": "2026-07-28T16:13:41+01:00"
-    },
-    "KM": {
-      "status": null,
-      "name": "Comoros",
-      "slug": "comoros",
-      "has_pdf": false,
-      "updated_at": "2025-12-10T13:42:55+00:00"
     },
     "CF": {
       "status": "some_parts",
