@@ -1,21 +1,43 @@
 {
-  "date": "2026-11-25",
-  "generated_at": "2026-11-25T17:29:39.920Z",
+  "date": "2026-11-26",
+  "generated_at": "2026-11-26T17:12:01.693Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
-    "RS": {
+    "MU": {
       "status": null,
-      "name": "Serbia",
-      "slug": "serbia",
+      "name": "Mauritius",
+      "slug": "mauritius",
       "has_pdf": false,
-      "updated_at": "2026-11-25T15:24:11+00:00"
+      "updated_at": "2026-11-26T16:39:27+00:00"
+    },
+    "PK": {
+      "status": "some_parts",
+      "name": "Pakistan",
+      "slug": "pakistan",
+      "has_pdf": false,
+      "updated_at": "2026-11-18T16:36:34+00:00"
     },
     "MW": {
       "status": null,
       "name": "Malawi",
       "slug": "malawi",
       "has_pdf": false,
-      "updated_at": "2026-11-25T11:22:56+00:00"
+      "updated_at": "2026-11-26T10:49:53+00:00"
+    },
+    "PE": {
+      "status": "some_parts",
+      "name": "Peru",
+      "slug": "peru",
+      "has_pdf": true,
+      "pdf_url": "https://assets.publishing.service.gov.uk/media/6645e81e993111924d9d365a/FCDO__TA__093_-_Peru_Travel_Advice_Ed3__WEB_.jpg",
+      "updated_at": "2026-11-26T10:26:20+00:00"
+    },
+    "RS": {
+      "status": null,
+      "name": "Serbia",
+      "slug": "serbia",
+      "has_pdf": false,
+      "updated_at": "2026-11-25T15:24:11+00:00"
     },
     "KM": {
       "status": null,
@@ -108,13 +130,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/6565efa562180b000dce830a/FCDO__TA__025_-_Malaysia_Travel_Advice_Ed3__WEB_.jpg",
       "updated_at": "2026-11-18T15:21:43+00:00"
-    },
-    "PK": {
-      "status": "some_parts",
-      "name": "Pakistan",
-      "slug": "pakistan",
-      "has_pdf": false,
-      "updated_at": "2026-11-18T16:36:34+00:00"
     },
     "TR": {
       "status": "some_parts",
@@ -396,14 +411,6 @@
       "pdf_url": "https://assets.publishing.service.gov.uk/media/698a079585bc7d6ba0fbc82e/FCDO__TA__008_-_Cameroon_Travel_Advice_Ed6__WEB_.jpg",
       "updated_at": "2026-11-06T16:22:46+00:00"
     },
-    "PE": {
-      "status": "some_parts",
-      "name": "Peru",
-      "slug": "peru",
-      "has_pdf": true,
-      "pdf_url": "https://assets.publishing.service.gov.uk/media/6645e81e993111924d9d365a/FCDO__TA__093_-_Peru_Travel_Advice_Ed3__WEB_.jpg",
-      "updated_at": "2026-11-06T16:13:51+00:00"
-    },
     "NP": {
       "status": null,
       "name": "Nepal",
@@ -654,13 +661,6 @@
       "has_pdf": true,
       "pdf_url": "https://assets.publishing.service.gov.uk/media/675319b87e5323915d6a0428/FCDO__TA__027_-_Mauritania_Travel_Advice_Ed6__WEB_.jpg",
       "updated_at": "2026-10-19T20:07:15+01:00"
-    },
-    "MU": {
-      "status": null,
-      "name": "Mauritius",
-      "slug": "mauritius",
-      "has_pdf": false,
-      "updated_at": "2026-10-19T15:45:58+01:00"
     },
     "BE": {
       "status": null,
