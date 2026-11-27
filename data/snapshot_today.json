@@ -1,8 +1,15 @@
 {
-  "date": "2026-11-26",
-  "generated_at": "2026-11-26T17:12:01.693Z",
+  "date": "2026-11-27",
+  "generated_at": "2026-11-27T16:53:46.888Z",
   "source": "FCDO Foreign Travel Advice",
   "countries": {
+    "PL": {
+      "status": null,
+      "name": "Poland",
+      "slug": "poland",
+      "has_pdf": false,
+      "updated_at": "2026-11-27T16:40:32+00:00"
+    },
     "MU": {
       "status": null,
       "name": "Mauritius",
@@ -342,13 +349,6 @@
       "slug": "trinidad-and-tobago",
       "has_pdf": false,
       "updated_at": "2026-11-11T16:31:16+00:00"
-    },
-    "PL": {
-      "status": null,
-      "name": "Poland",
-      "slug": "poland",
-      "has_pdf": false,
-      "updated_at": "2026-11-11T15:42:44+00:00"
     },
     "ES": {
       "status": null,
